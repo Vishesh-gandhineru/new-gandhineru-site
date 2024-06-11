@@ -17,7 +17,26 @@ const config = {
         "2xl": "1400px",
       },
     },
+    
     extend: {
+      fontFamily: {
+        Syne : ['var(--font-syne)', 'sans-serif'],
+        Satoshi : ['var(--font-satoshi)', 'sans-serif'],
+      },
+      fontSize: {
+        h1: ["var(--fs-h1)", { lineHeight: "var(--lh-h1)" }],
+        h2: ["var(--fs-h2)", { lineHeight: "var(--lh-h2)" }],
+        h3: ["var(--fs-h3)", { lineHeight: "var(--lh-h3)" }],
+        h4: ["var(--fs-h4)", { lineHeight: "var(--lh-h4)" }],
+        h5: ["var(--fs-h5)", { lineHeight: "var(--lh-h5)" }],
+        h6: ["var(--fs-h6)", { lineHeight: "var(--lh-h6)" }],
+        body: ["var(--fs-body)", { lineHeight: "var(--lh-body)" }],
+        
+      },
+      backgroundImage : {
+        'social-bg-image' : "url('/images/socialBgImage.png')",
+        'hero-home-bg-cover' : "url('/images/HerobannerImage.webp')",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
