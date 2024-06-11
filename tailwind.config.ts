@@ -35,7 +35,7 @@ const config = {
       },
       backgroundImage : {
         'social-bg-image' : "url('/images/socialBgImage.png')",
-        'hero-home-bg-cover' : "url('/images/HerobannerImage.webp')",
+        'hero-home-bg-cover' : "url('/images/HerobannerImage.png')",
       },
       colors: {
         border: "hsl(var(--border))",
