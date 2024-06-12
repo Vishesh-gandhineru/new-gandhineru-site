@@ -6,8 +6,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import FormInput from "./FormFields/FormInput";
-import { CircleAlert } from "lucide-react";
+import { ArrowRight, CircleAlert } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { PrimaryButton } from "./CustomButton";
 import {
   Tooltip,
   TooltipContent,
@@ -19,9 +20,10 @@ import {
   FormControl,
   FormField,
   FormItem,
+  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+import {Checkbox} from "@/components/ui/checkbox";
 
 import {
   Select,
@@ -55,6 +57,7 @@ const ContactFormSchema = z.object({
     { message: "Please select a service" }
   ),
   message: z.string().min(10, { message: "Must be atlest 10 characters long" }),
+  privacyPolicy: z.boolean().refine((val) => val === true, {message:"Required"}),
 });
 
 const ContactForm = () => {
@@ -66,6 +69,7 @@ const ContactForm = () => {
       phone: "",
       service: undefined,
       message: "",
+      privacyPolicy: false,
     },
   });
 
@@ -74,6 +78,7 @@ const ContactForm = () => {
   const PhoneField = form.getFieldState("phone");
   const ServiceField = form.getFieldState("service");
   const MessageField = form.getFieldState("message");
+const PrivacyPolicyField = form.getFieldState("privacyPolicy");
 
   function onSubmit(data: z.infer<typeof ContactFormSchema>) {
     console.log(data);
@@ -235,7 +240,40 @@ const ContactForm = () => {
             />
             <span className="text-[40px] font-Syne">.</span>
           </div>
-          <Button type="submit">Submit</Button>
+          <div className="flex justify-center items-center gap-[100px]">
+          <FormField
+          control={form.control}
+          name="privacyPolicy"
+          render={({ field }) => (
+            <FormItem className="flex flex-row items-center justify-center space-x-3 space-y-0 ">
+              <FormControl>
+                <Checkbox
+                  checked={field.value}
+                  onCheckedChange={field.onChange}
+                  className="rounded-full"
+                />
+              </FormControl>
+              <div className="space-y-1 leading-none">
+                <FormLabel className={cn("text-[#868686]" , [
+                    field.value === true ? " text-primary" : "",
+                    PrivacyPolicyField.invalid ? "text-InputError" : ""
+                ])}>
+                I agree to the Privacy Policy
+                </FormLabel>
+                
+              </div>
+            </FormItem>
+          )}
+        />
+          <Button variant="Primary"  type="submit" className={`relative group primaryButton mr-[40px] before:bg-gradient-to-b after:bg-gradient-to-t from-transparent from-80% to-50% to-current` }>
+          Let&apos;s get going! 
+          
+          <span className=" PrimaryButtonArrow absolute top-1/2 left-[100%] group-hover:left-[105%] group-hover:rotate-[-45deg] transition-all ease-in-out duration-300 -translate-y-1/2 bg-primary w-[40px] rounded-full h-full grid place-content-center">
+           <ArrowRight  />
+          </span>
+      
+      </Button>
+          </div>
         </form>
       </Form>
     </div>
