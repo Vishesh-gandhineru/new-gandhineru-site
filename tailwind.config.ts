@@ -38,6 +38,7 @@ const config = {
         'hero-home-banner' : "url('/Images/coverImageWebdev.png')",
       },
       colors: {
+        InputError : "#CF4964",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
