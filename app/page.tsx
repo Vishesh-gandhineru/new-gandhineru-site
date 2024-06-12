@@ -2,11 +2,12 @@ import React from 'react'
 import { PrimaryButton , SecondaryButton, SocialButton } from '@/components/CustomUi/CustomButton'
 import { ContactIcon } from '@/components/CustomIcons'
 import HeroBanner from '@/components/CustomUi/HeroBanner'
+import ContactForm from '@/components/CustomUi/ContactForm'
 const page = () => {
   return (
-    <section className='container'>
-      <HeroBanner className='bg-hero-home-bg-cover ' buttonText='Build your Brand'></HeroBanner>
-    <div className='space-y-6 mt-[50px] grid grid-cols-3'>
+    <section className='container p-[2rem]'>
+      <HeroBanner className=' bg-hero-home-banner' buttonText='Build your Brand'></HeroBanner>
+    <div className='space-y-6 my-[50px] grid grid-cols-1  md:grid-cols-3'>
       <div className='space-y-6 '>
       <h1>H1 - Heading</h1>
       <h2>H2 - Heading</h2>
@@ -29,6 +30,10 @@ const page = () => {
         <h5>With bg</h5>
       <PrimaryButton className="to-red-300">Primary button</PrimaryButton>
       </div>
+    </div>    
+    <div>
+      <h1>Form</h1>
+      <ContactForm />
     </div>
     </section>
   )

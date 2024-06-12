@@ -218,8 +218,6 @@
     opacity: 0;
    }
 
-
-
    .HeroBannerButton:after{
     content: "";
     position: absolute;
