@@ -250,35 +250,3 @@
     box-shadow: -10px 10px 0 0 #fff;
    }
 
-.MenuIcon:before {
-  content: "";
-  position: absolute;
-  width: 15px;
-  height: 2px;
-  background: #fff;
-  top: calc(50% - 10%);
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: all ease-in-out 0.3s;
-}
-
-.MenuIcon:after {
-  content: "";
-  position: absolute;
-  width: 15px;
-  height: 2px;
-  background: #fff;
-  top: calc(50% + 10%);
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: all ease-in-out 0.3s;
-}
-
-.MenuIcon:hover::after{
-  top: calc(50% + 15%);
-  transition: all ease-in-out 0.3s;
-}
-.MenuIcon:hover::before{
-  top: calc(50% - 15%);
-  transition: all ease-in-out 0.3s;
-}

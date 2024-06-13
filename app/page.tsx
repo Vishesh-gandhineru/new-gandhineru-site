@@ -5,6 +5,7 @@ import HeroBanner from '@/components/CustomUi/HeroBanner'
 import ContactForm from '@/components/CustomUi/ContactForm'
 import DemoBlogPost from '@/utils/DemoBlogPost';
 import BlogCard from '@/components/CustomUi/BlogCard'
+import Megamenu from '@/components/CustomUi/Header/Megamenu'
 
 const page = () => {
   return (

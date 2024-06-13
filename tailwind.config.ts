@@ -17,6 +17,9 @@ const config = {
         "2xl": "1400px",
       },
     },
+    colors : {
+      "white" : "#FCFAF8"
+    },
     
     extend: {
       fontFamily: {
@@ -37,6 +40,7 @@ const config = {
         'social-bg-image' : "url('/Images/socialBgImage.png')",
         'hero-home-banner' : "url('/Images/coverImageWebdev.png')",
         'hero-about-banner' : "url('/Images/herobannerImage.png')",
+        'MegaMenu-bg' : "url('/Images/MegaMenuBg.png')",
       },
       colors: {
         InputError : "#CF4964",

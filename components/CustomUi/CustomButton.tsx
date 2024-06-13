@@ -1,10 +1,9 @@
-"use client";
 
-import React, { useState } from "react";
+
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "@/components/CustomIcons";
-import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+
 
 import Link from "next/link";
 
@@ -102,10 +101,10 @@ export function ContactButton({
         className="w-[40px] h-[40px] before:left-[-10px] after:left-[-10px] relative py-0 px-0 md:px-0 primaryButton before:bg-gradient-to-b after:bg-gradient-to-t from-transparent from-80% to-50% to-current"
       >
         <span>{icon}</span>
-        <motion.span 
+        <span 
         className="PrimaryButtonArrow ContactButtonBox opacity-0 before:right-[-10px]  bg-primary absolute right-full top-[50%] translate-y-[-50%] w-fit h-[40px] flex items-center justify-center px-4 rounded-full transition-all ease-in-out duration-300">
           {children}
-        </motion.span>
+        </span>
       </Link>
     </Button>
   );

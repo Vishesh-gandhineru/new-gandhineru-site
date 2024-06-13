@@ -1,0 +1,96 @@
+.MenuBox {
+    height: 400px;
+    background: #FCFAF8;
+    color: #373737;
+    padding: 30px;
+    border-right: 1px solid #939393;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+}
+
+.MenuBox:hover {
+    background: transparent;
+    color: #fff;
+    transition: all ease-in-out 0.3s;
+}
+
+.MenuBox:nth-last-child(1){
+    border:none
+}
+
+.MenuIcon:before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 2px;
+    background: #fff;
+    top: calc(50% - 10%);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all ease-in-out 0.3s;
+  }
+  
+  .MenuIcon:after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 2px;
+    background: #fff;
+    top: calc(50% + 10%);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all ease-in-out 0.3s;
+  }
+  
+  .MenuIcon:hover::after{
+    top: calc(50% + 15%);
+    transition: all ease-in-out 0.3s;
+  }
+  .MenuIcon:hover::before{
+    top: calc(50% - 15%);
+    transition: all ease-in-out 0.3s;
+  }
+
+  .MenuIconClose:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    top: calc(50%);
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: all ease-in-out 0.3s;
+  }
+  .MenuIconClose:after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    top: calc(50%);
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transition: all ease-in-out 0.3s;
+  }
+  .MenuIconClose{
+    transition: all ease-in-out 0.3s;
+  }
+  .MenuIconClose:hover{
+    scale: 0.8;
+    transition: all ease-in-out 0.3s;
+  }
+
+  .MenuIconClose:hover::after{
+    top: calc(50%);
+    width: 15px;  
+    transition: all ease-in-out 0.3s;
+  }
+  .MenuIconClose:hover::before{
+    width: 15px;
+    top: calc(50%);
+ transition: all ease-in-out 0.3s;
+  }
