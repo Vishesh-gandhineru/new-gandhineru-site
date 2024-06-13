@@ -39,6 +39,7 @@ const config = {
       },
       colors: {
         InputError : "#CF4964",
+        gray:"#878787",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

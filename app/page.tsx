@@ -3,6 +3,9 @@ import { PrimaryButton , SecondaryButton, SocialButton } from '@/components/Cust
 import { ContactIcon } from '@/components/CustomIcons'
 import HeroBanner from '@/components/CustomUi/HeroBanner'
 import ContactForm from '@/components/CustomUi/ContactForm'
+import DemoBlogPost from '@/utils/DemoBlogPost';
+import BlogCard from '@/components/CustomUi/BlogCard'
+
 const page = () => {
   return (
     <section className='container p-[2rem]'>
@@ -30,7 +33,14 @@ const page = () => {
         <h5>With bg</h5>
       <PrimaryButton className="to-red-300">Primary button</PrimaryButton>
       </div>
-    </div>    
+    </div>
+  <div className=' grid grid-cols-4 gap-x-8 gap-y-10 w-[1190px]'>
+    {DemoBlogPost.map((post , index) => {
+      return(
+        <BlogCard key={index} title={post.title} image={post.image} readTime={post.readTime} date={post.date}/>
+      )
+    })} 
+  </div>    
     <div>
       <h1>Form</h1>
       <ContactForm />
