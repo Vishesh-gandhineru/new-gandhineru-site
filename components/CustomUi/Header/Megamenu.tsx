@@ -136,8 +136,7 @@ export function MegaMenuContent() {
 
       <div className=" border-[1px] rounded-[20px] border-white grid grid-cols-5 overflow-hidden mb-5">
         {navItems.map((item, i) => {
-            return (
-                <div className="overflow-hidden">
+            return (               
 
                 <motion.div variants={MenuBoxVariant} initial="initial" 
                 custom={i}
@@ -147,7 +146,7 @@ export function MegaMenuContent() {
                     <h1>{item.title}</h1>
                     </Link>
                 </motion.div>
-                </div>
+             
             
             )
         })}             
