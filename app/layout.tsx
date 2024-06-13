@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Syne } from "next/font/google";
 import localFont from 'next/font/local'
+import MainMenu from "@/components/CustomUi/Header/MainMenu";
 
 import "./globals.css";
 
@@ -32,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${syne.variable} ${Satoshi.variable}`}>{children}</body>
+      <body className={`${syne.variable} ${Satoshi.variable}`}><MainMenu />{children}</body>
     </html>
   );
 }

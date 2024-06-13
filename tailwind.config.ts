@@ -36,6 +36,7 @@ const config = {
       backgroundImage : {
         'social-bg-image' : "url('/Images/socialBgImage.png')",
         'hero-home-banner' : "url('/Images/coverImageWebdev.png')",
+        'hero-about-banner' : "url('/Images/herobannerImage.png')",
       },
       colors: {
         InputError : "#CF4964",
