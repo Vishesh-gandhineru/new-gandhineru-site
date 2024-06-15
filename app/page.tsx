@@ -5,11 +5,11 @@ import HeroBanner from '@/components/CustomUi/HeroBanner'
 import ContactForm from '@/components/CustomUi/ContactForm'
 import DemoBlogPost from '@/utils/DemoBlogPost';
 import BlogCard from '@/components/CustomUi/BlogCard'
-import Link from 'next/link'
+
 
 const page = () => {
   return (
-    <section>
+    <section>  
       <HeroBanner className=' bg-hero-home-banner' buttonText='Build your Brand'></HeroBanner>
       <div className='my-12 flex gap-3 items-center'>
         <h2>Nav link :</h2>
@@ -49,6 +49,8 @@ const page = () => {
       )
     })} 
   </div>    
+
+
     <div>
       <h1>Form</h1>
       <ContactForm />

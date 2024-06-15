@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import MainMenu from "@/components/CustomUi/Header/MainMenu";
 import MainFooter from "@/components/CustomUi/Footer/MainFooter";
 import PageTransition from "@/components/Animations/PageTransition";
+import CursorFollower from "@/components/Animations/customCursor";
 
 import "./globals.css";
 import CurveEffect from "@/components/Animations/CurveEffect";
@@ -43,6 +44,7 @@ export default function RootLayout({
       <body
         className={`${syne.variable} ${Satoshi.variable} bg-white container`}
       >
+          <CursorFollower />
         <MainMenu />
         <CurveEffect />
        <PageTransition>{children}</PageTransition> 

@@ -22,7 +22,7 @@ const Megamenu = ({ isActive }: MegamenuProps) => {
       width: 20,
       height: 20,
       transition: { delay : 0.1 , duration: 0.75, ease: [0.76, 0, 0.24, 1] },
-      borderRadius: "20px 20px 20px 2000px",
+      borderRadius: "2000px 200px 2000px 2000px",
       padding: 0,
     },
   };
@@ -39,7 +39,7 @@ const Megamenu = ({ isActive }: MegamenuProps) => {
         width: 20,
         height: 20,
         transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] },
-        borderRadius: "20px 20px 20px 2000px",
+        borderRadius: "2000px 20px 2000px 2000px",
         padding: 0,
       },
   }

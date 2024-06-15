@@ -22,7 +22,7 @@ const PageTransition = ({children} : {children : React.ReactNode}) => {
   
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence>
         <div key={pathname}>
             <motion.div variants={variants} initial="initial" animate="animate" transition={{ease:[0.76, 0, 0.24, 1]}}
             className="fixed top-0 left-0 w-screen h-screen bg-white z-[99] pointer-events-none"

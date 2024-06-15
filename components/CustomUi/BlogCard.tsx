@@ -1,3 +1,6 @@
+"use client"
+
+import { useCursorState } from '@/store/useCursorState'
 import Image from 'next/image'
 import React from 'react'
 
@@ -10,8 +13,11 @@ type BlogCardProps = {
 }
 
 const BlogCard = ({title , date , image , readTime} : BlogCardProps) => {
+
+  const {setCursorType , setCursorText} = useCursorState();
+
   return (
-    <div className=' relative'>
+    <div className=' relative' onMouseEnter={()=>{setCursorType("BlogCard"); setCursorText("View")}} onMouseLeave={()=>{setCursorText("") ; setCursorType("default")} }>
         <div className='w-full h-[300px] relative'>
             <Image src={image} layout='fill' objectFit='cover' alt={title} className='rounded-[20px]'/>
         </div>
