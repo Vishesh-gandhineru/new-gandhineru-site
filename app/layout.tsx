@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
 import { Syne } from "next/font/google";
-import localFont from 'next/font/local'
+import localFont from "next/font/local";
 import MainMenu from "@/components/CustomUi/Header/MainMenu";
+import MainFooter from "@/components/CustomUi/Footer/MainFooter";
+import PageTransition from "@/components/Animations/PageTransition";
 
 import "./globals.css";
+import CurveEffect from "@/components/Animations/CurveEffect";
 
-const syne = Syne({ subsets: ["latin"] , weight: ["400", "500","600" , "700" , "800"] , variable : "--font-syne"});
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-syne",
+});
 
 const Satoshi = localFont({
   src: [
@@ -16,10 +23,10 @@ const Satoshi = localFont({
     {
       path: "../public/fonts/Satoshi-Bold.woff2",
       weight: "700",
-    }
+    },
   ],
-  variable : "--font-satoshi",
-})
+  variable: "--font-satoshi",
+});
 
 export const metadata: Metadata = {
   title: "Gandhi and neru",
@@ -33,7 +40,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${syne.variable} ${Satoshi.variable}`}><MainMenu />{children}</body>
+      <body
+        className={`${syne.variable} ${Satoshi.variable} bg-white container`}
+      >
+        <MainMenu />
+        <CurveEffect />
+       <PageTransition>{children}</PageTransition> 
+        <MainFooter />
+      </body>
     </html>
   );
 }

@@ -17,11 +17,11 @@ const config = {
         "2xl": "1400px",
       },
     },
-    colors : {
-      "white" : "#FCFAF8"
-    },
+  
     
     extend: {
+
+      
       fontFamily: {
         Syne : ['var(--font-syne)', 'sans-serif'],
         Satoshi : ['var(--font-satoshi)', 'sans-serif'],
@@ -41,8 +41,10 @@ const config = {
         'hero-home-banner' : "url('/Images/coverImageWebdev.png')",
         'hero-about-banner' : "url('/Images/herobannerImage.png')",
         'MegaMenu-bg' : "url('/Images/MegaMenuBg.png')",
+        'footer-bg' : "url('/Images/footerBg.png')",
       },
       colors: {
+        white : "#FCFAF8",
         InputError : "#CF4964",
         gray:"#878787",
         border: "hsl(var(--border))",
@@ -93,10 +95,20 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
+        "marquee-vertical": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "marquee": "marquee var(--duration) linear infinite",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
       },
     },
   },

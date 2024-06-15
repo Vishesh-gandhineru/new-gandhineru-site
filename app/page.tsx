@@ -5,12 +5,19 @@ import HeroBanner from '@/components/CustomUi/HeroBanner'
 import ContactForm from '@/components/CustomUi/ContactForm'
 import DemoBlogPost from '@/utils/DemoBlogPost';
 import BlogCard from '@/components/CustomUi/BlogCard'
-import Megamenu from '@/components/CustomUi/Header/Megamenu'
+import Link from 'next/link'
 
 const page = () => {
   return (
-    <section className='container p-[2rem]'>
+    <section>
       <HeroBanner className=' bg-hero-home-banner' buttonText='Build your Brand'></HeroBanner>
+      <div className='my-12 flex gap-3 items-center'>
+        <h2>Nav link :</h2>
+      <PrimaryButton className='to-white' href='/about'>About </PrimaryButton>
+      <PrimaryButton className='to-white' href='/services'>Services</PrimaryButton>
+      <PrimaryButton className='to-white' href='/work'>Work </PrimaryButton>
+       
+      </div>
     <div className='space-y-6 my-[50px] grid grid-cols-1  md:grid-cols-3'>
       <div className='space-y-6 '>
       <h1>H1 - Heading</h1>

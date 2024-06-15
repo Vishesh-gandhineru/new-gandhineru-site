@@ -72,8 +72,8 @@ export function SocialButton({
       asChild
       className={` relative  group overflow-hidden SocialButton bg-cover repeat-0 hover:text-white transition-all ease-in-out duration-300 ${className}`}
     >
-      <Link href={href ? href : "#"}>
-        {children}{" "}
+      <Link href={href ? href : "#"}> 
+        <span className="z-[10]"> {children}</span>
         <span className="SocialButtonBG group-hover:opacity-100 transition-all ease-in-out duration-300"></span>
       </Link>
     </Button>

@@ -59,7 +59,7 @@
     position: absolute;
     width: 20px;
     height: 2px;
-    background: #fff;
+    background: #373737;
     top: calc(50%);
     left: 50%;
     transform: translate(-50%, -50%) rotate(45deg);
@@ -70,7 +70,7 @@
     position: absolute;
     width: 20px;
     height: 2px;
-    background: #fff;
+    background: #373737;
     top: calc(50%);
     left: 50%;
     transform: translate(-50%, -50%) rotate(-45deg);

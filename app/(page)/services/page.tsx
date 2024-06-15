@@ -2,7 +2,7 @@ import React from 'react'
 
 const ServicePage = () => {
   return (
-    <div>ServicePage</div>
+    <section className='h-[500px] grid place-content-center text-5xl'>Service Page</section>
   )
 }
 

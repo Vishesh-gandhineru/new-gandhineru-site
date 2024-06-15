@@ -2,7 +2,7 @@ import React from 'react'
 
 const AboutPage = () => {
   return (
-    <div>AboutPage</div>
+    <section className='h-[500px] grid place-content-center text-5xl'>About Page</section>
   )
 }
 

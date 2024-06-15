@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const MainMenu = () => {
   return (
-    <div className="container my-3 flex justify-between items-center">
+    <header className="my-3 flex justify-between items-center sticky top-0 py-3 bg-white z-50">
       <div className="Logo">
         <Link href="/">
         <LogoBlack />
@@ -17,7 +17,7 @@ const MainMenu = () => {
         <ContactButton icon={<ContactIcon />}>Lets Chat?</ContactButton>
       <MenuButton />
       </div>
-    </div>
+    </header>
   );
 };
 
