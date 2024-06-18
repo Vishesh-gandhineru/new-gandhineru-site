@@ -10,7 +10,6 @@ const ResourcesPage = async () => {
 
   const Posts = await GetAllPosts({_fields : 'id,slug,title,meta,stick,_links,date,featured_media'});
   const PostsCategory = await GetAllPostsCategory({_fields : 'id,name,slug'});
- console.log(Posts)
   return (
     <section>
       <HeroBanner
