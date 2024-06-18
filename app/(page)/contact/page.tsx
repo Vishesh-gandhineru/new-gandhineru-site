@@ -13,10 +13,10 @@ const ContactPage = () => {
       <div className="container my-[80px] flex flex-col gap-[50px] px-12">
         <div className="flex flex-col gap-[20px] justify-start items-start">
           <h1 className="text-[52px] leading-[66px]">
-            Got a vision? <br /> We'll make it happen.
+            Got a vision? <br /> We&apos;ll make it happen.
           </h1>
           <p className=" tracking-[1px]">
-            Let's work together - fill out the form below. Or simply drop us an
+            Let&apos;s work together - fill out the form below. Or simply drop us an
             email.
           </p>
         </div>
