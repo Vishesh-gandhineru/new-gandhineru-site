@@ -42,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${syne.variable} ${Satoshi.variable} bg-white container`}
+        className={`${syne.variable} ${Satoshi.variable} bg-white mx-4 lg:mx-0`}
       >
           <CursorFollower />
         <MainMenu />

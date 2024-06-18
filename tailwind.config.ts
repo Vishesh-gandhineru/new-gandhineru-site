@@ -38,13 +38,18 @@ const config = {
       },
       backgroundImage : {
         'social-bg-image' : "url('/Images/socialBgImage.png')",
-        'hero-home-banner' : "url('/Images/coverImageWebdev.png')",
+        'hero-home-banner' : "url('/Images/Home-page-banner.webp')",
         'hero-about-banner' : "url('/Images/herobannerImage.png')",
         'MegaMenu-bg' : "url('/Images/MegaMenuBg.png')",
         'footer-bg' : "url('/Images/footerBg.png')",
+        'hero-blog-banner' : "url('/Images/Blog cover.png')",
+        'hero-contact-banner' : "url('/Images/contact banner.png')",
       },
       colors: {
         white : "#FCFAF8",
+        formbg: "F3F3F3",
+        cardbg: "FFFDFA",
+        
         InputError : "#CF4964",
         gray:"#878787",
         border: "hsl(var(--border))",

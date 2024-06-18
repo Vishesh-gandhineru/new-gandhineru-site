@@ -100,7 +100,7 @@ export function MegaMenuContent() {
         },
         {
             title: "Resources",
-            link: "/resources",
+            link: "/blogs",
         },
         {
             title: "Contact",
@@ -134,14 +134,14 @@ export function MegaMenuContent() {
     >
   
 
-      <nav className=" border-[1px] rounded-[20px] border-white grid grid-cols-5 overflow-hidden mb-5">
+      <nav className=" border-[1px] rounded-[20px] border-white grid grid-cols-2 lg:grid-cols-5 overflow-hidden mb-5">
         {navItems.map((item, i) => {
             return (               
 
                 <motion.div variants={MenuBoxVariant} initial="initial" 
                 custom={i}
                 animate="enter" exit="exit"
-                key={i} className="MenuBox">
+                key={i} className="MenuBox h-[100px] lg:h-[400px] border-b-[1px] border-r-[1px] last:col-span-2 lg:last:col-span-1">
                     <Link href={item.link}>
                     <h1>{item.title}</h1>
                     </Link>
@@ -151,14 +151,16 @@ export function MegaMenuContent() {
             )
         })}             
       </nav>
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-1 gap-3 lg:grid-cols-2">
         <div className=" border-[1px] border-[#939393] bg-white rounded-[20px] text-primary py-[20px] px-[30px] flex justify-between items-center">
         <p className=" font-Syne text-[20px] leading-[24px]">Book a Clarity Call</p>
         <ArrowRight className="blackArrow scale-150" />
         </div>
-        <div className=" border-[1px] border-primary bg-white rounded-[20px] text-primary py-[20px] px-[30px] flex justify-between items-center">
-        <p className=" font-Syne text-[20px] leading-[24px]">Book a Clarity Call</p>
-        <ArrowRight className="blackArrow scale-150" />
+        <div className=" border-[1px] border-[#939393] bg-white rounded-[20px] text-[#868686]  text-base font-Satoshi py-[20px] px-[30px] flex justify-between items-center">
+        <Link  className="hover:text-primary" href="#">Instagram</Link>
+        <Link  className="hover:text-primary" href="#">LinkedIn</Link>
+        <Link  className="hover:text-primary" href="#">Behance</Link>
+        <Link  className="hover:text-primary" href="#">Facebook</Link>
         </div>
       </div>
 

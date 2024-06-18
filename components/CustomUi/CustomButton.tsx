@@ -6,6 +6,7 @@ import { ArrowRight } from "@/components/CustomIcons";
 
 
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 type globalsButtonProps = {
   children: React.ReactNode;
@@ -15,6 +16,8 @@ type globalsButtonProps = {
 
 type PrimaryButtonProps = {
   icon?: React.ReactNode;
+  iconClassName?: string;
+  iconColor?: string;
   type?: "button" | "submit" | "reset";
 };
 
@@ -22,6 +25,8 @@ export function PrimaryButton({
   children,
   href,
   className,
+  iconClassName,
+  iconColor , 
   icon,
   type,
 }: PrimaryButtonProps & globalsButtonProps) {
@@ -30,25 +35,28 @@ export function PrimaryButton({
       variant="Primary"
       type={type}
       asChild
-      className={`relative group primaryButton mr-[40px] before:bg-gradient-to-b after:bg-gradient-to-t from-transparent from-80% to-50% to-current ${className}`}
+      className={cn("relative group primaryButton mr-[40px] before:bg-gradient-to-b after:bg-gradient-to-t from-transparent from-80% to-50% to-current" , [className] )}
     >
       <Link href={href ? href : "#"}>
         <span>{children}</span>
-        <span className=" PrimaryButtonArrow absolute top-1/2 left-[100%] group-hover:left-[105%] group-hover:rotate-[-45deg] transition-all ease-in-out duration-300 -translate-y-1/2 bg-primary w-[40px] rounded-full h-full grid place-content-center">
-          {icon ? icon : <ArrowRight />}
+        <span className={cn("PrimaryButtonArrow absolute top-1/2 left-[100%] group-hover:left-[105%] group-hover:rotate-[-45deg] transition-all ease-in-out duration-300 -translate-y-1/2 bg-primary w-[40px] rounded-full h-full grid place-content-center" , [
+          iconClassName
+        
+        ])}>
+          {icon ? icon : <ArrowRight className={iconColor ? iconColor : ""} />}
         </span>
       </Link>
     </Button>
   );
 }
 
-export function SecondaryButton({ children, href }: globalsButtonProps) {
+export function SecondaryButton({ children, href , className }: globalsButtonProps) {
   return (
     <Button
       variant="secondary"
       size="secondary"
       asChild
-      className="SecondaryButton relative group mr-[30px]"
+      className={cn("SecondaryButton relative group mr-[30px]" , [className])}
     >
       <Link href={href ? href : "#"}>
         {children}{" "}

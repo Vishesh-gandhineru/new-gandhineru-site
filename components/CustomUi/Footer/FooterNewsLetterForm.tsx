@@ -16,6 +16,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { cn } from "@/lib/utils";
 
 const NewsletterFormSchema = z.object({
   fullname: z
@@ -25,7 +26,13 @@ const NewsletterFormSchema = z.object({
   email: z.string().email({ message: "Invalid email address" }),
 });
 
-const NewsLetterForm = () => {
+
+type NewsLetterFormProps = {
+  className?: string;
+};
+
+
+const NewsLetterForm = ({className} : NewsLetterFormProps) => {
   const form = useForm<z.infer<typeof NewsletterFormSchema>>({
     resolver: zodResolver(NewsletterFormSchema),
     defaultValues: {
@@ -43,7 +50,9 @@ const NewsLetterForm = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className={cn("space-y-8" , [
+        className
+      ])}>
         <div className="flex gap-5 justify-start items-center">
           <FormField
             control={form.control}

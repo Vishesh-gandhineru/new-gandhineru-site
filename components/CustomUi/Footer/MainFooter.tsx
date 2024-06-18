@@ -7,7 +7,7 @@ import NewsLetterForm from "./FooterNewsLetterForm";
 
 const MainFooter = () => {
   return (
-    <footer className="my-[50px]">
+    <footer className="my-[50px] container m-auto p-0">
       <div className="footer-content pt-[50px] h-[600px] bg-footer-bg bg-cover bg-no-repeat bg-center rounded-[20px] relative">
         <div className="FooterButton px-8 pb-2 rounded-b-[15px]  absolute top-0 left-[50%] translate-x-[-50%] bg-white">
           <SecondaryButton>Book a Clarity Call</SecondaryButton>

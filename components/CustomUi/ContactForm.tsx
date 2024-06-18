@@ -85,7 +85,7 @@ const PrivacyPolicyField = form.getFieldState("privacyPolicy");
   }
 
   return (
-    <div className="bg-[#F3F3F3] rounded-[20px] p-[2rem] grid place-content-center max-w-[1140px] w-full">
+    <div className="bg-[#F3F3F3] rounded-[20px] p-[2rem] grid place-content-center max-w-[1140px] w-full m-auto">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <div className="flex flex-wrap gap-4 justify-center items-center">
