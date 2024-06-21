@@ -39,7 +39,7 @@ export function PrimaryButton({
     >
       <Link href={href ? href : "#"}>
         <span>{children}</span>
-        <span className={cn("PrimaryButtonArrow absolute top-1/2 left-[100%] group-hover:left-[105%] group-hover:rotate-[-45deg] transition-all ease-in-out duration-300 -translate-y-1/2 bg-primary w-[40px] rounded-full h-full grid place-content-center" , [
+        <span className={cn("PrimaryButtonArrow absolute top-1/2 left-[100%] group-hover:left-[105%] group-hover:rotate-[-45deg] transition-all ease-in-out duration-300 -translate-y-1/2 bg-inherit before:bg-inherit w-[40px] rounded-full h-full grid place-content-center" , [
           iconClassName
         
         ])}>
@@ -50,7 +50,7 @@ export function PrimaryButton({
   );
 }
 
-export function SecondaryButton({ children, href , className }: globalsButtonProps) {
+export function SecondaryButton({ children, href , className , arrowColor = "blackArrow" }: globalsButtonProps & { arrowColor?: string }) {
   return (
     <Button
       variant="secondary"
@@ -62,7 +62,7 @@ export function SecondaryButton({ children, href , className }: globalsButtonPro
         {children}{" "}
         <span className="absolute top-1/2 left-[100%] group-hover:left-[105%] group-hover:rotate-[-45deg] transition-all ease-in-out duration-300 -translate-y-1/2  w-[40px] h-full grid place-content-center">
           {" "}
-          <ArrowRight className="blackArrow" />
+          <ArrowRight className={arrowColor} />
         </span>
       </Link>
     </Button>

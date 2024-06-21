@@ -18,9 +18,10 @@ const config = {
       },
     },
   
+  
     
     extend: {
-
+      
       
       fontFamily: {
         Syne : ['var(--font-syne)', 'sans-serif'],
@@ -44,6 +45,7 @@ const config = {
         'footer-bg' : "url('/Images/footerBg.png')",
         'hero-blog-banner' : "url('/Images/Blog cover.png')",
         'hero-contact-banner' : "url('/Images/contact banner.png')",
+        'relume-logo' : "url('/Images/compony logo.png')",
       },
       colors: {
         white : "#FCFAF8",

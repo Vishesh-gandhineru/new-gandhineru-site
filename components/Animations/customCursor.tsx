@@ -40,7 +40,7 @@ const CursorFollower = () => {
     default: {
         width : 16,
         height : 16,
-        backgroundColor : "red",
+        backgroundColor : "#D10000",
     },
 
     BlogCard : {
@@ -55,7 +55,7 @@ const CursorFollower = () => {
 
 return (  
         <motion.div
-            className="cursor fixed rounded-full bg-red-500 shadow-md w-4 h-4 z-[1000] pointer-events-none translate-x-[-50%] translate-y-[-50%] left-0 right-0 top-0 flex items-center justify-center" 
+            className="cursor fixed rounded-full bg-[#D10000] shadow-md w-4 h-4 z-[1000] pointer-events-none translate-x-[-50%] translate-y-[-50%] left-0 right-0 top-0 flex items-center justify-center" 
             style={{
                 left: smoothMouse.x,
                 top:  smoothMouse.y

@@ -143,7 +143,7 @@ export function MegaMenuContent() {
                 animate="enter" exit="exit"
                 key={i} className="MenuBox h-[100px] lg:h-[400px] border-b-[1px] border-r-[1px] last:col-span-2 lg:last:col-span-1">
                     <Link href={item.link}>
-                    <h1>{item.title}</h1>
+                    <h3>{item.title}</h3>
                     </Link>
                 </motion.div>
              

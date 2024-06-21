@@ -27,7 +27,7 @@ const BlogCard = ({title , date , image , readTime , slug} : BlogCardProps) => {
         <div className='w-full h-[300px] relative'>
           <Link href={`/blogs/${slug}`}> 
           
-            <Image src={image} layout='fill' objectFit='cover' alt={title} className='rounded-[20px] object-cover' quality={100}/>
+            <Image src={image} fill alt={title} className='rounded-[20px] object-cover' quality={100}/>
           </Link>
         </div>
         <div className='flex flex-col gap-2 mt-5'>
