@@ -10,7 +10,7 @@ import { PrimaryButton, SecondaryButton } from "./CustomButton";
 
 const ServiceCards = () => {
   const fetcher = () =>
-    GetAllServices({ _fields: "id,meta,slug,status,title" });
+    GetAllServices({ _fields: "id,meta,slug,status,title" , service_category_exclude: 17});
 
   const { data, isLoading, error } = useSWR("GetAllServices", fetcher);
 
@@ -32,7 +32,7 @@ const ServiceCards = () => {
               <div dangerouslySetInnerHTML={{ __html: serviceContent }}></div>
 
               <div className="flex gap-12">
-                <PrimaryButton className="text-white bg-[#242120]">
+                <PrimaryButton className="text-white bg-[#242120]" href={`/services/${item.slug}`}>
                   Take it ahead
                 </PrimaryButton>
 

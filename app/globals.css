@@ -148,7 +148,7 @@
 
 
   .sectionContainer {
-    @apply p-8 w-[1300px] mx-auto my-[50px];
+    @apply p-8 w-[1300px] mx-auto my-[20px];
   }
 
  

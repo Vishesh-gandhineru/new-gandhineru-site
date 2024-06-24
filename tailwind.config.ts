@@ -111,6 +111,7 @@ const config = {
           from: { transform: "translateY(0)" },
           to: { transform: "translateY(calc(-100% - var(--gap)))" },
         },
+       
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
