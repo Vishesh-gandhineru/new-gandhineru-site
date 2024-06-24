@@ -46,6 +46,7 @@ const config = {
         'hero-blog-banner' : "url('/Images/Blog cover.png')",
         'hero-contact-banner' : "url('/Images/contact banner.png')",
         'relume-logo' : "url('/Images/compony logo.png')",
+        'hero-server-banner' : "url('/Images/service-hero-banner.png')",
       },
       colors: {
         white : "#FCFAF8",

@@ -10,7 +10,7 @@ type HeadingProps = {
 
 const Heading = ({Heading , subHeading, className} : HeadingProps) => {
   return (
-    <div className={cn(" flex flex-col gap-3", [
+    <div className={cn(" flex flex-col gap-2", [
         className
     ])}>
           <p className="text-[20px] leading-[30px] tracking-normal">
