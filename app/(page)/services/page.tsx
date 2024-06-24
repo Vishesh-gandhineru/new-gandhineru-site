@@ -28,7 +28,7 @@ const ServicePage = () => {
           alt="Picture of the author"
         />
         <PrimaryButton className="to-white" icon={<ContactIcon />}>
-          Let's Chat?
+          Let&apos;s Chat?
         </PrimaryButton>
       </section>
       <section className="sectionContainer flex-col flex gap-8">
