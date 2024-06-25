@@ -68,7 +68,7 @@ const ServiceContent = ({ service }: Record<string, any>) => {
         </div>
       </section>
       <section id="process">
-        <div className=" space-y-4 h-screen">
+        <div className=" space-y-4">
             <h3>Process</h3>
            <ProcessTimeLine ProcessList={ProcessList}/>
 
