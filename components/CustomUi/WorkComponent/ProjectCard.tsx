@@ -23,7 +23,7 @@ const ProjectCard = ({title  , image  , slug} : CardProps) => {
         <div className='w-full h-[300px] relative'>
           <Link href={`/works/${slug}`}> 
           
-            <Image src={image} fill alt={title} className='rounded-[20px] object-cover' quality={100}/>
+            <Image src={image} fill = {true} sizes='2x' alt={title} className='rounded-[20px] object-cover' quality={100}/>
           </Link>
         </div>
         <div className='flex flex-col gap-2 mt-5'>

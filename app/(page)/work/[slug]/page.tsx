@@ -51,6 +51,7 @@ const page = async ({ params }: PageProps) => {
             src={banner_image}
             alt="title"
             fill
+            sizes="100vw"
             className=" object-cover object-center rounded-[20px]"
           />
         </div>
@@ -79,7 +80,7 @@ const page = async ({ params }: PageProps) => {
             <div className="flex flex-row gap-4 flex-wrap">
               {_embedded["wp:term"][0].map((service: any, index: number) => {
                 return (
-                  <span className=" w-fit inline-block border-[1px] rounded-full px-5 py-3 border-[#D0D0D0] uppercase text-[12px] leading-3 tracking-wider font-normal">
+                  <span key={index} className=" w-fit inline-block border-[1px] rounded-full px-5 py-3 border-[#D0D0D0] uppercase text-[12px] leading-3 tracking-wider font-normal">
                     {he.decode(service.name)}
                   </span>
                 );
@@ -95,6 +96,7 @@ const page = async ({ params }: PageProps) => {
             src={hero_image}
             alt={title}
             fill
+            sizes="100vw"
             className=" object-cover object-center rounded-[20px]"
           />
         </div>
@@ -108,7 +110,8 @@ const page = async ({ params }: PageProps) => {
           <div className=" relative w-full h-[50px] mt-6">
             <Image
               src={client_logo}
-              fill
+              fill = {true}
+              sizes="100vw"
               alt="Client logo"
               className=" object-contain object-center"
             />
@@ -118,6 +121,7 @@ const page = async ({ params }: PageProps) => {
           <Image
             src={bold_text_image}
             fill
+            sizes="100vw"
             alt={bold_text}
             className=" object-cover object-center"
           />
@@ -130,6 +134,7 @@ const page = async ({ params }: PageProps) => {
             src={second_banner_image}
             alt={title}
             fill
+            sizes="100vw"
             className=" object-cover object-center rounded-[20px]"
           />
         </div>
@@ -155,7 +160,8 @@ const page = async ({ params }: PageProps) => {
               <Image
                 src={image}
                 alt={`project image`}
-                fill
+                fill = {true}
+                sizes="100vw"
                 className=" object-cover object-center rounded-[20px]"
               />
             </div>
@@ -211,7 +217,8 @@ const page = async ({ params }: PageProps) => {
               <Image
                 src={image}
                 alt={`impact image`}
-                fill
+                fill = {true}
+                sizes="100vw"
                 className=" object-cover object-center rounded-[20px]"
               />
             </div>
