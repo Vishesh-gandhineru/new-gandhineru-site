@@ -51,7 +51,7 @@
   }
 
   p{
-    @apply text-body font-normal tracking-[2px];
+    @apply text-body font-normal tracking-[1px];
   }
   
   @layer base {

@@ -100,10 +100,11 @@ export function ContactButton({
   children,
   href,
   icon,
+  className
 }: globalsButtonProps & ContactButtonProps) {
 
   return (
-    <Button asChild className=" relative">
+    <Button asChild className={cn("relative", [className] )}>
       <Link
         href={href ? href : "#"}
         className="w-[40px] h-[40px] before:left-[-10px] after:left-[-10px] relative py-0 px-0 md:px-0 primaryButton before:bg-gradient-to-b after:bg-gradient-to-t from-transparent from-80% to-50% to-current"

@@ -3,7 +3,7 @@ import {fetchFromWordPress} from '../utils/GlobalAxiosFunction';
 
 
 export async function GetAllPosts(params: Record<string, any> = {}) {
-    const blogs = await fetchFromWordPress('posts', { _embed: true , per_page: 5 , ...params});
+    const blogs = await fetchFromWordPress('posts', { _embed: true  , ...params});
     return blogs;
 }
 

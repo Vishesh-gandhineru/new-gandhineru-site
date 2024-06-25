@@ -1,0 +1,43 @@
+.workCard:first-child{
+    grid-column: span 3;
+}
+
+.workCard:nth-child(2n){
+    grid-column: span 2;
+}
+.workCard:nth-child(4n){
+    grid-column: span 2;
+}
+.workCard:nth-child(5n){
+    grid-column: span 3;
+}
+
+.workCard:nth-child(3n){
+    grid-column: span 5;
+}
+.workCard:nth-child(3n) .workCardImage{
+    height: 630px;
+}
+
+.projectGallery:first-child {
+    grid-column: span 5;
+}
+
+.projectGallery:nth-child(2n){
+    grid-column: span 2;
+    height: 500px;
+}
+.projectGallery:nth-child(3n){
+    grid-column: span 3;
+    height: 500px;
+}
+.projectGallery:nth-child(4n){
+    grid-column: span 5;
+    height: 700px;
+}
+
+.ImpactGallery:nth-child(3n){
+    grid-column: span 2;
+    height: 650px;
+}
+
