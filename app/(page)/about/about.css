@@ -1,0 +1,3 @@
+.teamCard:nth-child(2n){
+    margin-top: -50px;
+}

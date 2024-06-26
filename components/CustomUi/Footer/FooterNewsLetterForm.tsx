@@ -53,7 +53,7 @@ const NewsLetterForm = ({className} : NewsLetterFormProps) => {
       <form onSubmit={form.handleSubmit(onSubmit)} className={cn("space-y-8" , [
         className
       ])}>
-        <div className="flex gap-5 justify-start items-center">
+        <div className="flex flex-col md:flex-row gap-5 justify-start items-center">
           <FormField
             control={form.control}
             name="fullname"
@@ -64,7 +64,7 @@ const NewsLetterForm = ({className} : NewsLetterFormProps) => {
                     placeholder="Name"
                     zodField={field}
                     ErrorMessage={FullnameField.error?.message}
-                    className="w-fit text-start text-sm pl-0 pb-1"
+                    className="w-full text-start text-sm pl-0 pb-1"
                   />
                 </FormControl>
               </FormItem>

@@ -47,7 +47,7 @@ const BlogSinglePage = async ({ params }: BlogSinglePageProps) => {
         buttonText="Book a Clarity Call"
       ></HeroBanner>
 
-      <div className="container my-[80px] flex flex-col gap-[50px] w-[80%]">
+      <div className=" my-[50px] md:container md:my-[80px] flex flex-col gap-[50px] md:w-[80%]">
         <div className="flex flex-col gap-[20px] justify-start items-start">
           <h1 className="text-[36px] leading-[46px]">{post.title.rendered}</h1>
           <div className=" flex gap-[30px] items-center justify-start w-full h-full">
@@ -61,10 +61,10 @@ const BlogSinglePage = async ({ params }: BlogSinglePageProps) => {
           <div dangerouslySetInnerHTML={{ __html: PostContent }}></div>
         </div>
       </div>
-      <div className="container px-[100px] flex flex-col gap-[80px]">
-        <div className="bg-[#F3F3F3] flex justify-between items-center py-12 px-12 rounded-[20px]">
-          <h3 className="w-[200px]">Get the latest news in your inbox!</h3>
-          <NewsLetterForm className="flex justify-end items-end gap-4 space-y-0" />
+      <div className="md:container md:px-[100px] flex flex-col gap-[80px]">
+        <div className="bg-[#F3F3F3] flex flex-col md:flex-row justify-between items-center py-12 px-12 rounded-[20px]">
+          <h3 className="md:w-[500px]">Get the latest news in your inbox!</h3>
+          <NewsLetterForm className="flex flex-col md:flex-row w-full justify-end items-end gap-4 space-y-0" />
         </div>
         <div className="flex flex-col gap-[40px]">
           <h3>Recommended Resources/ Reads</h3>

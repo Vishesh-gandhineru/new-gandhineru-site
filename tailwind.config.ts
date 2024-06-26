@@ -40,13 +40,16 @@ const config = {
       backgroundImage : {
         'social-bg-image' : "url('/Images/socialBgImage.png')",
         'hero-home-banner' : "url('/Images/Home-page-banner.webp')",
-        'hero-about-banner' : "url('/Images/herobannerImage.png')",
+        'hero-about-banner' : "url('/Images/about-hero-banner.webp')",
         'MegaMenu-bg' : "url('/Images/MegaMenuBg.png')",
         'footer-bg' : "url('/Images/footerBg.png')",
         'hero-blog-banner' : "url('/Images/Blog cover.png')",
         'hero-contact-banner' : "url('/Images/contact banner.png')",
         'relume-logo' : "url('/Images/compony logo.png')",
         'hero-server-banner' : "url('/Images/service-hero-banner.png')",
+        'transparency-bg' : "url('/Images/Transparency bg.png')",
+        'flexibility-bg' : "url('/Images/Flexibily bg.png')",
+        'creativity-bg' : "url('/Images/Creativity bg.png')",
       },
       colors: {
         white : "#FCFAF8",

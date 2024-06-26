@@ -17,11 +17,11 @@ const MainFooter = () => {
             <Marquee className="[--duration:20s] text-[64px] text-white">
               <div>Lets dive into wild ideas!</div>
               <div className="flex justify-center items-center mx-4">
-                <WhiteAndIcon />
+                <WhiteAndIcon className=" fill-white w-[48px] h-[48px]" />
               </div>
               <div>Lets dive into wild ideas!</div>
               <div className="flex justify-center items-center mx-4">
-                <WhiteAndIcon />
+                <WhiteAndIcon className=" fill-white w-[48px] h-[48px]"  />
               </div>
             </Marquee>
           </div>
