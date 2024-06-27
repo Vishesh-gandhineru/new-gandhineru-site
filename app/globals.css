@@ -8,12 +8,14 @@
 
   html {
     font-size: 16px;
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
+    overflow-x: hidden !important;
   }
 
   body {
     @apply font-Satoshi;
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
+    overflow: hidden;
   }
 
  body[data-scroll-locked] {
@@ -53,6 +55,7 @@
   p{
     @apply text-body font-normal tracking-[1px];
   }
+
   
   @layer base {
     :root {
@@ -103,6 +106,24 @@
       --lh-body : 1.5rem;
 
       --borderHideColor : #fff
+    }
+    @media (max-width: 640px) {
+      :root {
+        --fs-h1 : 5rem;
+        --lh-h1 : 5.75rem;
+        --fs-h2 : 1.5rem;
+        --lh-h2 : 2rem;
+        --fs-h3 : 1.25rem;
+        --lh-h3 : 1.875rem;
+        --fs-h4 : 1.25rem;
+        --lh-h4 : 2.25rem;
+        --fs-h5 : 1.25rem;
+        --lh-h5 : 1.5rem;
+        --fs-h6 : 1.125rem;
+        --lh-h6 : 1.25rem;
+        --fs-body : 0.875rem;
+        --lh-body : 1.25rem;
+      }
     }
 
     .dark {

@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const MainMenu = () => {
   return (
-    <header className="sticky top-0 pb-4 pt-8 z-50 lg:container lg:px-12">
+    <header className="sticky top-0 pb-4 pt-8 z-50 container">
       <div className=" absolute bg-white w-screen h-full top-0 left-[50%] translate-x-[-50%] z-[-1]" />
       <div className="flex justify-between items-center z-30">
       <div className="Logo">
