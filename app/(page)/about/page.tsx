@@ -54,7 +54,7 @@ const AboutPage = async () => {
       <section className="sectionContainer space-y-8 text-center">
         <div className="space-y-8 text-center w-[900px] m-auto">
           <h2 className="text-center">
-            If you've made it here, you must be curious about our story. Let's
+            If you&apos;ve made it here, you must be curious about our story. Let&apos;s
             get to it.
           </h2>
           <PrimaryButton className="to-white" icon={<ContactIcon />}>
@@ -82,7 +82,7 @@ const AboutPage = async () => {
               In 2018, Dishank Gandhi and Kalyani Nerurkar turned their shared
               passion for design into Gandhi & Neru. <br />
               <br />
-              From our start in social media, we've since evolved into a
+              From our start in social media, we&apos;ve since evolved into a
               tech-driven design studio, perfectly tuned to the needs of brands
               today.
             </p>
