@@ -17,7 +17,7 @@ const page = async ({ params }: PageProps) => {
     _fields: "id,slug,title,content,meta,_links",
   });
 
-  const Projects = await GetAllWork({ order: "asc" , per_page : 4});
+  const Projects = await GetAllWork(0,{ order: "asc" , per_page : 4});
 
   const { id, title, content, meta, _links, _embedded } = work[0];
   const {
