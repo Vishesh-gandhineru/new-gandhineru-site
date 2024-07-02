@@ -21,7 +21,7 @@ const config = {
         "2xl": "2rem",
       },
       screens: {
-        "2xl": "1400px",
+        "2xl": "1400px"
       },
 
     },
@@ -48,6 +48,7 @@ const config = {
       backgroundImage : {
         'social-bg-image' : "url('/Images/socialBgImage.png')",
         'hero-home-banner' : "url('/Images/Home-page-banner.webp')",
+        'hero-home-mob-banner' : "url('/Images/hero-home-mob-banner.png')",
         'hero-about-banner' : "url('/Images/about-hero-banner.webp')",
         'MegaMenu-bg' : "url('/Images/MegaMenuBg.png')",
         'footer-bg' : "url('/Images/footerBg.png')",

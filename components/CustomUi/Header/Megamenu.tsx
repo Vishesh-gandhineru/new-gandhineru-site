@@ -33,7 +33,7 @@ const Megamenu = ({ isActive }: MegamenuProps) => {
         height : 700,
         transition: { delay : 0.1 ,duration: 0.75, ease: [0.76, 0, 0.24, 1] },
         borderRadius: "20px 20px 20px 20px",
-    
+         
       },
       close: {
         width: 20,
@@ -51,7 +51,7 @@ const Megamenu = ({ isActive }: MegamenuProps) => {
       initial="close"
       animate={isActive ? "open" : "close"}
       variants={variants}
-      className="container right-2 top-2 bg-primary py-8 absolute z-[999]"
+      className="container m-auto right-2 top-2 bg-primary py-8 absolute z-[999]"
     >    
     <motion.div 
     initial="close"

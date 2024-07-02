@@ -27,16 +27,16 @@ const ServiceCards = () => {
             className="w-full h-[420px] bg-cover rounded-[20px] bg-center p-7 flex flex-col justify-end pb-[50px]"
             style={{ backgroundImage: `url(${bgImage})` }}
           >
-            <div className="w-[50%] grid gap-6">
+            <div className="w-full lg:w-[50%] flex flex-col gap-6">
               <h2 className="text-white">{item.title.rendered}</h2>
-              <div dangerouslySetInnerHTML={{ __html: serviceContent }}></div>
+              <div dangerouslySetInnerHTML={{ __html: serviceContent }}  className="text-wrap"/>
 
               <div className="flex gap-12">
-                <PrimaryButton className="text-white bg-[#242120]" href={`/services/${item.slug}`}>
+                <PrimaryButton className="text-white bg-[#242120] text-[12px] md:text-base" href={`/services/${item.slug}`}>
                   Take it ahead
                 </PrimaryButton>
 
-                <SecondaryButton href="/services" className="text-base text-white" arrowColor="white"> 
+                <SecondaryButton href="/services" className="text-base text-white text-[12px] md:text-base" arrowColor="white"> 
                 View Projects
                 </SecondaryButton>
               </div>

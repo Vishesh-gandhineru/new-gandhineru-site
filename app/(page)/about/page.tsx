@@ -43,7 +43,7 @@ const AboutPage = async () => {
       name: "Changemakers",
     },
   ];
-  console.log(teams);
+
   return (
     <main>
       <HeroBanner

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Image from "next/image";
 import he from 'he'
 import { cn } from "@/lib/utils";

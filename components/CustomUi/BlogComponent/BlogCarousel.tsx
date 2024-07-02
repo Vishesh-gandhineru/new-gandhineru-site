@@ -52,7 +52,7 @@ type CategoryType = {
           align: "center",
           loop: true,
         }}
-        className="flex gap-5"
+        className="flex flex-col lg:flex-row gap-5"
       >
         <div>
           <Heading

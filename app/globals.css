@@ -12,10 +12,12 @@
     overflow-x: hidden !important;
   }
 
+
   body {
     @apply font-Satoshi;
-    scroll-behavior: smooth;
-    overflow: hidden;
+    scroll-behavior: smooth;   
+    /* overflow: hidden; */
+
   }
 
  body[data-scroll-locked] {
@@ -109,8 +111,8 @@
     }
     @media (max-width: 640px) {
       :root {
-        --fs-h1 : 5rem;
-        --lh-h1 : 5.75rem;
+        --fs-h1 : 2.25rem;
+        --lh-h1 : 2.875rem;
         --fs-h2 : 1.5rem;
         --lh-h2 : 2rem;
         --fs-h3 : 1.25rem;
@@ -174,6 +176,28 @@
     @apply py-8 w-[1300px] mx-auto my-[20px];
   }
 
+  @media (max-width: 640px) {
+    .sectionContainer {
+      @apply py-8 w-full mx-auto my-[20px];
+    }
+  }
+  @media (max-width: 1024px) {
+    .sectionContainer {
+      @apply py-8 w-full mx-auto my-[20px];
+    }
+  }
+ 
+  @media (max-width: 1400px) {
+    .sectionContainer {
+      @apply py-8 w-full mx-auto my-[20px];
+    }
+  }
+ 
+  /* @media (max-width: 1024px) {
+    .sectionContainer {
+      @apply py-8 w-full mx-auto my-[20px];
+    }
+  } */
  
   .primaryButton::before {
     content: "";

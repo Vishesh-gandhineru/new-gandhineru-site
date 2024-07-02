@@ -5,6 +5,7 @@ import React, { Suspense } from "react";
 import "./work.css"
 import Loading from "./loading";
 import WorkCategoryFilter from "@/components/CustomUi/WorkComponent/WorkCategoryFilter";
+import WorkCard from "@/components/CustomUi/WorkComponent/WorkCard";
 
 
 type WorkPageProps = {
@@ -20,10 +21,6 @@ const WorKPage = async ({searchParams} : WorkPageProps) => {
   const works = await GetAllWork( id ? id : 0 , {order : "asc"}); 
   const workCategory = await GetAllWorkCategory({_field:"id,count,name,slug"});
   
-  console.log(works)
-  const WorkCard = React.lazy(() => import('@/components/CustomUi/WorkComponent/WorkCard'));
- 
-
    
   return (
     <main>
@@ -32,7 +29,7 @@ const WorKPage = async ({searchParams} : WorkPageProps) => {
         <h1 className=" text-primary">Explore our Work</h1>
         <WorkCategoryFilter categories={workCategory} activeCategory={category} />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-x-5 gap-y-14">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-x-5 gap-y-14">   
         
         {works.map((work: any) => {
           return (
@@ -45,7 +42,10 @@ const WorKPage = async ({searchParams} : WorkPageProps) => {
                 slug={work.slug}
               />
               );
-            })}          
+            })}     
+          
+          
+  
       
         </div>
       </section>

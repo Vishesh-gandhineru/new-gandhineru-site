@@ -35,7 +35,7 @@ export function PrimaryButton({
       variant="Primary"
       type={type}
       asChild
-      className={cn("relative group primaryButton mr-[40px] before:bg-gradient-to-b after:bg-gradient-to-t from-transparent from-80% to-50% to-current" , [className] )}
+      className={cn("relative group primaryButton mr-[40px] px-5 md:py-2 md:px-8 before:bg-gradient-to-b after:bg-gradient-to-t from-transparent from-80% to-50% to-current" , [className] )}
     >
       <Link href={href ? href : "#"}>
         <span>{children}</span>
