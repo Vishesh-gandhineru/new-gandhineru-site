@@ -35,7 +35,7 @@ const WorkCategoryFilter = ({ categories }: WorkCategoryFilterProps) => {
         scroll: false,
       });
     }
-  }, [activeCategory, category]);
+  }, [activeCategory, category , activeCategoryId]);
 
   return (
     <div className="flex gap-5">

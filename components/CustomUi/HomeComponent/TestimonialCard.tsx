@@ -18,26 +18,26 @@ const TestimonialCard = () => {
   return (
     <Carousel>
     <CarouselContent className="-ml-0">     
-      <CarouselItem className="p-12 border-[1px] rounded-[20px] border-[#DADADA] relative">
-        <div className="w-[70%] flex flex-col gap-3">
+      <CarouselItem className="p-6 lg:p-12 border-[1px] rounded-[20px] border-[#DADADA] relative">
+        <div className="w-full lg:w-[70%] flex flex-col gap-3">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus lectus sed eros tempus imperdiet.</p>
             <p>- Name Surname</p>
         </div>
-        <Image src='/Images/compony logo.png' width={110} height={30} alt='Logo Banner' className=' absolute bottom-[12%] right-[5%]'/> 
+        <Image src='/Images/compony logo.png' width={110} height={30} alt='Logo Banner' className='mt-8 lg:mt-0 float-end relative lg:absolute lg:bottom-[12%] lg:right-[5%]'/> 
       </CarouselItem>
-      <CarouselItem className="p-12 border-[1px] rounded-[20px] border-[#DADADA] relative">
-        <div className="w-[70%] flex flex-col gap-3">
+      <CarouselItem className="p-6 lg:p-12 border-[1px] rounded-[20px] border-[#DADADA] relative">
+        <div className="w-full lg:w-[70%] flex flex-col gap-3">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus lectus sed eros tempus imperdiet.</p>
             <p>- Name Surname</p>
         </div>
-        <Image src='/Images/compony logo.png' width={110} height={30} alt='Logo Banner' className=' absolute bottom-[12%] right-[5%]'/> 
+        <Image src='/Images/compony logo.png' width={110} height={30} alt='Logo Banner' className=' mt-8 lg:mt-0 float-end relative lg:absolute lg:bottom-[12%] lg:right-[5%]'/> 
       </CarouselItem>
-      <CarouselItem className="p-12 border-[1px] rounded-[20px] border-[#DADADA] relative">
-        <div className="w-[70%] flex flex-col gap-3">
+      <CarouselItem className="p-6 lg:p-12 border-[1px] rounded-[20px] border-[#DADADA] relative">
+        <div className="w-full lg:w-[70%] flex flex-col gap-3">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus lectus sed eros tempus imperdiet.</p>
             <p>- Name Surname</p>
         </div>
-        <Image src='/Images/compony logo.png' width={110} height={30} alt='Logo Banner' className=' absolute bottom-[12%] right-[5%]'/> 
+        <Image src='/Images/compony logo.png' width={110} height={30} alt='Logo Banner' className=' mt-8 lg:mt-0 float-end relative lg:absolute lg:bottom-[12%] lg:right-[5%]'/> 
       </CarouselItem>
       
     </CarouselContent>

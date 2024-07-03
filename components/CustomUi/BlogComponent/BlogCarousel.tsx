@@ -46,15 +46,15 @@ type CategoryType = {
     
 
   return (
-    <div>
+    <div className="w-full">
       <Carousel
         opts={{
           align: "center",
           loop: true,
         }}
-        className="flex flex-col lg:flex-row gap-5"
+        className="w-full flex flex-col lg:flex-row gap-5"
       >
-        <div>
+        <div className="w-full">
           <Heading
             Heading="The G&N Journal"
             subHeading="Journey through our minds & learnings"
@@ -62,19 +62,19 @@ type CategoryType = {
           <div className="mt-[20px]">
             <BlogCategorySelect category={category} value={value} setValue={setValue}/>
           </div>
-          <div className=" relative mt-[50px] ">
+          <div className="relative mt-[50px] hidden md:block">
             <CarouselNext className=" relative" />
             <CarouselPrevious className=" relative" />
           </div>
         </div>
 
-        <div className="w-[80%]">
+        <div className="w-full md:w-[80%]">
           <CarouselContent>
             {post?.map((post: any) => {
               return (
                 <CarouselItem
                   key={post.id}
-                  className="md:basis-1/2 lg:basis-[30%]"
+                  className="basis-[80%] md:basis-1/2 lg:basis-[30%]"
                 >
                   <BlogCard
                     key={post.id}

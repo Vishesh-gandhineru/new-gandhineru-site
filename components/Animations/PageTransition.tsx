@@ -15,7 +15,7 @@ const PageTransition = ({children} : {children : React.ReactNode}) => {
     },
     animate: {
       opacity: 0,
-      transition: {delay: 1.5 , duration: 0.4, ease: [0.76, 0, 0.24, 1] },
+      transition: {delay: 1 , duration: 0.4, ease: [0.76, 0, 0.24, 1] },
     },
    
   };

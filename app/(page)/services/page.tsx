@@ -8,6 +8,7 @@ import Heading from "@/components/CustomUi/Heading";
 import BundledServices from "@/components/CustomUi/ServiceComponent/BundledServices";
 import CompareTable from "@/components/CustomUi/ServiceComponent/CompareTable";
 import { FAQSection } from "@/components/CustomUi/ServiceComponent/FAQSlider";
+import ServiceCardSection from "@/components/CustomUi/ServiceComponent/ServiceCardSection";
 
 const ServicePage = () => {
   return (
@@ -36,7 +37,7 @@ const ServicePage = () => {
           Heading="Our Services"
           subHeading="A Toolkit of Insight, Intuition & Tech"
         />
-        <ServiceCards />
+        <ServiceCardSection />
       </section>
       <section className="sectionContainer">
         <Heading

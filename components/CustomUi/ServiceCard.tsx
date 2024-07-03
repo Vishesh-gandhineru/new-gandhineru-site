@@ -1,50 +1,71 @@
 "use client";
 
-import React, { Suspense } from "react";
-import motion from "framer-motion";
-import { GetAllServices } from "@/ServerActions/FetchServices";
-import useSWR from "swr";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+
 import { cn } from "@/lib/utils";
-import DOMPurify from "isomorphic-dompurify";
+
 import { PrimaryButton, SecondaryButton } from "./CustomButton";
 
-const ServiceCards = () => {
-  const fetcher = () =>
-    GetAllServices({ _fields: "id,meta,slug,status,title" , service_category_exclude: 17});
+type ServiceCardProps = {
+  bgImage: string;
+  serviceContent: string;
+  title: string;
+  slug: string;
+  i: number;
+  range: number[];
+  targetScale: number;
+  Progress: any;
+};
 
-  const { data, isLoading, error } = useSWR("GetAllServices", fetcher);
-
+const ServiceCards = ({
+  bgImage,
+  serviceContent,
+  title,
+  slug,
+  i,
+  range,
+  targetScale,
+  Progress,
+}: ServiceCardProps) => {
+ 
+ 
+  const stackScale = useTransform(Progress, range, [1, targetScale]);
   return (
-    <section className="flex flex-col gap-3">
-      {data?.map((item: any) => {
-        const bgImage = item.meta["banner-image"];
-        const serviceContent = DOMPurify.sanitize(
-          item.meta["overview-content"]
-        );
-        return (
+    <div
+      className={cn(" h-screen sticky grid place-content-center")}
+      style={{ top: `calc(0% + ${i * 20}px)` }}
+    >
+      <motion.div
+        className="w-full h-[420px] bg-cover rounded-[20px] bg-center p-7 flex flex-col justify-end pb-[50px] "
+        style={{ backgroundImage: `url(${bgImage})`, scale: stackScale }}
+      >
+        <div className="w-full lg:w-[50%] flex flex-col gap-6">
+          <h2 className="text-white">{title}</h2>
           <div
-            key={item.id}
-            className="w-full h-[420px] bg-cover rounded-[20px] bg-center p-7 flex flex-col justify-end pb-[50px]"
-            style={{ backgroundImage: `url(${bgImage})` }}
-          >
-            <div className="w-full lg:w-[50%] flex flex-col gap-6">
-              <h2 className="text-white">{item.title.rendered}</h2>
-              <div dangerouslySetInnerHTML={{ __html: serviceContent }}  className="text-wrap"/>
+            dangerouslySetInnerHTML={{ __html: serviceContent }}
+            className="text-wrap"
+          />
 
-              <div className="flex gap-12">
-                <PrimaryButton className="text-white bg-[#242120] text-[12px] md:text-base" href={`/services/${item.slug}`}>
-                  Take it ahead
-                </PrimaryButton>
+          <div className="flex gap-12">
+            <PrimaryButton
+              className="text-white bg-[#242120] text-[12px] md:text-base"
+              href={`/services/${slug}`}
+            >
+              Take it ahead
+            </PrimaryButton>
 
-                <SecondaryButton href="/services" className="text-base text-white text-[12px] md:text-base" arrowColor="white"> 
-                View Projects
-                </SecondaryButton>
-              </div>
-            </div>
+            <SecondaryButton
+              href="/services"
+              className="text-base text-white text-[12px] md:text-base"
+              arrowColor="white"
+            >
+              View Projects
+            </SecondaryButton>
           </div>
-        );
-      })}
-    </section>
+        </div>
+      </motion.div>
+    </div>
   );
 };
 

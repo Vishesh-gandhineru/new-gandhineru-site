@@ -8,11 +8,15 @@ import HeroBanner from "@/components/CustomUi/HeroBanner";
 import AnimatedLogoBanner from "@/components/CustomUi/HomeComponent/AnimatedLogoBanner";
 import TestimonialCard from "@/components/CustomUi/HomeComponent/TestimonialCard";
 import Heading from "@/components/CustomUi/Heading";
-import ServiceCards from "@/components/CustomUi/ServiceCard";
 import BlogCarousel from "@/components/CustomUi/BlogComponent/BlogCarousel";
 import Work from "@/components/CustomUi/HomeComponent/Work";
+import { GetAllServices } from "@/ServerActions/FetchServices";
+import ServiceCardSection from "@/components/CustomUi/ServiceComponent/ServiceCardSection";
 
-const page = () => {
+
+
+const page = async () => {
+  const services = await GetAllServices({ _fields: "id,meta,slug,status,title" , service_category_exclude: 17});
   return (
     <main>
       <HeroBanner
@@ -42,23 +46,28 @@ const page = () => {
         </div>
       </HeroBanner>
 
-      <section className="sectionContainer flex flex-col gap-[80px] ">
+      <section className=" py-16 w-full md:w-[1300px] mx-auto my-[20px] flex flex-col gap-[80px]">
         <AnimatedLogoBanner />
       </section>
-      <section className="sectionContainer max-w-[1000px] flex flex-col gap-[80px] ">
+      <section className="sectionContainer w-full md:max-w-[1000px]">
         <Work />
       </section>
-      <section className="sectionContainer flex justify-between items-center w-[1300px]">
+      <section className="sectionContainer flex flex-col gap-5 md-flex-row justify-between items-start md:items-start">
         <Heading
           Heading="Trust earned the right way"
           subHeading="Thanks for rolling the dice on us"
         />
-        <div className="w-[60%]">
+        <div className="w-full md:w-[60%]">
           <TestimonialCard />
         </div>
       </section>
-      <section className="sectionContainer">
-        <ServiceCards />
+      <section className="sectionContainer relative">
+        <Heading
+          Heading="Our Services"
+          subHeading="A Toolkit of Insight, Intuition & Tech" 
+          className=" relative  md:absolute top-[100px] left-0"
+          />
+        <ServiceCardSection />
       </section>
       <section className="sectionContainer flex gap-5">        
           <BlogCarousel />
