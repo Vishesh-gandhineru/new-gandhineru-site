@@ -22,11 +22,11 @@ const FormInput = ({
   ErrorMessage,
 }: FormInputProps) => {
   return (
-    <div className=" relative">
+    <div className="relative w-full">
       <Input
         placeholder={placeholder}
         className={cn(
-          `text-base font-normal bg-transparent w-[300px] border-t-0 border-r-0 border-l-0  rounded-none border-b-2 border-[#D0D0D0] focus-visible:ring-0 focus:border-primary focus-visible:ring-offset-0 text-center placeholder-[#868686]`,
+          `text-base font-normal bg-transparent w-[250px] lg:w-[300px] border-t-0 border-r-0 border-l-0  rounded-none border-b-2 border-[#D0D0D0] focus-visible:ring-0 focus:border-primary focus-visible:ring-offset-0 text-center placeholder-[#868686]`,
           [
             className,
             ErrorMessage

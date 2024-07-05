@@ -57,12 +57,12 @@ const page = async ({ params }: PageProps) => {
         </div>
       </section>
       {/* Hero Content */}
-      <section className="sectionContainer flex flex-row flex-wrap gap-8 items-center justify-between">
-        <div className="WorkContent w-[50%]">
+      <section className="sectionContainer flex flex-col lg:flex-row flex-wrap gap-8 items-center justify-between">
+        <div className="WorkContent w-full lg:w-[50%]">
           <h3 className="mb-[30px]">{title.rendered}</h3>
           <div dangerouslySetInnerHTML={{ __html: content.rendered }} />
         </div>
-        <div className="w-[40%] flex flex-wrap  h-fit gap-x-5 gap-y-8">
+        <div className="w-full lg:w-[40%] flex flex-wrap  h-fit gap-x-5 gap-y-8">
           <div className="flex flex-col gap-3">
             <p>Industry:</p>
             <span className="  w-fit border-[1px] rounded-full px-5 py-3 border-[#D0D0D0] uppercase text-[12px] leading-3 tracking-wider font-normal">
@@ -91,7 +91,7 @@ const page = async ({ params }: PageProps) => {
       </section>
       {/* First fold Img */}
       <section className="max-w-[1400px] m-auto">
-        <div className=" relative w-full h-[730px]">
+        <div className=" relative w-full h-[300px] md:h-[400px] lg:h-[730px]">
           <Image
             src={hero_image}
             alt={title}
@@ -102,8 +102,8 @@ const page = async ({ params }: PageProps) => {
         </div>
       </section>
         {/* Bold Text */}
-      <section className="sectionContainer grid grid-cols-2 justify-center items-center">
-        <div className="text-center w-[80%]">
+      <section className="sectionContainer grid grid-cols-1 gap-14 lg:grid-cols-2 justify-center items-center">
+        <div className="text-center w-full lg:w-[80%]">
           <h2 className="text-[64px] leading-[74px] tracking-wider text-[#872980] font-bold">
             {bold_text}
           </h2>

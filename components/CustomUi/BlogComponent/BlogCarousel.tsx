@@ -16,6 +16,7 @@ import {
 import BlogCard from "../BlogCard";
 import Heading from "../Heading";
 import { BlogCategorySelect } from "./BlogCategorySelect";
+import { ShotLogoGn } from "@/components/CustomIcons";
 
 
 const BlogCarousel = () => {
@@ -52,13 +53,15 @@ type CategoryType = {
           align: "center",
           loop: true,
         }}
-        className="w-full flex flex-col lg:flex-row gap-5"
+        className="w-full flex flex-col lg:flex-row gap-10"
       >
-        <div className="w-full">
-          <Heading
-            Heading="The G&N Journal"
-            subHeading="Journey through our minds & learnings"
-          />
+        <div className="w-full lg:w-fit">
+        <div className="flex flex-col gap-2 lg:gap-2">
+          <p className="text-body md:text-[20px] leading-[30px] tracking-normal">
+          Journey through our minds & learnings
+          </p>
+          <h3 className="flex flex-row items-center gap-3">The <span className=" inline"><ShotLogoGn className=" fill-[#C0C0C0]"/></span> Journal</h3>
+        </div>        
           <div className="mt-[20px]">
             <BlogCategorySelect category={category} value={value} setValue={setValue}/>
           </div>

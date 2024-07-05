@@ -38,7 +38,7 @@ const WorkCategoryFilter = ({ categories }: WorkCategoryFilterProps) => {
   }, [activeCategory, category , activeCategoryId]);
 
   return (
-    <div className="flex gap-5">
+    <div className="flex items-center justify-start  gap-5 overflow-x-scroll whitespace-nowrap md:overflow-auto">
       <div>
         <p
           onClick={() => {

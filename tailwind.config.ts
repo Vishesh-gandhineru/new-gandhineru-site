@@ -59,6 +59,10 @@ const config = {
         'transparency-bg' : "url('/Images/Transparency bg.png')",
         'flexibility-bg' : "url('/Images/Flexibily bg.png')",
         'creativity-bg' : "url('/Images/Creativity bg.png')",
+        'brandEssence-bg' : "url('/Images/brandEssence.png')",
+        'digitalConnection-bg' : "url('/Images/digitalConnection.png')",
+        'engageAudience-bg' : "url('/Images/engageAudience.png')",
+        'processAutomation-bg' : "url('/Images/processAutomation.png')",
       },
 
       backgroundPosition: {

@@ -46,13 +46,13 @@ const page = async () => {
         </div>
       </HeroBanner>
 
-      <section className=" py-16 w-full md:w-[1300px] mx-auto my-[20px] flex flex-col gap-[80px]">
+      <section className=" py-16 w-full xl:max-w-[1300px] mx-auto my-[20px] flex flex-col gap-[80px]">
         <AnimatedLogoBanner />
       </section>
       <section className="sectionContainer w-full md:max-w-[1000px]">
         <Work />
       </section>
-      <section className="sectionContainer flex flex-col gap-5 md-flex-row justify-between items-start md:items-start">
+      <section className="sectionContainer flex flex-col lg:flex-row gap-5 md-flex-row justify-between items-start md:items-center">
         <Heading
           Heading="Trust earned the right way"
           subHeading="Thanks for rolling the dice on us"
@@ -65,7 +65,7 @@ const page = async () => {
         <Heading
           Heading="Our Services"
           subHeading="A Toolkit of Insight, Intuition & Tech" 
-          className=" relative  md:absolute top-[100px] left-0"
+          className=" relative  md:absolute top-[50px] left-0"
           />
         <ServiceCardSection />
       </section>

@@ -16,14 +16,15 @@ const AccordionContext = createContext<AccordionContextType | undefined>(
 
 type AccordionProps = {
   children: React.ReactNode;
+  className?: string;
 };
 
-export const AnimatedAccordion = ({ children }: AccordionProps) => {
+export const AnimatedAccordion = ({ children , className }: AccordionProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <AccordionContext.Provider value={{ isOpen, setIsOpen }}>
-      <div>{children}</div>
+      <div className={`w-full ${className}`}>{children}</div>
     </AccordionContext.Provider>
   );
 };
@@ -51,7 +52,7 @@ export const AnimatedAccordionHeader = ({
   return (
     <div
       className={cn(
-        "border-[1px] py-5 pr-10 pl-5 rounded-[20px] text-start relative overflow-hidden z-10 cursor-pointer bg-white",
+        "border-[1px] py-5 pr-40 md:pr-20 pl-5 rounded-[20px] text-start relative overflow-hidden z-10 cursor-pointer bg-white",
         [className],
         isOpen ? "text-white" : "text-black"
       )}
@@ -97,7 +98,7 @@ export const AnimatedAccordionHeader = ({
   );
 };
 
-export const AnimatedAccordionContent = ({ children }: AccordionProps) => {
+export const AnimatedAccordionContent = ({ children , className }: AccordionProps) => {
   const context = useContext(AccordionContext);
 
   if (!context) {
@@ -113,7 +114,7 @@ export const AnimatedAccordionContent = ({ children }: AccordionProps) => {
       <motion.div
         initial={{ y: -100, opacity: 1 }}
         animate={{ y: isOpen ? 0 : -100, opacity: isOpen ? 1 : 0 }}
-        className="overflow-hidden border-[1px] py-8 pr-10 pl-5 rounded-[20px] h-fit text-start relative text-base z-1"
+        className={cn("overflow-hidden border-[1px] py-8 pr-10 pl-5 rounded-[20px] h-fit text-start relative text-base z-1 text-wrap", [className])}
       >
         {children}
       </motion.div>

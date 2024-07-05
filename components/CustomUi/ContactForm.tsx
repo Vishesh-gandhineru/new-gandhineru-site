@@ -85,11 +85,11 @@ const PrivacyPolicyField = form.getFieldState("privacyPolicy");
   }
 
   return (
-    <div className="bg-[#F3F3F3] rounded-[20px] p-[2rem] grid place-content-center max-w-[1140px] w-full m-auto">
+    <div className="bg-[#F3F3F3] text-wrap rounded-[20px] py-8 px-4 md:py-14 grid place-content-center max-w-[1140px] w-full m-auto">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <div className="flex flex-wrap gap-4 justify-center items-center">
-            <span className="text-4xl">Hi! My name is</span>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full">
+          <div className="flex flex-wrap gap-4 justify-center items-center w-[95%] m-auto md:w-full">
+            <span className="text-xl md:text-[1.6rem] lg:text-4xl">Hi! My name is</span>
             <FormField
               control={form.control}
               name="fullname"
@@ -99,16 +99,17 @@ const PrivacyPolicyField = form.getFieldState("privacyPolicy");
                     <FormInput
                       placeholder="First & Last Name"
                       zodField={field}
+                      className="w-[200px]"
                       ErrorMessage={FullnameField.error?.message}
                     />
                   </FormControl>
                 </FormItem>
               )}
             />
-            <span className="text-4xl">and I&apos;m</span>
+            <span className="text-xl md:text-[1.6rem] lg:text-4xl">and I&apos;m</span>
           </div>
-          <div className="flex flex-wrap gap-4 justify-center items-center">
-            <span className="text-4xl">
+          <div className="flex flex-wrap gap-4 justify-center items-center w-[95%] m-auto md:w-full">
+            <span className="text-xl md:text-[1.6rem] lg:text-4xl text-center md:text-left">
               looking for a partner to assist with
             </span>
 
@@ -186,8 +187,8 @@ const PrivacyPolicyField = form.getFieldState("privacyPolicy");
             />
             <span className="text-[40px] font-Syne">.</span>
           </div>
-          <div className="flex flex-wrap gap-4 justify-center items-center">
-            <span className="text-4xl">You can reach me out at</span>
+          <div className="flex flex-wrap gap-4 justify-center items-center w-[95%] m-auto md:w-full">
+            <span className="text-xl md:text-[1.6rem] lg:text-4xl">You can reach me out at</span>
             <FormField
               control={form.control}
               name="email"
@@ -197,15 +198,16 @@ const PrivacyPolicyField = form.getFieldState("privacyPolicy");
                     <FormInput
                       placeholder="Email"
                       zodField={field}
+                      className="w-[200px]"
                       ErrorMessage={EmailField.error?.message}
                     />
                   </FormControl>
                 </FormItem>
               )}
             />
-            <span className="text-4xl">and</span>
+            <span className="text-xl md:text-[1.6rem] lg:text-4xl">and</span>
           </div>
-          <div className="flex flex-wrap gap-4 justify-center items-center">
+          <div className="flex flex-wrap gap-4 justify-center items-center w-[95%] m-auto md:w-full">
             <FormField
               control={form.control}
               name="phone"
@@ -222,7 +224,7 @@ const PrivacyPolicyField = form.getFieldState("privacyPolicy");
               )}
             />
             <span className="text-[40px] font-Syne">.</span>
-            <span className="text-4xl">Here&apos;s some more info:</span>
+            <span className="text-xl md:text-[1.6rem] lg:text-4xl">Here&apos;s some more info:</span>
             <FormField
               control={form.control}
               name="message"
@@ -240,7 +242,7 @@ const PrivacyPolicyField = form.getFieldState("privacyPolicy");
             />
             <span className="text-[40px] font-Syne">.</span>
           </div>
-          <div className="flex justify-center items-center gap-[100px]">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-[100px]">
           <FormField
           control={form.control}
           name="privacyPolicy"

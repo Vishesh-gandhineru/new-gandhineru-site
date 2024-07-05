@@ -1,3 +1,9 @@
 .teamCard:nth-child(2n){
     margin-top: -50px;
 }
+
+@media (max-width: 768px) {
+    .teamCard:nth-child(2n){
+        margin-top: 0;
+    }
+}

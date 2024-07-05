@@ -12,7 +12,8 @@ import {
 import { Accordion } from "@radix-ui/react-accordion";
 import { GetAllteam } from "@/ServerActions/FetchTeam";
 import TeamCard from "@/components/CustomUi/AboutComponent/TeamCard";
-import "./about.css"
+import "./about.css";
+import WhatWeDoSection from "@/components/CustomUi/AboutComponent/WhatWeDoSection";
 
 const AboutPage = async () => {
   const teams = await GetAllteam();
@@ -52,16 +53,16 @@ const AboutPage = async () => {
       ></HeroBanner>
       {/* first fold */}
       <section className="sectionContainer space-y-8 text-center">
-        <div className="space-y-8 text-center w-[900px] m-auto">
+        <div className="space-y-8 text-center w-full lg:w-[900px] m-auto">
           <h2 className="text-center">
-            If you&apos;ve made it here, you must be curious about our story. Let&apos;s
-            get to it.
+            If you&apos;ve made it here, you must be curious about our story.
+            Let&apos;s get to it.
           </h2>
           <PrimaryButton className="to-white" icon={<ContactIcon />}>
             Let&apos;s Chat?
           </PrimaryButton>
         </div>
-        <div className=" relative w-[1030px] h-[360px] m-auto">
+        <div className=" relative w-full lg:w-[1030px] h-[360px] m-auto">
           <Image
             src="/Images/Blog cover.png"
             fill
@@ -73,11 +74,11 @@ const AboutPage = async () => {
       </section>
       {/* who we are */}
       <section className="sectionContainer">
-        <div className="w-[900px] m-auto flex  gap-7">
-          <div className="w-[30%]">
+        <div className="w-full lg:w-[900px] m-auto flex flex-col lg:flex-row  gap-7">
+          <div className="w-full lg:w-[30%]">
             <h3>Who we are?</h3>
           </div>
-          <div className="w-[65%]">
+          <div className="w-full lg:w-[65%]">
             <p>
               In 2018, Dishank Gandhi and Kalyani Nerurkar turned their shared
               passion for design into Gandhi & Neru. <br />
@@ -91,21 +92,15 @@ const AboutPage = async () => {
       </section>
       {/* What we do */}
       <section className="sectionContainer">
-        <div className="w-[500px] m-auto text-center space-y-4">
-          <h3>What we do?</h3>
-          <p>
-            With a growing team and a forward-thinking vision, we focus on four
-            key areas to deliver impact.
-          </p>
-        </div>
+        <WhatWeDoSection />
       </section>
       {/* collaborate with */}
       <section className="sectionContainer">
-        <div className="w-[900px] m-auto flex  gap-7">
-          <div className="w-[30%]">
+        <div className="w-full lg:w-[900px] m-auto flex flex-col lg:flex-row  gap-7">
+          <div className="w-full lg:w-[30%]">
             <h3>Who do we collaborate with?</h3>
           </div>
-          <div className="w-[65%]">
+          <div className="w-full lg:w-[65%]">
             <p>
               We team up with businesses at all stages, from inception to
               expansion. Design isn&apos;t isolated; it&apos;s an integrated
@@ -138,11 +133,11 @@ const AboutPage = async () => {
       </section>
       {/* Add value */}
       <section className="sectionContainer">
-        <div className="w-[1000px] m-auto text-center">
+        <div className="w-full lg:w-[1000px] m-auto text-center">
           <div className="mb-[30px]">
             <h3>How do we add value?</h3>
           </div>
-          <div className="grid grid-cols-3">
+          <div className="flex flex-row overflow-scroll justify-start whitespace-nowrap lg:grid lg:grid-cols-3 lg:overflow-visible">
             <AnimatedAccordion>
               <AnimatedAccordionHeader bgImage="bg-transparency-bg">
                 <h4>Transparency</h4>
@@ -177,7 +172,7 @@ const AboutPage = async () => {
         <div className="mb-[30px] text-center">
           <h3>Meet the team</h3>
         </div>
-        <div className="mt-[100px] grid grid-cols-5 gap-x-[20px] gap-y-[50px]">
+        <div className="lg:mt-[100px] grid grid-cols-1 lg:grid-cols-5 gap-x-[20px] gap-y-[50px]">
           {teams.map((item: any) => {
             return <TeamCard key={item.id} team={item} />;
           })}

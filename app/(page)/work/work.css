@@ -15,8 +15,17 @@
 .workCard:nth-child(3n){
     grid-column: span 5;
 }
+
 .workCard:nth-child(3n) .workCardImage{
     height: 630px;
+}
+@media (max-width:767px){
+    .workCard{
+        grid-column: span 1 !important;
+    }
+    .workCard:nth-child(3n) .workCardImage{
+        height: 330px;
+    }
 }
 
 .projectGallery:first-child {
