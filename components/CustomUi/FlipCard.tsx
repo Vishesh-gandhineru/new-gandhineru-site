@@ -10,7 +10,7 @@ interface FlipCardProps {
     style?:CSSProperties
 }
 
-export const FlipCard: React.FC<FlipCardProps> = forwardRef ( ({ children , className , style } , ref : Ref<HTMLDivElement>) => {
+const FlipCard: React.FC<FlipCardProps> = forwardRef ( ({ children , className , style } , ref : Ref<HTMLDivElement>) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const controls = useAnimation();
 
@@ -46,14 +46,19 @@ export const FlipCard: React.FC<FlipCardProps> = forwardRef ( ({ children , clas
   );
 }); 
 
-export const FrontCard: React.FC<{ children: ReactNode , className?: string , style?:CSSProperties  }> = ({ children , className , style }) => {
+const FrontCard: React.FC<{ children: ReactNode , className?: string , style?:CSSProperties  }> = ({ children , className , style }) => {
   return <div className={cn("FrontCard w-full h-full", [
     className
   ])} style={style}>{children}</div>;
 };
 
-export const BackCard: React.FC<{ children: ReactNode , className?: string ,style?:CSSProperties }> = ({ children, className , style }) => {
+const BackCard: React.FC<{ children: ReactNode , className?: string ,style?:CSSProperties }> = ({ children, className , style }) => {
   return <div className={cn("BackCard w-full h-full", [
     className
   ])} style={style}>{children}</div>;
 };
+
+
+FlipCard.displayName = 'FlipCard';
+
+export { FlipCard , FrontCard , BackCard };

@@ -50,6 +50,7 @@ const BlogSinglePage = async ({ params }: BlogSinglePageProps) => {
   return (
     <section>
       <HeroBanner
+        buttonHref="/contact"
         className=" bg-hero-blog-banner container"
         buttonText="Book a Clarity Call"
       ></HeroBanner>
@@ -79,10 +80,11 @@ const BlogSinglePage = async ({ params }: BlogSinglePageProps) => {
           <h3>Recommended Resources/ Reads</h3>
           <Carousel>
   <CarouselContent>    
-            {Posts.map((post: Record<string, any> = {}) => {
+            {Posts.map((post: Record<string, any> = {} , i:number) => {
               return (
                 <CarouselItem key={post.id} className=" basis-[80%] sm:basis-[40%] lg:basis-1/4">
-                  <BlogCard                    
+                  <BlogCard   
+                    index={i}                 
                     title={post.title.rendered}
                     date={post.date}
                     image={post._embedded["wp:featuredmedia"][0].source_url}
