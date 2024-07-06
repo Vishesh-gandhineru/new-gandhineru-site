@@ -1,9 +1,11 @@
+"use client"
+
 import React, { Suspense } from "react";
 import Image from "next/image";
 import he from 'he'
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-
+import { MotionDiv } from "../MotionDiv";
 type WorksProps = {
   image: string;
   title: string;
@@ -15,7 +17,11 @@ type WorksProps = {
 
 const WorkCard = ({ image, title, tags, slug , className, i}: WorksProps) => {
   return (
-    <div className={cn(" space-y-8", [className])}>
+    <MotionDiv 
+    initial={{opacity: 0 , y: 50}}
+    whileInView={{opacity: 1 , y: 0}}
+    transition={{duration: 0.3 , ease: "easeInOut" , delay: i * 0.1}}
+    className={cn(" space-y-8", [className])}>
       <div className=" workCardImage relative w-full h-[330px] md:h-[450px]">
         <Link href={`/work/${slug}`}>
         <Image
@@ -34,7 +40,7 @@ const WorkCard = ({ image, title, tags, slug , className, i}: WorksProps) => {
           ))}
         </div>
       </div>
-    </div>
+    </MotionDiv>
   );
 };
 

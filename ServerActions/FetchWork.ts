@@ -5,11 +5,9 @@ import axios from "axios"
 export async function GetAllWork(categoryId : number , params: Record<string, any> = {}) {
     if (categoryId != 0) {
         const workWithCategory = await fetchFromWordPress('work', { _embed: true ,_fields:"id,slug,title,content,meta,_links" ,...params , work_category: categoryId});
-        console.log("workWithCategory running")
         return workWithCategory;
     } else if (categoryId == 0) {
         const works = await fetchFromWordPress('work', { _embed: true ,_fields:"id,slug,title,content,meta,_links" ,...params});
-        console.log("works running")
         return works;
     }
 }

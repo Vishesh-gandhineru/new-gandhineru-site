@@ -7,6 +7,7 @@ import Loading from "./loading";
 import WorkCategoryFilter from "@/components/CustomUi/WorkComponent/WorkCategoryFilter";
 import WorkCard from "@/components/CustomUi/WorkComponent/WorkCard";
 import { FilterIcon } from "@/components/CustomIcons";
+import { MotionDiv } from "@/components/CustomUi/MotionDiv";
 
 
 type WorkPageProps = {

@@ -12,6 +12,7 @@ import BlogCarousel from "@/components/CustomUi/BlogComponent/BlogCarousel";
 import Work from "@/components/CustomUi/HomeComponent/Work";
 import { GetAllServices } from "@/ServerActions/FetchServices";
 import ServiceCardSection from "@/components/CustomUi/ServiceComponent/ServiceCardSection";
+import { MotionDiv , MotionSection } from "@/components/CustomUi/MotionDiv";
 
 
 
@@ -24,7 +25,11 @@ const page = async () => {
         className=" bg-hero-home-mob-banner bg-bottom lg:bg-center  lg:bg-hero-home-banner flex items-center h-[587px] lg:h-[640px] container m-auto p-5 lg:p-12"
         buttonText="Build your Brand"
       >
-        <div className="w-full h-full pt-[10px] pb-[50px] justify-between lg:justify-center lg:w-[60%] flex flex-col gap-[80px]">
+        <MotionDiv 
+        initial={{opacity: 0 , y: 50}}
+        animate={{opacity: 1 , y: 0}}
+        transition={{duration: 0.8 , ease: "easeInOut" , delay: 1}}
+        className="w-full h-full pt-[10px] pb-[50px] justify-between lg:justify-center lg:w-[60%] flex flex-col gap-[80px]">
           <div className="flex flex-col gap-3 lg:gap-8">
             <h1 className="normal-case">
               Simply put, we design and build brands
@@ -44,15 +49,23 @@ const page = async () => {
               View Services
             </SecondaryButton>
           </div>
-        </div>
+        </MotionDiv>
       </HeroBanner>
 
-      <section className=" py-16 w-full xl:max-w-[1300px] mx-auto my-[20px] flex flex-col gap-[80px]">
+      <MotionSection
+      initial={{opacity: 0 , y: 50}}
+      whileInView={{opacity: 1 , y: 0}}
+      transition={{duration: 0.3 , ease: "easeInOut" , delay: 0.2}}
+      className=" py-16 w-full xl:max-w-[1300px] mx-auto my-[20px] flex flex-col gap-[80px]">
         <AnimatedLogoBanner />
-      </section>
-      <section className="sectionContainer w-full md:max-w-[1000px]">
+      </MotionSection>
+      <MotionSection 
+      initial={{opacity: 0 , y: 50}}
+      whileInView={{opacity: 1 , y: 0}}
+      transition={{duration: 0.3 , ease: "easeInOut" , delay: 0.4}}
+      className="sectionContainer w-full md:max-w-[1000px]">
         <Work />
-      </section>
+      </MotionSection>
       <section className="sectionContainer flex flex-col lg:flex-row gap-5 md-flex-row justify-between items-start md:items-center">
         <Heading
           Heading="Trust earned the right way"

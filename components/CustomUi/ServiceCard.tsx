@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 import { PrimaryButton, SecondaryButton } from "./CustomButton";
+import { MotionDiv } from "./MotionDiv";
 
 type ServiceCardProps = {
   bgImage: string;
@@ -32,14 +33,21 @@ const ServiceCards = ({
  
   const stackScale = useTransform(Progress, range, [1, targetScale]);
   return (
-    <div
+    <MotionDiv
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
       className={cn(" h-full sticky grid place-content-center top-[20%]")}
     >
-      <motion.div
+      <motion.div     
         className="w-full relative h-[420px] bg-cover rounded-[20px] bg-center p-7 flex flex-col justify-end pb-[50px]"
         style={{ backgroundImage: `url(${bgImage})`, scale: stackScale , top: `calc(-5vh + ${i * 25}px)` }}
       >
-        <div className="w-full lg:w-[50%] flex flex-col gap-6">
+        <motion.div 
+        initial={{opacity: 0 , y: 50}}
+        whileInView={{opacity: 1 , y: 0}}
+        transition={{duration: 0.5 , ease: "easeInOut" , delay: 0.2}}
+        className="w-full lg:w-[50%] flex flex-col gap-6">
           <h2 className="text-white">{title}</h2>
           <div
             dangerouslySetInnerHTML={{ __html: serviceContent }}
@@ -62,9 +70,9 @@ const ServiceCards = ({
               View Projects
             </SecondaryButton>
           </div>
-        </div>
+        </motion.div>
       </motion.div>
-    </div>
+    </MotionDiv>
   );
 };
 
