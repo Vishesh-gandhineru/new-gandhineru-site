@@ -10,6 +10,7 @@ const ContactPage = () => {
       <section>
 
       <HeroBanner
+        buttonHref="/contact"
         className=" bg-hero-contact-banner container"
         buttonText="Book a Clarity Call"
       ></HeroBanner>

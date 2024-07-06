@@ -16,12 +16,12 @@ const ServiceCardSection = () => {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["start start", "end start"],
+    offset: ["start 50%", "end start"],
   });
 
   return (
     <section
-      className="flex flex-col gap-3 relative"
+      className="flex flex-col gap-3 relative mb-[80px]"
       ref={container}
     >
       {data?.map((item: any, i: number) => {

@@ -33,7 +33,7 @@ const ServiceCards = ({
   const stackScale = useTransform(Progress, range, [1, targetScale]);
   return (
     <div
-      className={cn(" h-screen sticky grid place-content-center top-8")}
+      className={cn(" h-full sticky grid place-content-center top-[20%]")}
     >
       <motion.div
         className="w-full relative h-[420px] bg-cover rounded-[20px] bg-center p-7 flex flex-col justify-end pb-[50px]"

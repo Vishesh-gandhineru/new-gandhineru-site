@@ -29,7 +29,7 @@ const MainFooter = () => {
             <div className="bg-white w-full h-full py-[50px] px-6 lg:px-14 flex flex-col gap-12 container rounded-[30px]">
               <div className="flex  flex-col lg:flex-row gap-8">
                 <div className="w-full lg:w-[40%] flex flex-col gap-5 md:gap-8">
-                  <LogoBlack />
+                  <LogoBlack className="w-[200px] h-full"/>
                   <div className="flex flex-col gap-8">
                     <h2 className=" text-2xl">
                       Get the latest <br /> news in your inbox

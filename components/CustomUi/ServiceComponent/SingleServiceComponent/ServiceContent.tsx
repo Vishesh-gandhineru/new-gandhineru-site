@@ -25,6 +25,7 @@ const ServiceContent = ({ service }: Record<string, any>) => {
             />
           </div>
           <PrimaryButton
+            href="/contact"
             className="to-white absolute right-0 bottom-0"
             icon={<ContactIcon />}
           >

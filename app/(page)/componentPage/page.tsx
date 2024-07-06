@@ -10,7 +10,7 @@ import BlogCard from '@/components/CustomUi/BlogCard'
 const page = () => {
   return (
     <section>  
-      <HeroBanner className=' bg-hero-home-banner' buttonText='Build your Brand'><div>
+      <HeroBanner buttonHref='#' className=' bg-hero-home-banner' buttonText='Build your Brand'><div>
         <h1>Simply put, we design
 and build brands</h1>
 <p className=' font-light'>Driven by visuals, tech and automation</p>

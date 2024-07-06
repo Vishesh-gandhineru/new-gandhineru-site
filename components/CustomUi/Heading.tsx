@@ -13,7 +13,7 @@ const Heading = ({Heading , subHeading, className} : HeadingProps) => {
     <div className={cn(" flex flex-col gap-2 lg:gap-2", [
         className
     ])}>
-          <p className="text-[20px] text-base leading-[30px] tracking-normal">
+          <p className="text-[20px] text-base leading-[25px] tracking-normal">
             {subHeading}
           </p>
           <h3>{Heading}</h3>

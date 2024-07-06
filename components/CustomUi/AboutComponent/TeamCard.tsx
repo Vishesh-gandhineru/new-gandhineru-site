@@ -14,7 +14,7 @@ const TeamCard = ({team} : TeamCardProps) => {
     const {front_image , ai_image , designation } = meta;
 
   return (
-    <div className=' teamCard space-y-3'>
+    <div className='teamCard space-y-3'>
         <div className=' relative grid place-content-center'>
             <div className=' relative w-[220px] h-[290px] z-10'>
             <Image src={front_image} alt={`${title} personal image`} fill sizes='2x' className='object-cover object-center'/>

@@ -12,7 +12,7 @@ const MainMenu = () => {
       <div className="flex justify-between items-center z-30">
       <div className="Logo">
         <Link href="/">
-        <LogoBlack />
+        <LogoBlack className="h-full w-[200px]"/>
         </Link>
       </div>
       <div className="flex justify-center items-start gap-3">

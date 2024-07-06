@@ -14,6 +14,7 @@ import { GetAllteam } from "@/ServerActions/FetchTeam";
 import TeamCard from "@/components/CustomUi/AboutComponent/TeamCard";
 import "./about.css";
 import WhatWeDoSection from "@/components/CustomUi/AboutComponent/WhatWeDoSection";
+import TeamsSection from "@/components/CustomUi/AboutComponent/TeamsSection";
 
 const AboutPage = async () => {
   const teams = await GetAllteam();
@@ -48,6 +49,7 @@ const AboutPage = async () => {
   return (
     <main>
       <HeroBanner
+        buttonHref="/contact"
         className=" bg-hero-about-banner container"
         buttonText="Book a Clarity Call"
       ></HeroBanner>
@@ -58,7 +60,7 @@ const AboutPage = async () => {
             If you&apos;ve made it here, you must be curious about our story.
             Let&apos;s get to it.
           </h2>
-          <PrimaryButton className="to-white" icon={<ContactIcon />}>
+          <PrimaryButton href="/contact" className="to-white" icon={<ContactIcon />}>
             Let&apos;s Chat?
           </PrimaryButton>
         </div>
@@ -172,11 +174,7 @@ const AboutPage = async () => {
         <div className="mb-[30px] text-center">
           <h3>Meet the team</h3>
         </div>
-        <div className="lg:mt-[100px] grid grid-cols-1 lg:grid-cols-5 gap-x-[20px] gap-y-[50px]">
-          {teams.map((item: any) => {
-            return <TeamCard key={item.id} team={item} />;
-          })}
-        </div>
+       <TeamsSection teams={teams}/>
       </section>
     </main>
   );

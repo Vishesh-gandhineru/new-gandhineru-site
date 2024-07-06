@@ -104,10 +104,10 @@ const page = async ({ params }: PageProps) => {
         {/* Bold Text */}
       <section className="sectionContainer grid grid-cols-1 gap-14 lg:grid-cols-2 justify-center items-center">
         <div className="text-center w-full lg:w-[80%]">
-          <h2 className="text-[64px] leading-[74px] tracking-wider text-[#872980] font-bold">
+          <h2 className="text-[40px] leading-[50px]  md:text-[64px] md:leading-[74px] tracking-wider text-[#872980] font-bold">
             {bold_text}
           </h2>
-          <div className=" relative w-full h-[50px] mt-6">
+          <div className=" relative w-full h-[30px] md:h-[50px] mt-6">
             <Image
               src={client_logo}
               fill = {true}
@@ -117,19 +117,19 @@ const page = async ({ params }: PageProps) => {
             />
           </div>
         </div>
-        <div className="relative h-[560px] w-full">
+        <div className="relative h-[300px] lg:h-[560px] w-full">
           <Image
             src={bold_text_image}
             fill
             sizes="100vw"
             alt={bold_text}
-            className=" object-cover object-center"
+            className=" object-cover object-center rounded-[20px]"
           />
         </div>
       </section>
         {/* Second fold Img */}
       <section className="max-w-[1400px] m-auto">
-        <div className=" relative w-full h-[730px]">
+        <div className=" relative w-full h-[400px] lg:h-[730px]">
           <Image
             src={second_banner_image}
             alt={title}
@@ -141,7 +141,7 @@ const page = async ({ params }: PageProps) => {
       </section>
         {/* Project brief */}
       <section className="sectionContainer flex flex-row flex-wrap gap-8 items-center justify-between">
-        <div className="WorkContent w-[50%]">
+        <div className="WorkContent w-full lg:w-[50%]">
           <h4 className="mb-[00px]">Project brief :</h4>
           <div
             dangerouslySetInnerHTML={{ __html: project_brief }}
@@ -155,7 +155,7 @@ const page = async ({ params }: PageProps) => {
           return (
             <div
               key={index}
-              className=" projectGallery relative w-full h-[600px]"
+              className=" projectGallery relative w-full h-[200px] md:h-[400px] lg:h-[600px]"
             >
               <Image
                 src={image}
@@ -170,14 +170,14 @@ const page = async ({ params }: PageProps) => {
       </section>
         {/* Challenge and Approach */}
       <section className="sectionContainer flex flex-row flex-wrap gap-8 items-center justify-between">
-        <div className="WorkContent w-[45%]">
+        <div className="WorkContent w-full md:w-[45%]">
           <h4 className="mb-[00px]">Challenge :</h4>
           <div
             dangerouslySetInnerHTML={{ __html: challenge }}
             className="text-base"
           />
         </div>
-        <div className="WorkContent w-[45%]">
+        <div className="WorkContent w-full md:w-[45%]">
           <h4 className="mb-[00px]">Approach :</h4>
           <div
             dangerouslySetInnerHTML={{ __html: approach }}
@@ -187,7 +187,7 @@ const page = async ({ params }: PageProps) => {
       </section>
         {/* Approach banner */}
         <section className="max-w-[1400px] m-auto">
-        <div className=" relative w-full h-[660px]">
+        <div className=" relative w-full h-[400px] lg:h-[660px]">
           <Image
             src={approach_banner}
             alt={title}
@@ -198,7 +198,7 @@ const page = async ({ params }: PageProps) => {
       </section>
         {/* Impact */}
         <section className="sectionContainer flex flex-row flex-wrap gap-8 items-center justify-between">
-        <div className="WorkContent w-[50%]">
+        <div className="WorkContent w-full lg:w-[50%]">
           <h4 className="mb-[00px]">Impact :</h4>
           <div
             dangerouslySetInnerHTML={{ __html: impact }}
@@ -212,7 +212,7 @@ const page = async ({ params }: PageProps) => {
           return (
             <div
               key={index}
-              className=" ImpactGallery relative w-full h-[500px]"
+              className=" ImpactGallery relative w-full h-[200px] md:h-[400px] lg:h-[500px]"
             >
               <Image
                 src={image}
@@ -226,9 +226,9 @@ const page = async ({ params }: PageProps) => {
         })}
       </section>
       {/* client testimonial */}
-      <section className="max-w-[1400px] m-auto grid grid-cols-2 gap-[80px] my-[50px] justify-center items-center">
+      <section className="max-w-[1400px] m-auto grid grid-cols-1 md:grid-cols-2 gap-[80px] my-[50px] justify-center items-center">
         <div>
-            <Image src={client_testimonial_image} alt={`${title} testimonial`} width={668} height={550} />
+            <Image src={client_testimonial_image} alt={`${title} testimonial`} width={668} height={550} className=" rounded-[20px]" />
         </div>
         <div>
             <h3 className="mb-3">{client_testimonial_tiitle}</h3>
@@ -241,7 +241,7 @@ const page = async ({ params }: PageProps) => {
             <div className="mb-5">
             <h3 className=" text-primary">View more projects</h3>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-x-5 gap-y-14">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-10 lg:gap-y-14">
             {Projects.map((project: any) => {
                 return (
                 <ProjectCard

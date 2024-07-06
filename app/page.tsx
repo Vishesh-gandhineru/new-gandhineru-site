@@ -20,6 +20,7 @@ const page = async () => {
   return (
     <main>
       <HeroBanner
+        buttonHref="/services"
         className=" bg-hero-home-mob-banner bg-bottom lg:bg-center  lg:bg-hero-home-banner flex items-center h-[587px] lg:h-[640px] container m-auto p-5 lg:p-12"
         buttonText="Build your Brand"
       >
@@ -61,12 +62,11 @@ const page = async () => {
           <TestimonialCard />
         </div>
       </section>
-      <section className="sectionContainer relative">
+      <section className="sectionContainer flex-col flex gap-[80px]">
         <Heading
           Heading="Our Services"
-          subHeading="A Toolkit of Insight, Intuition & Tech" 
-          className=" relative  md:absolute top-[50px] left-0"
-          />
+          subHeading="A Toolkit of Insight, Intuition & Tech"
+        />
         <ServiceCardSection />
       </section>
       <section className="sectionContainer flex gap-5">        

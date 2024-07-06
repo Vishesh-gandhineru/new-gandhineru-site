@@ -112,7 +112,7 @@ const Work = () => {
           </Suspense>
         </div>
         <div className="text-right">
-          <PrimaryButton>View all Work</PrimaryButton>
+          <PrimaryButton href="/work">View all Work</PrimaryButton>
         </div>
       </div>
     </div>

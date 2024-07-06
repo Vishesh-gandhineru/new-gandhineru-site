@@ -20,7 +20,7 @@ const ProjectCard = ({title  , image  , slug} : CardProps) => {
 
   return (
     <div className=' relative' onMouseOver={()=>{setCursorType("BlogCard"); setCursorText("View")}} onMouseOut={()=>{setCursorText("") ; setCursorType("default")} } onClick={()=>{setCursorText("") ; setCursorType("default")}}>
-        <div className='w-full h-[300px] relative'>
+        <div className='w-full h-[250px] md:h-[300px] relative'>
           <Link href={`/works/${slug}`}> 
           
             <Image src={image} fill = {true} sizes='2x' alt={title} className='rounded-[20px] object-cover' quality={100}/>

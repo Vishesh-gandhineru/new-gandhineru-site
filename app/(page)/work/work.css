@@ -19,14 +19,7 @@
 .workCard:nth-child(3n) .workCardImage{
     height: 630px;
 }
-@media (max-width:767px){
-    .workCard{
-        grid-column: span 1 !important;
-    }
-    .workCard:nth-child(3n) .workCardImage{
-        height: 330px;
-    }
-}
+
 
 .projectGallery:first-child {
     grid-column: span 5;
@@ -44,9 +37,50 @@
     grid-column: span 5;
     height: 700px;
 }
-
-.ImpactGallery:nth-child(3n){
+.ImpactGallery:nth-child(3){
     grid-column: span 2;
-    height: 650px;
+    height: 700px;
+
 }
 
+@media (max-width:880px){
+  
+    .projectGallery:nth-child(2n){
+        grid-column: span 2;
+        height: 400px;
+    }
+    .projectGallery:nth-child(3n){
+        grid-column: span 3;
+        height: 400px;
+    }
+    .projectGallery:nth-child(4n){
+        grid-column: span 5;
+        height: 400px;
+    }
+    .ImpactGallery:nth-child(3){
+        grid-column: span 2;
+        height: 400px;
+    
+    }
+    
+}
+
+
+@media (max-width:767px){
+    .workCard{
+        grid-column: span 1 !important;
+    }
+    .workCard:nth-child(3n) .workCardImage{
+        height: 330px;
+    }
+
+    .projectGallery{
+        grid-column: span 5 !important;
+        height: 200px !important;
+    }
+    .ImpactGallery{
+        grid-column: span 2 !important;
+        height: 200px !important;
+    
+    }
+}

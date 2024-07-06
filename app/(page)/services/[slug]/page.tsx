@@ -25,6 +25,7 @@ const page = async ({params} : ServiceProps) => {
   return (
     <main>
     <HeroBanner
+      buttonHref='/contact'
       className="container"
       style={{ backgroundImage: `url(${bannerImageUrl})` }}
       buttonText="Book a Clarity Call"

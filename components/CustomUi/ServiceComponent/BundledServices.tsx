@@ -13,16 +13,16 @@ const BundledServices = () => {
   const { data : bundleService, isLoading, error } = useSWR("GetBundleService", fetcher);
 
   return (
-    <section className='mt-[50px]'>
+    <section className='mt-[50px] w-full'>
         {bundleService?.map((item: any) => {
             const bgImage = item.meta["banner-image"];
             const serviceContent = item.meta["overview-content"];
             return (
-                <div key={item.id} className='flex gap-8 justify-start items-center w-[80%]'>
-                    <div className=' relative w-[480px] h-[280px]'><Image src={bgImage} alt='bundleServiceImage' fill={true} className=' object-cover object-center rounded-2xl'/></div>
-                    <div className='flex flex-col gap-4 items-start w-[40%]'>
+                <div key={item.id} className='flex flex-col lg:flex-row gap-8 justify-start items-center w-full lg:w-[80%]'>
+                    <div className=' relative w-full lg:w-[480px] h-[280px]'><Image src={bgImage} alt='bundleServiceImage' fill={true} className=' object-cover object-center rounded-2xl'/></div>
+                    <div className='flex flex-col gap-4 items-start w-full lg:w-[40%]'>
                         <h4>{item.title.rendered}</h4>
-                        <div dangerouslySetInnerHTML={{ __html: serviceContent }} />
+                        <div dangerouslySetInnerHTML={{ __html: serviceContent }} className='text-body'/>
                         <SecondaryButton className='mt-[20px]'>Learn More</SecondaryButton>
                     </div>
 

@@ -37,14 +37,14 @@ export default function CompareTable() {
             <TableHead className="text-primary">
               <h4>Features</h4>
             </TableHead>
-            <TableHead className="px-4 py-3 text-primary text-center">
+            <TableHead className="px-4 py-3 text-primary text-center text-nowrap">
               <h4>Other Companies</h4>
             </TableHead>
-            <TableHead className="px-4 py-3 text-primary text-center">
+            <TableHead className="px-4 py-3 text-primary text-center text-nowrap">
               <h4>Freelancers</h4>
             </TableHead>
-            <TableHead className="px-4 py-3 text-primary text-center flex justify-center">
-              <LogoBlack />
+            <TableHead className="px-4 py-3 text-primary text-center flex justify-center text-nowrap">
+              <LogoBlack className="h-[40px] w-[130px]" />
             </TableHead>
           </TableRow>
         </TableHeader>
@@ -52,7 +52,7 @@ export default function CompareTable() {
           { TableData.map((data, index) => {
             return(
             <TableRow key={index}>
-              <TableCell className="text-primary text-base">
+              <TableCell className="text-primary text-base text-nowrap">
               {data.feature}
               </TableCell>
               <TableCell className="px-4 py-3">
