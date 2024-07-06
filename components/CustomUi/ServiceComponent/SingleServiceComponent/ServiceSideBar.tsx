@@ -12,7 +12,7 @@ type ServiceSideBarProps = {
 
 const ServiceSideBar = ({className} : ServiceSideBarProps) => {
   return (
-    <div className={cn("serviceSideBar flex flex-col gap-4 h-fit px-5 text-base text-[#C7C7C7]", [
+    <div className={cn("serviceSideBar justify-start flex flex-col gap-4 h-fit  text-base text-[#C7C7C7]", [
         className,
 
     ])}>

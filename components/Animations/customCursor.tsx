@@ -50,12 +50,20 @@ const CursorFollower = () => {
       
         
     }, 
+    WorkCard : {
+        width : 80,
+        height : 80,
+        background: "rgba( 44, 44, 44, 0.5 )",        
+        backdropFilter: "blur( 10.5px )",
+        WebkitBackdropFilter: "blur( 10.5px )",
+        
+    }
  
    }
 
 return (  
         <motion.div
-            className="hidden lg:flex cursor fixed rounded-full bg-[#D10000] shadow-md w-4 h-4 z-[1000] pointer-events-none translate-x-[-50%] translate-y-[-50%] left-0 right-0 top-0 items-center justify-center" 
+            className="hidden xl:flex cursor fixed rounded-full bg-[#D10000] shadow-md w-4 h-4 z-[1000] pointer-events-none translate-x-[-50%] translate-y-[-50%] left-0 right-0 top-0 items-center justify-center" 
             style={{
                 left: smoothMouse.x,
                 top:  smoothMouse.y
@@ -65,7 +73,7 @@ return (
             animate={cursorType}
 
         >
-            <span className='text-white text-sm tracking-wider'>{cursorText}</span>
+            <span className='text-white text-sm tracking-[2px] uppercase'>{cursorText}</span>
         </motion.div>  
 );
 };

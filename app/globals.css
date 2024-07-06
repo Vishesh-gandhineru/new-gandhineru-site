@@ -399,3 +399,13 @@
   }
 
  
+  .hideScroll::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+  
+.glassmorphism {
+  box-shadow: inset 0px 0px 100px rgba(231, 231, 234, 0.37);
+  backdrop-filter: blur( 14.5px );
+  -webkit-backdrop-filter: blur( 50.5px ); 
+}

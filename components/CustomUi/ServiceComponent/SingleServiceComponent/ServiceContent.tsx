@@ -15,7 +15,7 @@ const ServiceContent = ({ service }: Record<string, any>) => {
 
 
   return (
-    <div className="content w-[80%] space-y-[50px]">
+    <div className="content w-full lg:w-[80%] space-y-[50px]">
       <section id="overview" className=" space-y-12">
         <div className=" space-y-4 relative">
           <h2>{meta["overview-heading"]}</h2>

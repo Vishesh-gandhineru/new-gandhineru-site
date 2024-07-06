@@ -73,7 +73,7 @@ type CategoryType = {
 
         <div className="w-full md:w-[80%]">
           <CarouselContent>
-            {post?.map((post: any) => {
+            {post?.map((post: any , i: number) => {
               return (
                 <CarouselItem
                   key={post.id}
@@ -81,6 +81,7 @@ type CategoryType = {
                 >
                   <BlogCard
                     key={post.id}
+                    index={i}
                     title={post.title.rendered}
                     date={post.date}
                     image={post._embedded["wp:featuredmedia"][0].source_url}

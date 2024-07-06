@@ -38,9 +38,10 @@ const WorKPage = async ({searchParams} : WorkPageProps) => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-5 gap-x-5 gap-y-14">   
         
-        {works.map((work: any) => {
+        {works.map((work: any , i: number) => {
           return (
-            <WorkCard   
+            <WorkCard 
+            i={i}  
             key={work.id}           
               className="workCard"
                 image={work._embedded["wp:featuredmedia"][0].source_url}

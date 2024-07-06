@@ -3,10 +3,10 @@
 import { create } from 'zustand'
 
 type CursorState = {
-    cursorType: "default" | "BlogCard"
+    cursorType: "default" | string
     cursorText: string
     setCursorText: (cursorText: string) => void
-    setCursorType: (cursorType: "default" | "BlogCard" | undefined) => void
+    setCursorType: (cursorType: "default" | string ) => void
 
 }
 
@@ -14,5 +14,5 @@ export const useCursorState = create<CursorState>((set) => ({
     cursorType: "default",
     cursorText : "",
     setCursorText: (cursorText: string) => set({cursorText}),
-    setCursorType: (cursorType: "default" | "BlogCard" | undefined) => set({cursorType})
+    setCursorType: (cursorType: "default" | string) => set({cursorType})
 }))

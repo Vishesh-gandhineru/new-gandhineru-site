@@ -4,6 +4,8 @@ import { useCursorState } from '@/store/useCursorState'
 import Link from 'next/link'
 import Image from 'next/image'
 import React from 'react'
+import { motion } from 'framer-motion'
+
 
 
 type BlogCardProps = {
@@ -12,9 +14,10 @@ type BlogCardProps = {
     image: string
     readTime: number
     slug: string
+    index: number
 }
 
-const BlogCard = ({title , date , image , readTime , slug} : BlogCardProps) => {
+const BlogCard = ({title , date , image , readTime , slug , index} : BlogCardProps) => {
 
   const {setCursorType , setCursorText} = useCursorState();
 
@@ -23,7 +26,11 @@ const BlogCard = ({title , date , image , readTime , slug} : BlogCardProps) => {
   const FormatedDate = `${PostDate.getDate()} ${Months[PostDate.getMonth()]} ${PostDate.getFullYear()}`
 
   return (
-    <div className=' relative' onMouseOver={()=>{setCursorType("BlogCard"); setCursorText("View")}} onMouseOut={()=>{setCursorText("") ; setCursorType("default")} } onClick={()=>{setCursorText("") ; setCursorType("default")}}>
+    <motion.div 
+    initial={{opacity: 0 , y: 50}}
+    whileInView={{opacity: 1 , y: 0}}
+    transition={{duration: 0.3 , ease: "easeInOut", delay: 0.1 * index}}
+    className=' relative' onMouseOver={()=>{setCursorType("BlogCard"); setCursorText("View")}} onMouseOut={()=>{setCursorText("") ; setCursorType("default")} } onClick={()=>{setCursorText("") ; setCursorType("default")}}>
         <div className='w-full h-[300px] relative'>
           <Link href={`/blogs/${slug}`}> 
           
@@ -37,7 +44,7 @@ const BlogCard = ({title , date , image , readTime , slug} : BlogCardProps) => {
         <span className=' absolute top-3 left-3 bg-white rounded-full px-5 py-2 text-primary text-sm uppercase'>
         {readTime} min read
         </span>
-    </div>
+    </motion.div>
   )
 }
 

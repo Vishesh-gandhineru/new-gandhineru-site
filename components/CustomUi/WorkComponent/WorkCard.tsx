@@ -10,9 +10,10 @@ type WorksProps = {
   tags: Array<{ name: string }>;
   slug: string;
   className?: string;
+  i: number
 };
 
-const WorkCard = ({ image, title, tags, slug , className}: WorksProps) => {
+const WorkCard = ({ image, title, tags, slug , className, i}: WorksProps) => {
   return (
     <div className={cn(" space-y-8", [className])}>
       <div className=" workCardImage relative w-full h-[330px] md:h-[450px]">
