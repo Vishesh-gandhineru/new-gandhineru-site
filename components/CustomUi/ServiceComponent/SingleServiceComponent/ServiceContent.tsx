@@ -76,15 +76,15 @@ const ServiceContent = ({ service }: Record<string, any>) => {
             
         </div>
       </section>
-      <section>
+      <section id="relevant-projects">
         <h3>View work samples</h3>
         <h3>Need to working on the as this will come from wordpress</h3>
       </section>
-      <section>
+      <section id="testimonials">
         <h3>Testimonials</h3>
         <TestimonialCard />
       </section>
-      <section>
+      <section id="faqs" >
         <h3>FAQs</h3>
         <FAQSection />
       </section>

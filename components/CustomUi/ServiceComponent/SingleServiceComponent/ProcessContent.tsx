@@ -7,33 +7,19 @@ type ProcessContentProps = {
 };
 
 const ProcessContent = ({ item }: ProcessContentProps) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const IsinView = useInView(ref);
 
- const variants = {
-    visible: { opacity: 1, y: 0 },
-    hidden: { opacity: 0, y: 50 },
-  };
    
   return (
-    <div ref={ref} className="flex w-full justify-between">
-        <MotionConfig  transition={{ duration: 0.5 , ease: "easeInOut" , delay: 0.5}}    >            
-      <motion.div  
-       variants={variants}
-        initial="hidden"
-        animate={IsinView ? "visible" : "hidden"}  
-       
-      className="process-title w-[100%] text-[20px]">
+    <div className="flex flex-col gap-4 justify-start items-start select-none">              
+      <div        
+      className="process-title text-[20px]">
         {item["process-title"]}
-      </motion.div>
-      <motion.div
-      variants={variants}
-      initial="hidden"
-      animate={IsinView ? "visible" : "hidden"}  
+      </div>
+      <div
         dangerouslySetInnerHTML={{ __html: item["process-content"] }}
-        className="w-[100%] text-base"
+        className="w-[200px] lg:w-[200px] text-base text-wrap"
       />
-        </MotionConfig>
+     
     </div>
   );
 };

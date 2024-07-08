@@ -15,12 +15,12 @@ const HeroBanner = ({
   className,
   buttonText,
   style,
-  buttonHref
+  buttonHref,
 }: HeroBannerProps) => {
   return (
     <section
       className={cn(
-        "h-[350px] capitalize rounded-[20px] p-6 relative bg-cover bg-center bg-no-repeat",
+        "h-[350px] container capitalize rounded-[20px] p-6 relative bg-cover bg-center bg-no-repeat",
         [className]
       )}
       style={style}

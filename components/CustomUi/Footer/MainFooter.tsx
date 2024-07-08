@@ -4,6 +4,8 @@ import { SecondaryButton, SocialButton } from "../CustomButton";
 import { WhiteAndIcon, LogoBlack } from "@/components/CustomIcons";
 import Marquee from "../Marquee/Marquee";
 import NewsLetterForm from "./FooterNewsLetterForm";
+import Link from "next/link";
+
 
 const MainFooter = () => {
   return (
@@ -43,31 +45,31 @@ const MainFooter = () => {
                     <div className="w-full col-span-1">
                       <h2 className="text-2xl mb-4 text-primary">Info</h2>
                       <ul className="grid grid-cols-2 md:grid-cols-1 gap-3  text-[#404040] text-[14px] lg:text-base">
-                        <li>About</li>
-                        <li>Case Studies</li>
-                        <li>Blogs</li>
+                        <Link href='/about'>About</Link>
+                        <Link href='/work'>Case Studies</Link>
+                        <Link href='/blogs'>Blogs</Link>
                       </ul>
                     </div>
                     <div className="w-full col-span-2">
                       <h2 className="text-2xl mb-4 text-primary">Services</h2>
                       <ul className="grid grid-cols-2 md:grid-cols-2 gap-y-3 lg:gap-x-[10px] text-[14px] lg:text-base text-[#404040]">
-                        <li>Branding</li>
-                        <li>Process Automation</li>
-                        <li>UI/UX</li>
-                        <li>Content</li>
-                        <li>Web Development</li>
-                        <li>Bundled Services</li>
+                        <Link href='/services#branding-design'>Branding</Link>
+                        <Link href='/services#no-code-process'>Process Automation</Link>
+                        <Link href='/services#illustration'>UI/UX</Link>
+                        <Link href='/services#product-development'>Content</Link>
+                        <Link href='/services#web-development'>Web Development</Link>
+                        <Link href='/services#bundled-services'>Bundled Services</Link>
                       </ul>
                     </div>
                   </div>
 
                   {/* Social button */}
                   <div className="mt-8 md:mt-8 flex flex-row gap-y-3 flex-wrap md:gap-y-4  ">
-                    <SocialButton className="px-4 md:px-8 text-[12px] md:text-base">Facebook</SocialButton>
-                    <SocialButton className="px-4 md:px-8 text-[12px] md:text-base">Dribbble</SocialButton>
-                    <SocialButton className="px-4 md:px-8 text-[12px] md:text-base">Clutch</SocialButton>
-                    <SocialButton className="px-4 md:px-8 text-[12px] md:text-base">LinkedIn</SocialButton>
-                    <SocialButton className="px-4 md:px-8 text-[12px] md:text-base">Instagram</SocialButton>
+                    <SocialButton className="px-4 md:px-7 text-[12px] md:text-base">Facebook</SocialButton>
+                    <SocialButton className="px-4 md:px-7 text-[12px] md:text-base">Dribbble</SocialButton>
+                    <SocialButton className="px-4 md:px-7 text-[12px] md:text-base">Clutch</SocialButton>
+                    <SocialButton className="px-4 md:px-7 text-[12px] md:text-base">LinkedIn</SocialButton>
+                    <SocialButton className="px-4 md:px-7 text-[12px] md:text-base">Instagram</SocialButton>
                   </div>
                 </div>
               </div>

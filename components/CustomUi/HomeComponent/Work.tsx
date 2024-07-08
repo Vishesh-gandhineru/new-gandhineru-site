@@ -85,7 +85,10 @@ const Work = () => {
                         WorkCategory == category.id
                           ? "text-primary font-bold"
                           : "",
+
+                        category.count == 0 ? "hidden" : ""   
                       ]
+
                     )}
                   >
                     {category.name}

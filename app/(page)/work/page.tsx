@@ -25,7 +25,7 @@ const WorKPage = async ({searchParams} : WorkPageProps) => {
   
    
   return (
-    <main>
+    <main className="mt-[80px]">
       <section className="sectionContainer">
         <div className="mb-10 space-y-4">
         <h1 className=" text-primary">Explore our Work</h1>

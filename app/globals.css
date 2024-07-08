@@ -10,6 +10,7 @@
     font-size: 16px;
     scroll-behavior: smooth;
     overflow-x: hidden !important;
+    scroll-padding-top: 100px; 
   }
 
 
@@ -109,6 +110,25 @@
 
       --borderHideColor : #fff
     }
+    @media (max-width: 880px) {
+      :root {
+        --fs-h1 : 3.25rem;
+        --lh-h1 : 3.875rem;
+        --fs-h2 : 2.5rem;
+        --lh-h2 : 2.875rem;
+        --fs-h3 : 2rem;
+        --lh-h3 : 2.5rem;
+        --fs-h4 : 1.25rem;
+        --lh-h4 : 2.25rem;
+        --fs-h5 : 1.25rem;
+        --lh-h5 : 1.5rem;
+        --fs-h6 : 1.125rem;
+        --lh-h6 : 1.25rem;
+        --fs-body : 0.875rem;
+        --lh-body : 1.25rem;
+      }
+    }
+
     @media (max-width: 640px) {
       :root {
         --fs-h1 : 2.25rem;
@@ -173,25 +193,9 @@
 
 
   .sectionContainer {
-    @apply py-8 w-[1300px] mx-auto my-[20px];
+    @apply py-8 max-w-[1300px] w-full mx-auto my-[20px];
   }
   
-  @media (max-width: 1400px) {
-    .sectionContainer {
-      @apply py-8 w-full mx-auto my-[20px];
-    }
-  }
-  @media (max-width: 1024px) {
-    .sectionContainer {
-      @apply py-8 w-full mx-auto my-[20px];
-    }
-  }
- 
-  @media (max-width: 640px) {
-    .sectionContainer {
-      @apply py-5 w-full mx-auto my-[20px];
-    }
-  }
  
   
  

@@ -52,7 +52,7 @@ const page = async ({ params }: PageProps) => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className=" relative w-full h-[400px]"
+          className=" relative w-full h-[400px] mt-[30px]"
         >
           <Image
             src={banner_image}

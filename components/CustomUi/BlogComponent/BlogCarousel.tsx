@@ -71,7 +71,7 @@ type CategoryType = {
           </div>
         </div>
 
-        <div className="w-full md:w-[80%]">
+        <div className="w-full lg:w-[80%]">
           <CarouselContent>
             {post?.map((post: any , i: number) => {
               return (

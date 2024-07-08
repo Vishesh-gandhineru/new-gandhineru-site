@@ -64,7 +64,7 @@ const NewsLetterForm = ({ className }: NewsLetterFormProps) => {
                     placeholder="Name"
                     zodField={field}
                     ErrorMessage={FullnameField.error?.message}
-                    className="w-full text-start text-sm pl-0 pb-1"
+                    className="w-full md:w-fit lg:w-fit text-start text-sm pl-0 pb-1"
                   />
                 </FormControl>
               </FormItem>
@@ -80,7 +80,7 @@ const NewsLetterForm = ({ className }: NewsLetterFormProps) => {
                     placeholder="Email"
                     zodField={field}
                     ErrorMessage={EmailField.error?.message}
-                    className="w-full text-start text-sm pl-0 pb-1"
+                    className="w-full lg:w-fit text-start text-sm pl-0 pb-1"
                   />
                 </FormControl>
               </FormItem>

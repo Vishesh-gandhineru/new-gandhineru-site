@@ -30,7 +30,7 @@ const ServicePage = () => {
           width={1260}
           height={360}
           alt="Picture of the author"
-          className="m-auto w-full h-[200px] object-cover object-[80%] rounded-2xl"
+          className="m-auto w-full h-[200px] md:h-[400px] object-cover object-[80%] rounded-2xl"
         />
         <PrimaryButton className="to-white" href="/contact" icon={<ContactIcon />}>
           Let&apos;s Chat?
@@ -43,7 +43,7 @@ const ServicePage = () => {
         />
         <ServiceCardSection />
       </section>
-      <section className="sectionContainer">
+      <section id="bundled-services" className="sectionContainer">
         <Heading
           Heading="Bundled Services"
           subHeading="Experience seamless synergy with our bundled services, combining the power of brand identity, website design + development, digital design and copy writing to elevate your brand and maximize impact across all touchpoints."
