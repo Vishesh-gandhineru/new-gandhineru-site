@@ -1,22 +1,77 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef } from "react";
 import { PrimaryButton } from "../../CustomButton";
 import { ContactIcon } from "@/components/CustomIcons";
 import Image from "next/image";
 import ProcessTimeLine from "./ProcessTimeLine";
 import TestimonialCard from "../../HomeComponent/TestimonialCard";
 import { FAQSection } from "../FAQSlider";
+import { GetAllWork } from "@/ServerActions/FetchWork";
+import ProjectCard from "../../WorkComponent/ProjectCard";
 
-const ServiceContent = ({ service }: Record<string, any>) => {
+import useSWR from "swr";
+import { motion, useScroll, useInView, useTransform } from "framer-motion";
+import { useRouter } from "next/navigation";
+
+
+type ServiceContentProps = {
+  service: Record<string, any>;
+  setActiveSection: React.Dispatch<React.SetStateAction<string>>;
+};
+
+const ServiceContent = ({ service , setActiveSection }: ServiceContentProps) => {
   const { meta } = service[0];
-
-  
+  const WorkCategory = meta.work_category_id;
   const coverageList = Object.values(meta["coverage-list"]);
   const ProcessList = Object.values(meta["process-list"]);
+  const fetcher = () => GetAllWork(WorkCategory);
 
+  const { data: fetchWork } = useSWR("WorkCategory", fetcher);
+  const container = useRef(null);
+  const overview = useRef(null);
+  const why = useRef(null);
+  const coverages = useRef(null);
+  const process = useRef(null);
+  const faqs = useRef(null);
+  const testimonials = useRef(null);
+  const relevantProjects = useRef(null);
+
+  const overViewInView = useInView(overview);
+  const whyInView = useInView(why );
+  const coveragesInView = useInView(coverages);
+  const processInView = useInView(process);
+  const faqsInView = useInView(faqs);
+  const testimonialsInView = useInView(testimonials);
+  const relevantProjectsInView = useInView(relevantProjects);
+  
+  useEffect(() => {
+    if (overViewInView) {
+      setActiveSection("overview");
+    }
+    if (whyInView) {
+      setActiveSection("why");
+    }
+    if (coveragesInView) {
+      setActiveSection("coverages");
+    }
+    if (processInView) {
+      setActiveSection("process");
+    }
+    if (faqsInView) {
+      setActiveSection("faqs");
+    }
+    if (testimonialsInView) {
+      setActiveSection("testimonials");
+    }
+    if (relevantProjectsInView) {
+      setActiveSection("relevant-projects");
+    }
+  } , [overViewInView , whyInView , coveragesInView , processInView , faqsInView , testimonialsInView , relevantProjectsInView])
 
   return (
-    <div className="content w-full lg:w-[80%] space-y-[50px]">
-      <section id="overview" className=" space-y-12">
+    <div className="content w-full lg:w-[80%] space-y-[50px]" ref={container}>
+      <motion.section id="overview" className="space-y-12" ref={overview}>
         <div className=" space-y-4 relative">
           <h2>{meta["overview-heading"]}</h2>
           <div className="w-[80%]">
@@ -40,51 +95,66 @@ const ServiceContent = ({ service }: Record<string, any>) => {
             alt={meta["overview-heading"]}
           />
         </div>
-      </section>
+      </motion.section>
 
-      <section id="why">
+      <motion.section id="why" ref={why}>
         <div className=" space-y-4">
           <h3>{meta["why-title"]}</h3>
 
-          <div dangerouslySetInnerHTML={{ __html: meta["why-content"] }} className=" grid grid-cols-2 gap-5 grid-flow-dense" />
+          <div
+            dangerouslySetInnerHTML={{ __html: meta["why-content"] }}
+            className=" grid grid-cols-2 gap-5 grid-flow-dense"
+          />
         </div>
-      </section>
+      </motion.section>
 
-
-      <section id="coverages">
+      <motion.section id="coverages" ref={coverages}>
         <div className=" space-y-4">
-            <h3>Coverages</h3>
-            <div>
-            {
-                coverageList.map((item: any, index: number) => {
-                        return (
-                                <li key={index}>{item["coverage-title"]}</li>
-                        )
-                })
-            }
-
-            </div>
-
-            
+          <h3>Coverages</h3>
+          <div>
+            {coverageList.map((item: any, index: number) => {
+              return <li key={index}>{item["coverage-title"]}</li>;
+            })}
+          </div>
         </div>
-      </section>
-      <section id="process">
+      </motion.section>
+      <section id="process" ref={process}>
         <div className=" space-y-4">
-            <h3>Process</h3>
-           <ProcessTimeLine ProcessList={ProcessList}/>
-
-            
+          <h3>Process</h3>
+          <ProcessTimeLine ProcessList={ProcessList} />
         </div>
       </section>
-      <section id="relevant-projects">
+      <motion.section
+      
+        id="relevant-projects"
+        className="space-y-8"
+        ref={relevantProjects}
+      >
         <h3>View work samples</h3>
-        <h3>Need to working on the as this will come from wordpress</h3>
-      </section>
-      <section id="testimonials">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-10 lg:gap-y-14">
+          {fetchWork?.map((project: any, index: number) => {
+            return (
+              <ProjectCard
+                index={index}
+                key={project.id}
+                image={project._embedded["wp:featuredmedia"][0].source_url}
+                title={project?.title.rendered}
+                slug={project.slug}
+              />
+            );
+          })}
+        </div>
+      </motion.section>
+      <motion.section
+     
+        id="testimonials"
+        className="sectionContainer flex"
+        ref={testimonials}
+      >
         <h3>Testimonials</h3>
         <TestimonialCard />
-      </section>
-      <section id="faqs" >
+      </motion.section>
+      <section  id="faqs" className="sectionContainer" ref={faqs}>
         <h3>FAQs</h3>
         <FAQSection />
       </section>

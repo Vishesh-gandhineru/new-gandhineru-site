@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import "./MegaMenuStyle.css";
 import { ArrowRight } from "@/components/CustomIcons";
@@ -66,6 +66,9 @@ const Megamenu = ({ isActive }: MegamenuProps) => {
 export default Megamenu;
 
 export function MegaMenuContent() {
+
+ const [menuIsHoverd, setMenuIsHoverd] = useState(false);
+
   const MenuContentVariant = {
     initial: {
       opacity: 0,
@@ -180,21 +183,28 @@ export function MegaMenuContent() {
               custom={i}
               animate="enter"
               exit="exit"
-              transition={{ duration: 0.5 , ease:"easeInOut"}}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
               key={i}
               layout
-              className="MenuBox justify-end hover:justify-start transition-all ease-out duration-300 h-[100px] lg:h-[400px] border-b-[1px] border-r-[1px] last:col-span-2 lg:last:col-span-1"
+              className="MenuBox justify-end hover:justify-start transition-all ease-out duration-300 h-[100px] lg:h-[400px] border-b-[1px] border-r-[1px] last:col-span-2 lg:last:col-span-1 group"
             >
               <Link href={item.link}>
                 <h3>{item.title}</h3>
               </Link>
-              <div>
+              <div className="hidden group-hover:block">
                 {item.subMenu &&
                   item.subMenu.map((subItem, i) => {
                     return (
-                      <Link key={i} href={subItem.link}>
+                      <motion.div key={i}
+                      initial={{opacity: 0}}
+                      animate={{opacity: 1}}
+                      transition={{duration: 0.5 , delay:i * 0.1}}
+                      
+                      >
+                      <Link href={subItem.link}>
                         <h4>{subItem.title}</h4>
                       </Link>
+                      </motion.div>
                     );
                   })}
               </div>

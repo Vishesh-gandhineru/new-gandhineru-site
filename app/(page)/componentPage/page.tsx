@@ -1,13 +1,19 @@
 import React from 'react'
 import { PrimaryButton , SecondaryButton, SocialButton } from '@/components/CustomUi/CustomButton'
-import { ContactIcon } from '@/components/CustomIcons'
+import { ArrowRight, ContactIcon } from '@/components/CustomIcons'
 import HeroBanner from '@/components/CustomUi/HeroBanner'
 import ContactForm from '@/components/CustomUi/ContactForm'
 import DemoBlogPost from '@/utils/DemoBlogPost';
 import BlogCard from '@/components/CustomUi/BlogCard'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
+import { cn } from '@/lib/utils'
+import ShflleCard from '@/components/CustomUi/ShflleCard'
+
 
 
 const page = () => {
+  
   return (
     <section>  
       <HeroBanner buttonHref='#' className=' bg-hero-home-banner' buttonText='Build your Brand'><div>
@@ -59,6 +65,10 @@ and build brands</h1>
       <h1>Form</h1>
       <ContactForm />
     </div>
+
+   
+   
+    
     </section>
   )
 }

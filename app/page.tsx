@@ -11,6 +11,7 @@ import BlogCarousel from "@/components/CustomUi/BlogComponent/BlogCarousel";
 import Work from "@/components/CustomUi/HomeComponent/Work";
 import ServiceCardSection from "@/components/CustomUi/ServiceComponent/ServiceCardSection";
 import { MotionDiv , MotionSection } from "@/components/CustomUi/MotionDiv";
+import { Skeleton } from "@/components/ui/skeleton";
 
 
 
@@ -64,7 +65,7 @@ const page = async () => {
       className="sectionContainer w-full md:max-w-[1000px]">
         <Work />
       </MotionSection>
-      <section className="sectionContainer flex flex-col lg:flex-row gap-5 md-flex-row justify-between items-start md:items-center">
+      <section className="sectionContainer flex flex-col lg:flex-row gap-5 md-flex-row justify-between items-start md:items-center space-y-8">
         <Heading
           Heading="Trust earned the right way"
           subHeading="Thanks for rolling the dice on us"
@@ -83,6 +84,8 @@ const page = async () => {
       <section className="sectionContainer flex gap-5">        
           <BlogCarousel />
       </section>
+
+     
     </main>
   );
 };

@@ -1,47 +1,59 @@
 "use client"
 
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-  } from "@/components/ui/carousel"
   import Image from "next/image"
 
-  import { motion } from "framer-motion"
 
 
-import React from 'react'
+import React, { useState } from 'react'
+import ShflleCard from "../ShflleCard";
+
+type Item = {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+};
 
 const TestimonialCard = () => {
+
+  const [content, setContent] = useState<Item[]>([
+    {
+      id: 1,
+      title: "Vishesh",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus lectus sed eros tempus imperdiet.",
+      image: '/Images/compony logo.png'
+    },
+    {
+      id: 2,
+      title: "Dishank",
+      description: "Lorem ipsum dolor  Sed cursus lectus sed eros tempus imperdiet. sit amet, consectetur adipiscing elit.",
+      image: '/Images/compony logo.png'
+    },
+    {
+      id: 3,
+      title: "Neha",
+      description: "sit amet, consectetur adipiscing elit. sit amet, consectetur adipiscing elit.",
+      image: '/Images/compony logo.png'
+    },
+    {
+      id: 4,
+      title: "Name",
+      description: "Lorem ipsum dolor  Sed cursus lectus sed eros tempus imperdiet. sit amet, consectetur adipiscing elit.",
+      image: '/Images/compony logo.png'
+    },
+    {
+      id: 5,
+      title: "Full Name",
+      description: "Lorem ipsum dolor  Sed cursus lectus sed eros tempus imperdiet. sit amet, consectetur adipiscing elit.",
+      image: '/Images/compony logo.png'
+    },
+  ]);
+
   return (
-    <Carousel>
-    <CarouselContent className="-ml-0">     
-      <CarouselItem className="p-6 lg:p-12 border-[1px] rounded-[20px] border-[#DADADA] relative">
-        <div className="w-full lg:w-[70%] flex flex-col gap-3">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus lectus sed eros tempus imperdiet.</p>
-            <p>- Name Surname</p>
-        </div>
-        <Image src='/Images/compony logo.png' width={110} height={30} alt='Logo Banner' className='mt-8 lg:mt-0 float-end relative lg:absolute lg:bottom-[12%] lg:right-[5%]'/> 
-      </CarouselItem>
-      <CarouselItem className="p-6 lg:p-12 border-[1px] rounded-[20px] border-[#DADADA] relative">
-        <div className="w-full lg:w-[70%] flex flex-col gap-3">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus lectus sed eros tempus imperdiet.</p>
-            <p>- Name Surname</p>
-        </div>
-        <Image src='/Images/compony logo.png' width={110} height={30} alt='Logo Banner' className=' mt-8 lg:mt-0 float-end relative lg:absolute lg:bottom-[12%] lg:right-[5%]'/> 
-      </CarouselItem>
-      <CarouselItem className="p-6 lg:p-12 border-[1px] rounded-[20px] border-[#DADADA] relative">
-        <div className="w-full lg:w-[70%] flex flex-col gap-3">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus lectus sed eros tempus imperdiet.</p>
-            <p>- Name Surname</p>
-        </div>
-        <Image src='/Images/compony logo.png' width={110} height={30} alt='Logo Banner' className=' mt-8 lg:mt-0 float-end relative lg:absolute lg:bottom-[12%] lg:right-[5%]'/> 
-      </CarouselItem>
-      
-    </CarouselContent>
-  </Carousel>
+
+      <ShflleCard content={content} setContent={setContent} />
+
+
   )
 }
 

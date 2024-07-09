@@ -15,9 +15,10 @@ type BlogCardProps = {
     readTime: number
     slug: string
     index?: number
+
 }
 
-const BlogCard = ({title , date , image , readTime , slug , index = 0} : BlogCardProps) => {
+const BlogCard = ({title , date , image , readTime , slug , index = 0 } : BlogCardProps) => {
 
   const {setCursorType , setCursorText} = useCursorState();
 
@@ -26,6 +27,8 @@ const BlogCard = ({title , date , image , readTime , slug , index = 0} : BlogCar
   const FormatedDate = `${PostDate.getDate()} ${Months[PostDate.getMonth()]} ${PostDate.getFullYear()}`
 
   return (
+  
+    
     <motion.div 
     initial={{opacity: 0 , y: 50}}
     whileInView={{opacity: 1 , y: 0}}
@@ -45,6 +48,7 @@ const BlogCard = ({title , date , image , readTime , slug , index = 0} : BlogCar
         {readTime} min read
         </span>
     </motion.div>
+
   )
 }
 

@@ -3,7 +3,6 @@
 import { GetAllPosts, GetAllPostsCategory } from "@/ServerActions/FetchPost";
 import React from "react";
 import useSWR from "swr";
-import he from 'he'
 
 import {
   Carousel,
@@ -14,38 +13,36 @@ import {
 } from "@/components/ui/carousel";
 
 import BlogCard from "../BlogCard";
-import Heading from "../Heading";
+
 import { BlogCategorySelect } from "./BlogCategorySelect";
 import { ShotLogoGn } from "@/components/CustomIcons";
-
+import BlogLoading from "./BlogLoading";
 
 const BlogCarousel = () => {
-
-const [value, setValue] = React.useState("")
+  const [SelectCategory, setSelectCategory] = React.useState("");
 
   const fetchPost = () =>
     GetAllPosts({
-      _fields: "id,slug,title,meta,stick,_links,date,featured_media",
+      _fields: "id,slug,title,meta,stick,_links,date,featured_media",categories: SelectCategory === "" ? undefined : SelectCategory
     });
-  const fetchCategory = () => GetAllPostsCategory({ _fields: "id,name,slug" });
+  const fetchCategory = () => GetAllPostsCategory({ _fields: "id,name,slug,count" });
   const {
     data: post,
     isLoading: PostLoading,
     error: postError,
-  } = useSWR("GetAllPosts", fetchPost);
+  } = useSWR(`GetallPost/${SelectCategory}`, fetchPost);
   const {
     data: category,
     isLoading: categoryLoading,
     error: categoryError,
   } = useSWR("GetAllPostsCategory", fetchCategory);
 
-type CategoryType = {
+  type CategoryType = {
     id: string;
     name: string;
     slug: string;
-    };
-    
-
+  };
+console.log(SelectCategory);
   return (
     <div className="w-full">
       <Carousel
@@ -56,14 +53,24 @@ type CategoryType = {
         className="w-full flex flex-col lg:flex-row gap-10"
       >
         <div className="w-full lg:w-fit">
-        <div className="flex flex-col gap-2 lg:gap-2">
-          <p className="text-body md:text-[20px] leading-[30px] tracking-normal">
-          Journey through our minds & learnings
-          </p>
-          <h3 className="flex flex-row items-center gap-3">The <span className=" inline"><ShotLogoGn className=" fill-[#C0C0C0]"/></span> Journal</h3>
-        </div>        
+          <div className="flex flex-col gap-2 lg:gap-2">
+            <p className="text-body md:text-[20px] leading-[30px] tracking-normal">
+              Journey through our minds & learnings
+            </p>
+            <h3 className="flex flex-row items-center gap-3">
+              The{" "}
+              <span className=" inline">
+                <ShotLogoGn className=" fill-[#C0C0C0]" />
+              </span>{" "}
+              Journal
+            </h3>
+          </div>
           <div className="mt-[20px]">
-            <BlogCategorySelect category={category} value={value} setValue={setValue}/>
+            <BlogCategorySelect
+              category={category}
+              value={SelectCategory}
+              setValue={setSelectCategory}
+            />
           </div>
           <div className="relative mt-[50px] hidden md:block">
             <CarouselNext className=" relative" />
@@ -71,9 +78,9 @@ type CategoryType = {
           </div>
         </div>
 
-        <div className="w-full lg:w-[80%]">
+        {PostLoading ? <div className="w-full lg:w-[80%]"><BlogLoading/></div> : <div className="w-full lg:w-[80%]">
           <CarouselContent>
-            {post?.map((post: any , i: number) => {
+            {post?.map((post: any, i: number) => {
               return (
                 <CarouselItem
                   key={post.id}
@@ -92,7 +99,7 @@ type CategoryType = {
               );
             })}
           </CarouselContent>
-        </div>
+        </div>}
       </Carousel>
     </div>
   );

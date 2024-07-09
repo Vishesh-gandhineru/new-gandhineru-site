@@ -4,6 +4,7 @@ import ServiceContent from "@/components/CustomUi/ServiceComponent/SingleService
 import ServiceSideBar from "@/components/CustomUi/ServiceComponent/SingleServiceComponent/ServiceSideBar";
 import React from "react";
 import "../service.css"
+import ServiceMain from "@/components/CustomUi/ServiceComponent/SingleServiceComponent/ServiceMain";
 
 type ServiceProps = {
   params: {
@@ -14,7 +15,7 @@ type ServiceProps = {
 const page = async ({ params }: ServiceProps) => {
   const { slug } = params;
   const service = await GetServiceBySlug(slug, {
-    _fields: "id,slug,title,meta,status",
+    _fields: "id,slug,title,meta,status,work_category_id",
   });
 
   const bannerImageUrl = service[0]?.meta["banner-image"];
@@ -27,9 +28,8 @@ const page = async ({ params }: ServiceProps) => {
         style={{ backgroundImage: `url(${bannerImageUrl})` }}
         buttonText="Book a Clarity Call"
       ></HeroBanner>
-      <section className="sectionContainer flex flex-col lg:flex-row  gap-8">
-        <ServiceSideBar className="w-full gap-8 overflow-scroll whitespace-nowrap lg:overflow-visible  lg:gap-4 lg:w-[20%] flex-row lg:flex-col lg:sticky lg:top-[120px] lg:bottom-2" />
-        <ServiceContent service={service} />
+      <section className="sectionContainer">
+       <ServiceMain service={service} />
       </section>
     </main>
   );

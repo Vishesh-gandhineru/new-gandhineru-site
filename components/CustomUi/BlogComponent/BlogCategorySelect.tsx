@@ -50,15 +50,18 @@ export function BlogCategorySelect({category , value , setValue} : BlogCategoryS
           <CommandList>
             <CommandEmpty>No framework found.</CommandEmpty>
             <CommandGroup>
-            {frameworks?.map((framework:any) => (
+            {category?.map((framework:any) => (
                 <CommandItem
                     key={framework.id}
                     value={framework.id}
                     onSelect={(currentValue) => {
-                        setValue(currentValue === value ? "" : currentValue)
+                        setValue(currentValue === value ? "" : framework.id)
                         setOpen(false)
                         setSelectedCategory(he.decode(framework.name))
                     }}
+                    className={cn("",[
+                      framework.count == 0 ? "hidden" : ""
+                    ])}
                 >
                     {he.decode(framework.name)}
                 </CommandItem>
