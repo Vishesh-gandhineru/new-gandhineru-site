@@ -5,6 +5,7 @@ import { WhiteAndIcon, LogoBlack } from "@/components/CustomIcons";
 import Marquee from "../Marquee/Marquee";
 import NewsLetterForm from "./FooterNewsLetterForm";
 import Link from "next/link";
+import TransitionLink from "@/components/Animations/TransitionLink";
 
 
 const MainFooter = () => {
@@ -45,20 +46,20 @@ const MainFooter = () => {
                     <div className="w-full col-span-1">
                       <h2 className="text-2xl mb-4 text-primary">Info</h2>
                       <ul className="grid grid-cols-2 md:grid-cols-1 gap-3  text-[#404040] text-[14px] lg:text-base">
-                        <Link href='/about'>About</Link>
-                        <Link href='/work'>Case Studies</Link>
-                        <Link href='/blogs'>Blogs</Link>
+                        <TransitionLink href='/about'>About</TransitionLink>
+                        <TransitionLink href='/work'>Case Studies</TransitionLink>
+                        <TransitionLink href='/blogs'>Blogs</TransitionLink>
                       </ul>
                     </div>
                     <div className="w-full col-span-2">
                       <h2 className="text-2xl mb-4 text-primary">Services</h2>
                       <ul className="grid grid-cols-2 md:grid-cols-2 gap-y-3 lg:gap-x-[10px] text-[14px] lg:text-base text-[#404040]">
-                        <Link href='/services#branding-design'>Branding</Link>
-                        <Link href='/services#no-code-process'>Process Automation</Link>
-                        <Link href='/services#illustration'>UI/UX</Link>
-                        <Link href='/services#product-development'>Content</Link>
-                        <Link href='/services#web-development'>Web Development</Link>
-                        <Link href='/services#bundled-services'>Bundled Services</Link>
+                        <TransitionLink href='/services#branding-design'>Branding</TransitionLink>
+                        <TransitionLink href='/services#no-code-process'>Process Automation</TransitionLink>
+                        <TransitionLink href='/services#illustration'>UI/UX</TransitionLink>
+                        <TransitionLink href='/services#product-development'>Content</TransitionLink>
+                        <TransitionLink href='/services#web-development'>Web Development</TransitionLink>
+                        <TransitionLink href='/services#bundled-services'>Bundled Services</TransitionLink>
                       </ul>
                     </div>
                   </div>

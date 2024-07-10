@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import "./MegaMenuStyle.css";
 import { ArrowRight } from "@/components/CustomIcons";
 import Link from "next/link";
+import TransitionLink from "@/components/Animations/TransitionLink";
 type MegamenuProps = {
   isActive: boolean;
 };
@@ -188,9 +189,9 @@ export function MegaMenuContent() {
               layout
               className="MenuBox justify-end hover:justify-start transition-all ease-out duration-300 h-[100px] lg:h-[400px] border-b-[1px] border-r-[1px] last:col-span-2 lg:last:col-span-1 group"
             >
-              <Link href={item.link}>
+              <TransitionLink href={item.link}>
                 <h3>{item.title}</h3>
-              </Link>
+              </TransitionLink>
               <div className="hidden group-hover:block">
                 {item.subMenu &&
                   item.subMenu.map((subItem, i) => {
@@ -201,9 +202,9 @@ export function MegaMenuContent() {
                       transition={{duration: 0.5 , delay:i * 0.1}}
                       
                       >
-                      <Link href={subItem.link}>
+                      <TransitionLink href={subItem.link}>
                         <h4>{subItem.title}</h4>
-                      </Link>
+                      </TransitionLink>
                       </motion.div>
                     );
                   })}
@@ -220,18 +221,18 @@ export function MegaMenuContent() {
           <ArrowRight className="blackArrow scale-150" />
         </div>
         <div className=" border-[1px] border-[#939393] bg-white rounded-[20px] text-[#868686]  text-base font-Satoshi py-[20px] px-[30px] flex justify-between items-center">
-          <Link className="hover:text-primary" href="#">
+          <TransitionLink className="hover:text-primary" href="#">
             Instagram
-          </Link>
-          <Link className="hover:text-primary" href="#">
+          </TransitionLink>
+          <TransitionLink className="hover:text-primary" href="#">
             LinkedIn
-          </Link>
-          <Link className="hover:text-primary" href="#">
+          </TransitionLink>
+          <TransitionLink className="hover:text-primary" href="#">
             Behance
-          </Link>
-          <Link className="hover:text-primary" href="#">
+          </TransitionLink>
+          <TransitionLink className="hover:text-primary" href="#">
             Facebook
-          </Link>
+          </TransitionLink>
         </div>
       </div>
     </motion.div>

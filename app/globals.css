@@ -18,6 +18,9 @@
     @apply font-Satoshi;
     scroll-behavior: smooth;   
     /* overflow: hidden; */
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+    transition-duration: 500ms;
 
   }
 
@@ -412,4 +415,11 @@
   box-shadow: inset 0px 0px 100px rgba(231, 231, 234, 0.37);
   backdrop-filter: blur( 14.5px );
   -webkit-backdrop-filter: blur( 50.5px ); 
+}
+
+.page-transition {
+  opacity: 0;
+  background:#fff;
+  transform : translateY(400px);
+  /* filter : blur(12px) */
 }

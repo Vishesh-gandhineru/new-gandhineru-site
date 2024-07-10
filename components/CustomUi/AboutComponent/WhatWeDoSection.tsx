@@ -92,7 +92,7 @@ const WhatWeDoSection = () => {
     })
   }, [isMobile]);
 
-  console.log(isMobile);
+  
 
   return (
     <div className="space-y-10 mt-[20vh] relative" ref={conatiner}>

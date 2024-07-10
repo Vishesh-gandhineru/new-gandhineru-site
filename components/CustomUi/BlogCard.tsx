@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import React from 'react'
 import { motion } from 'framer-motion'
+import TransitionLink from '../Animations/TransitionLink'
 
 
 
@@ -35,10 +36,10 @@ const BlogCard = ({title , date , image , readTime , slug , index = 0 } : BlogCa
     transition={{duration: 0.3 , ease: "easeInOut", delay: 0.1 * index}}
     className=' relative' onMouseOver={()=>{setCursorType("BlogCard"); setCursorText("View")}} onMouseOut={()=>{setCursorText("") ; setCursorType("default")} } onClick={()=>{setCursorText("") ; setCursorType("default")}}>
         <div className='w-full h-[300px] relative'>
-          <Link href={`/blogs/${slug}`}> 
+          <TransitionLink href={`/blogs/${slug}`}> 
           
             <Image src={image} fill alt={title} className='rounded-[20px] object-cover' quality={100}/>
-          </Link>
+          </TransitionLink>
         </div>
         <div className='flex flex-col gap-2 mt-5'>
         <h3 className=' font-Satoshi text-base'>{title}</h3>

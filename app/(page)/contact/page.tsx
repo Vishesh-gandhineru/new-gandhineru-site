@@ -1,3 +1,4 @@
+import TransitionLink from "@/components/Animations/TransitionLink";
 import LocationCard from "@/components/CustomUi/ContactComponent/LocationCard";
 import ContactForm from "@/components/CustomUi/ContactForm";
 import HeroBanner from "@/components/CustomUi/HeroBanner";
@@ -35,15 +36,15 @@ const ContactPage = () => {
     <div className="flex flex-col md:flex-row gap-[20px] lg:gap-[50px] justify-center">
           <div className="flex flex-col gap-5 text-base">
             <p className="text-base tracking-[1px]">Start a project : </p>
-            <Link href="mailto:hello@1gandhineru.com" className='border-[1px] ml-5 rounded-full w-fit h-fit py-2 px-7 text-sm'>hello@gandhineru.com</Link>
+            <TransitionLink href="mailto:hello@1gandhineru.com" className='border-[1px] ml-5 rounded-full w-fit h-fit py-2 px-7 text-sm'>hello@gandhineru.com</TransitionLink>
           </div>
           <div className="flex flex-col gap-5 text-base">
             <p className=" text-base tracking-[1px]">Partner with us : </p>
-            <Link href="mailto:hello@1gandhineru.com" className='border-[1px] ml-5 rounded-full w-fit h-fit py-2 px-7 text-sm'>hello@gandhineru.com</Link>
+            <TransitionLink href="mailto:hello@1gandhineru.com" className='border-[1px] ml-5 rounded-full w-fit h-fit py-2 px-7 text-sm'>hello@gandhineru.com</TransitionLink>
           </div>
           <div className="flex flex-col gap-5 text-base">
             <p className=" text-base tracking-[1px]">Join the team: : </p>
-            <Link href="mailto:hello@1gandhineru.com" className='border-[1px] ml-5 rounded-full w-fit h-fit py-2 px-7 text-sm'>hello@gandhineru.com</Link>
+            <TransitionLink href="mailto:hello@1gandhineru.com" className='border-[1px] ml-5 rounded-full w-fit h-fit py-2 px-7 text-sm'>hello@gandhineru.com</TransitionLink>
           </div>
          
         </div>

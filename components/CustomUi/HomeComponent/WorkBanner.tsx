@@ -7,6 +7,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useCursorState } from "@/store/useCursorState";
 import { motion } from "framer-motion";
+import TransitionLink from "@/components/Animations/TransitionLink";
 
 type WorksProps = {
   image: string;
@@ -37,14 +38,14 @@ const WorkBanner = ({ image, title, tags, slug, className }: WorksProps) => {
       }}
     >
       <div className=" workCardImage relative w-full h-[400px] md:h-[580px]">
-        <Link href={`/work/${slug}`}>
+        <TransitionLink href={`/work/${slug}`}>
           <Image
             src={image}
             alt={title}
             fill={true}
             className=" object-cover object-center rounded-[20px]"
           />
-        </Link>
+        </TransitionLink>
         <div
           className={cn(
             "pointer-events-none w-full h-full  absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] z-10 rounded-[20px] transition-all duration-800 ease-in ",

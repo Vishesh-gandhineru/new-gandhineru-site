@@ -42,7 +42,7 @@ const BlogCarousel = () => {
     name: string;
     slug: string;
   };
-console.log(SelectCategory);
+
   return (
     <div className="w-full">
       <Carousel

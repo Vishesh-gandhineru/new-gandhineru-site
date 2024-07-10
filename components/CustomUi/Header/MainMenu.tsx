@@ -5,6 +5,7 @@ import { ContactButton } from "../CustomButton";
 import { ContactIcon } from "@/components/CustomIcons";
 import Link from "next/link";
 import StickyMenu from "./StickyMenu";
+import TransitionLink from "@/components/Animations/TransitionLink";
 
 const MainMenu = () => {
   return (
@@ -12,9 +13,9 @@ const MainMenu = () => {
       <StickyMenu className=" absolute top-0 left-1/2 -translate-x-1/2 w-screen h-full m-auto z-[-1]" />
       <div className="flex justify-between items-center z-30">
         <div className="Logo">
-          <Link href="/">
+          <TransitionLink href="/">
             <LogoBlack className="h-full w-[200px]" />
-          </Link>
+          </TransitionLink>
         </div>
         <div className="flex justify-center items-start gap-3">
           <ContactButton icon={<ContactIcon />} className=" hidden md:flex">

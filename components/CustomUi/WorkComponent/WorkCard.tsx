@@ -6,6 +6,7 @@ import he from 'he'
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { MotionDiv } from "../MotionDiv";
+import TransitionLink from "@/components/Animations/TransitionLink";
 type WorksProps = {
   image: string;
   title: string;
@@ -23,14 +24,14 @@ const WorkCard = ({ image, title, tags, slug , className, i}: WorksProps) => {
     transition={{duration: 0.3 , ease: "easeInOut" , delay: i * 0.1}}
     className={cn(" space-y-8", [className])}>
       <div className=" workCardImage relative w-full h-[330px] md:h-[450px]">
-        <Link href={`/work/${slug}`}>
+        <TransitionLink href={`/work/${slug}`}>
         <Image
           src={image}
           alt={title}
           fill={true}
           className=" object-cover object-center rounded-[20px]"
         />
-        </Link>
+        </TransitionLink>
       </div>
       <div>
         <h3 className=" text-primary mb-3">{title}</h3>

@@ -7,7 +7,6 @@ import PageTransition from "@/components/Animations/PageTransition";
 import CursorFollower from "@/components/Animations/customCursor";
 import SmoothScroll from "@/components/Animations/SmoothScroll";
 
-
 import "./globals.css";
 import CurveEffect from "@/components/Animations/CurveEffect";
 
@@ -46,14 +45,13 @@ export default function RootLayout({
       <body
         className={`${syne.variable} ${Satoshi.variable} bg-white mx-4 md:mx-6 md:mt-3 xl:mx-4 xl:mt-0`}
       >
-          <CursorFollower /> 
-        <MainMenu />
-        <CurveEffect />
-       <PageTransition>
-     {children}      
-        </PageTransition> 
+        <CursorFollower />
+        <PageTransition />
+        <MainMenu /> 
+        <main>
+        {children}
+        </main>
         <MainFooter />
-
       </body>
     </html>
   );

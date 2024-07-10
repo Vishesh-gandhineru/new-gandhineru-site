@@ -7,6 +7,7 @@ import { ArrowRight } from "@/components/CustomIcons";
 
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import TransitionLink from "../Animations/TransitionLink";
 
 type globalsButtonProps = {
   children: React.ReactNode;
@@ -37,7 +38,7 @@ export function PrimaryButton({
       asChild
       className={cn("relative group primaryButton mr-[40px] px-5 md:py-2 md:px-8 before:bg-gradient-to-b after:bg-gradient-to-t from-transparent from-80% to-50% to-current" , [className] )}
     >
-      <Link href={href ? href : "#"}>
+      <TransitionLink href={href ? href : "#"}>
         <span>{children}</span>
         <span className={cn("PrimaryButtonArrow absolute top-1/2 left-[100%] group-hover:left-[105%] group-hover:rotate-[-45deg] transition-all ease-in-out duration-300 -translate-y-1/2 bg-inherit before:bg-inherit w-[40px] rounded-full h-full grid place-content-center" , [
           iconClassName
@@ -45,7 +46,7 @@ export function PrimaryButton({
         ])}>
           {icon ? icon : <ArrowRight className={iconColor ? iconColor : ""} />}
         </span>
-      </Link>
+      </TransitionLink>
     </Button>
   );
 }
@@ -58,13 +59,13 @@ export function SecondaryButton({ children, href , className , arrowColor = "bla
       asChild
       className={cn("SecondaryButton relative group mr-[30px]" , [className])}
     >
-      <Link href={href ? href : "#"}>
+      <TransitionLink href={href ? href : "#"}>
         {children}{" "}
         <span className="absolute top-1/2 left-[100%] group-hover:left-[105%] group-hover:rotate-[-45deg] transition-all ease-in-out duration-300 -translate-y-1/2  w-[40px] h-full grid place-content-center">
           {" "}
           <ArrowRight className={arrowColor} />
         </span>
-      </Link>
+      </TransitionLink>
     </Button>
   );
 }
@@ -80,10 +81,10 @@ export function SocialButton({
       asChild
       className={` relative  group overflow-hidden SocialButton bg-cover repeat-0 hover:text-white transition-all ease-in-out duration-300 ${className}`}
     >
-      <Link href={href ? href : "#"}> 
+      <TransitionLink href={href ? href : "#"}> 
         <span className="z-[10]"> {children}</span>
         <span className="SocialButtonBG group-hover:opacity-100 transition-all ease-in-out duration-300"></span>
-      </Link>
+      </TransitionLink>
     </Button>
   );
 }
@@ -105,7 +106,7 @@ export function ContactButton({
 
   return (
     <Button asChild className={cn("relative", [className] )}>
-      <Link
+      <TransitionLink
         href={href ? href : "#"}
         className="w-[40px] h-[40px] before:left-[-10px] after:left-[-10px] relative py-0 px-0 md:px-0 primaryButton before:bg-gradient-to-b after:bg-gradient-to-t from-transparent from-80% to-50% to-current"
       >
@@ -114,7 +115,7 @@ export function ContactButton({
         className="PrimaryButtonArrow ContactButtonBox opacity-0 before:right-[-10px]  bg-primary absolute right-full top-[50%] translate-y-[-50%] w-fit h-[40px] flex items-center justify-center px-4 rounded-full transition-all ease-in-out duration-300">
           {children}
         </span>
-      </Link>
+      </TransitionLink>
     </Button>
   );
 }

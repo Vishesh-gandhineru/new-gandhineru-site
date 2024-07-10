@@ -1,35 +1,52 @@
 "use client";
 
-import React from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import React, { useEffect } from "react";
+import { motion , useAnimate } from "framer-motion";
 import { usePathname } from "next/navigation";
 
-const PageTransition = ({children} : {children : React.ReactNode}) => {
-  const pathname = usePathname();
+import { usePageAnimation } from "@/store/usePageAnimation";
+import { LogoWhite } from "../CustomIcons";
 
- 
-  const variants = {
-    initial: {
-      opacity: 1,
-      transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] },
-    },
-    animate: {
-      opacity: 0,
-      transition: {delay: 1 , duration: 0.4, ease: [0.76, 0, 0.24, 1] },
-    },
-   
-  };
+const PageTransition = () => {
+ const {startAnimation} = usePageAnimation()
+  const [scope , animate] = useAnimate()
   
+  const path = usePathname();
+  useEffect(() => {
+    if (startAnimation) {
+      const enterAnimation =  () => {
+         animate(scope.current, { height: "100vh" }, { duration: 1, ease: [0.76, 0, 0.24, 1] })
+         animate("#logo", { opacity: 1, top: "50%"} , { duration: 0.8, ease: [0.76, 0, 0.24, 1] })
+      }
+      enterAnimation()
+    } else {
+      const exitAnimation = async () => {
+        animate(scope.current, { height: "0vh"  } , { duration: 1.5,delay: 0.8 , ease: [0.76, 0, 0.24, 1] })
+        animate("#logo", {opacity:0,  top: "150%"} , { duration: 1.4, delay: 0.8, ease: [0.76, 0, 0.24, 1] })
+      }
+      exitAnimation()
+    }
+    return;
+ }, [startAnimation])
+
 
   return (
-    <AnimatePresence>
-        <div key={pathname}>
-            <motion.div variants={variants} initial="initial" animate="animate" transition={{ease:[0.76, 0, 0.24, 1]}}
-            className="fixed top-0 left-0 w-screen h-screen bg-white z-[99] pointer-events-none"
-            />
-        </div>
-      {children}
-    </AnimatePresence>
+    <div>
+    <motion.div 
+    ref={scope}
+    layout
+    initial={{height:"0vh"}}
+    style={{ transformOrigin: "bottom" }}
+    className='w-screen h-screen grid place-content-center bg-primary z-[1000] fixed top-0 left-0 pointer-events-none overflow-hidden'>
+      <motion.div 
+      id="logo"
+      className=' absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 '>
+      <LogoWhite className="w-[100%] h-[100px]" />
+      </motion.div>
+    </motion.div>
+
+    </div>
+
   );
 };
 
