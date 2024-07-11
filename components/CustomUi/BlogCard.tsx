@@ -32,7 +32,7 @@ const BlogCard = ({title , date , image , readTime , slug , index = 0 } : BlogCa
     
     <motion.div 
     initial={{opacity: 0 , y: 50}}
-    whileInView={{opacity: 1 , y: 0}}
+    animate={{opacity: 1 , y: 0}}
     transition={{duration: 0.3 , ease: "easeInOut", delay: 0.1 * index}}
     className=' relative' onMouseOver={()=>{setCursorType("BlogCard"); setCursorText("View")}} onMouseOut={()=>{setCursorText("") ; setCursorType("default")} } onClick={()=>{setCursorText("") ; setCursorType("default")}}>
         <div className='w-full h-[300px] relative'>

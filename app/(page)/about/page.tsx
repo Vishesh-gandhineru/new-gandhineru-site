@@ -135,7 +135,7 @@ const AboutPage = async () => {
       </section>
       {/* Add value */}
       <section className="sectionContainer">
-        <div className="w-full lg:w-[1000px] m-auto text-center">
+        <div className="w-full xl:w-[1000px] m-auto text-center">
           <div className="mb-[30px]">
             <h3>How do we add value?</h3>
           </div>

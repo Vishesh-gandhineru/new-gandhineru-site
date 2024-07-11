@@ -13,7 +13,12 @@
     background: transparent;
     color: #fff;
     transition: all ease-in-out 0.3s;
+    justify-content: flex-start;
 }
+
+
+
+
 
 .MenuBox:nth-last-child(1){
     border:none

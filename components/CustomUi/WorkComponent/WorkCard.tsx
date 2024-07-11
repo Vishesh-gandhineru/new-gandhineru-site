@@ -21,9 +21,10 @@ const WorkCard = ({ image, title, tags, slug , className, i}: WorksProps) => {
     <MotionDiv 
     initial={{opacity: 0 , y: 50}}
     whileInView={{opacity: 1 , y: 0}}
+    viewport={{ once: true }}
     transition={{duration: 0.3 , ease: "easeInOut" , delay: i * 0.1}}
     className={cn(" space-y-8", [className])}>
-      <div className=" workCardImage relative w-full h-[330px] md:h-[450px]">
+      <div className=" workCardImage relative w-full h-[330px] md:h-[300px] lg:h-[450px]">
         <TransitionLink href={`/work/${slug}`}>
         <Image
           src={image}

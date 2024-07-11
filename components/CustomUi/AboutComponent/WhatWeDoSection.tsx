@@ -11,56 +11,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 const MotionFlipCard = motion(FlipCard);
 
 const WhatWeDoSection = () => {
-  const FlipCardContent = [
-    {
-      front: {
-        title: "Process Automation",
-        bg_image: "bg-processAutomation-bg",
-      },
-      back: {
-        title: "Process Automation",
-        content:
-          "We help you automate your business processes to increase efficiency and reduce human errors.",
-        bg_color: "#FFF8B2",
-      },
-    },
-    {
-      front: {
-        title: "Brand Essence",
-        bg_image: "bg-brandEssence-bg",
-      },
-      back: {
-        title: "Brand Essence",
-        content:
-          "We help you automate your business processes to increase efficiency and reduce human errors.",
-        bg_color: "#F4E5CF",
-      },
-    },
-    {
-      front: {
-        title: "Digital Connection",
-        bg_image: "bg-digitalConnection-bg",
-      },
-      back: {
-        title: "Digital Connection",
-        content:
-          "We help you automate your business processes to increase efficiency and reduce human errors.",
-        bg_color: "#D286AF",
-      },
-    },
-    {
-      front: {
-        title: "Engage Audience",
-        bg_image: "bg-engageAudience-bg",
-      },
-      back: {
-        title: "Engage Audience",
-        content:
-          "We help you automate your business processes to increase efficiency and reduce human errors.",
-        bg_color: "#96CED3",
-      },
-    },
-  ];
+ 
 
   const conatiner = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -95,7 +46,7 @@ const WhatWeDoSection = () => {
   
 
   return (
-    <div className="space-y-10 mt-[20vh] relative" ref={conatiner}>
+    <div className="space-y-10 lg:mt-[10vh] xl:mt-[20vh] relative" ref={conatiner}>
       <div className="w-full lg:w-[500px] m-auto text-center space-y-4 ">
         <h3>What we do?</h3>
         <p>

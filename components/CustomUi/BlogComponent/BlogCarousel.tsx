@@ -84,7 +84,7 @@ const BlogCarousel = () => {
               return (
                 <CarouselItem
                   key={post.id}
-                  className="basis-[80%] md:basis-1/2 lg:basis-[30%]"
+                  className="basis-[80%] md:basis-1/2 lg:basis-[40%] xl:basis-[30%]"
                 >
                   <BlogCard
                     key={post.id}

@@ -5,10 +5,8 @@ import MainMenu from "@/components/CustomUi/Header/MainMenu";
 import MainFooter from "@/components/CustomUi/Footer/MainFooter";
 import PageTransition from "@/components/Animations/PageTransition";
 import CursorFollower from "@/components/Animations/customCursor";
-import SmoothScroll from "@/components/Animations/SmoothScroll";
-
 import "./globals.css";
-import CurveEffect from "@/components/Animations/CurveEffect";
+
 
 const syne = Syne({
   subsets: ["latin"],
@@ -31,7 +29,7 @@ const Satoshi = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Gandhi and neru",
+  title: "Gandhi & Neru",
   description: "New Gandhi and neru website",
 };
 
@@ -42,6 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+     
       <body
         className={`${syne.variable} ${Satoshi.variable} bg-white mx-4 md:mx-6 md:mt-3 xl:mx-4 xl:mt-0`}
       >

@@ -40,6 +40,9 @@ const LocationCard = ({location , time , description , imageSrc , open} : Locati
       onMouseLeave={() => {
         setIsOpen(false);
       }}
+      onTap={() => {
+        setIsOpen(!isOpen);
+      }}
       className=" rounded-[20px] relative"
     >
       <div className="border-[1px] rounded-[20px] flex justify-center flex-col px-4 lg:px-8 relative h-[150px] overflow-hidden">

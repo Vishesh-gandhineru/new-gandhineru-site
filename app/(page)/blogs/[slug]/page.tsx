@@ -70,19 +70,19 @@ const BlogSinglePage = async ({ params }: BlogSinglePageProps) => {
         </div>
       </div>
       <div className="md:container flex flex-col gap-[40px] md:gap-[50px]">
-        <div className="bg-[#F3F3F3] xl:w-[85%] m-auto flex flex-col md:gap-[30px] lg:flex-row justify-between items-center p-8 md:py-12 md:px-12 rounded-[20px]">
+        <div className="bg-[#F3F3F3] xl:w-[85%] xl:m-auto flex flex-col md:gap-[30px] lg:flex-row justify-between items-center p-8 md:py-12 md:px-12 rounded-[20px]">
           <h3 className="lg:w-[500px]">Get the latest news in your inbox!</h3>
           <NewsLetterForm className="flex flex-col md:flex-row w-full justify-start md:justify-center xl:justify-end items-start lg:items-end gap-4 space-y-0" />
         </div>
 
 
-          <div className="w-full lg:w-[1190px] my-0 m-auto flex flex-col gap-5">
+          <div className="w-full xl:w-[1190px] my-0 m-auto flex flex-col gap-5 lg:gap-8">
           <h3>Recommended Resources/ Reads</h3>
           <Carousel>
   <CarouselContent>    
             {Posts.map((post: Record<string, any> = {} , i:number) => {
               return (
-                <CarouselItem key={post.id} className=" basis-[80%] sm:basis-[40%] lg:basis-1/4">
+                <CarouselItem key={post.id} className=" basis-[80%] sm:basis-[40%] lg:basis-[30%]">
                   <BlogCard   
                     index={i}                 
                     title={post.title.rendered}

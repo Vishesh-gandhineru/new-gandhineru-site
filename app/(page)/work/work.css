@@ -66,6 +66,17 @@
 }
 
 
+@media (max-width:880px){
+   
+    .workCard:nth-child(3n) .workCardImage{
+        height: 300px;
+    }
+
+   
+}
+
+
+
 @media (max-width:767px){
     .workCard{
         grid-column: span 1 !important;

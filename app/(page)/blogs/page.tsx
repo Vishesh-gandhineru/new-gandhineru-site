@@ -14,8 +14,8 @@ import Link from 'next/link';
 
 const ResourcesPage = async ({searchParams}: {searchParams: {category : number}}) => {
  
-  const {category} = searchParams;
-  const Posts = await GetAllPosts({_fields : 'id,slug,title,meta,stick,_links,date,featured_media' , categories: category == 0 ? undefined : category});
+  const {category:categoryId} = searchParams;
+  const Posts = await GetAllPosts({_fields : 'id,slug,title,meta,stick,_links,date,featured_media' , categories: categoryId == 0 ? undefined : categoryId});
   const PostsCategory = await GetAllPostsCategory({_fields : 'id,name,slug,count'});
 
   return (
@@ -26,11 +26,13 @@ const ResourcesPage = async ({searchParams}: {searchParams: {category : number}}
         buttonText="Book a Clarity Call"
       ></HeroBanner>
 
-      <div className="lg:container my-[50px] lg:my-[80px] flex flex-col gap-[30px]">
+      <div id='MainContent' className="lg:container my-[50px] lg:my-[80px] flex flex-col gap-[30px]">
         <div className='flex flex-col gap-[20px] justify-center items-center'>
         <h2 className='text-center lg:w-[80%] xl-[50%]'>Access global knowledge in design and development.</h2>
-        <div className=' w-full flex overflow-x-scroll hideScroll justify-start lg:justify-center items-center whitespace-nowrap gap-[20px]'>
-         <Link href="/blogs?category=0" scroll={false} className='text-[10px] md:text-base border-[1px] rounded-full w-fit h-fit py-2 px-7'>All</Link>
+        <div className=' w-full flex overflow-x-scroll hideScroll justify-start md:justify-center items-center whitespace-nowrap gap-[20px]'>
+         <Link href="/blogs?category=0" scroll={false} className={cn('text-[10px] md:text-base border-[1px] rounded-full w-fit h-fit py-2 px-7', [
+            categoryId == 0  ? "bg-primary text-white" : "bg-white text-primary",
+         ])}>All</Link>
           {PostsCategory.map((category : Record<string , any> = {} , index:number)=>{
             return (
              <BlogCategoryButton i={index} key={category.id} category={category} />
@@ -38,7 +40,7 @@ const ResourcesPage = async ({searchParams}: {searchParams: {category : number}}
           })}
         </div>
         </div>
-       {Posts ? <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10 md:w-[1190px] my-0 m-auto'>
+       {Posts ? <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 xl:w-[1190px] my-0 m-auto'>
           {Posts.map((post : Record<string , any> = {})=>{
             return (
               <BlogCard key={post.id} title={post.title.rendered} date={post.date} image={post._embedded["wp:featuredmedia"][0].source_url} readTime={post.meta["read-time"]} slug={post.slug} />
