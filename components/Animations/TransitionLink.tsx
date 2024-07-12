@@ -34,9 +34,9 @@ const handleTransition = async (
  body?.classList.add("page-transition");
     // setStartAnimation(true)
 
-    await sleep(1000);
+    await sleep(500);
     router.push(href); 
-    await sleep(100);
+    await sleep(500);
 
     body?.classList.remove("page-transition");
     // setStartAnimation(false)           
