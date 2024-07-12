@@ -29,12 +29,17 @@ const handleTransition = async (
     if (path === href) {
       return;
     }
+ const body = document.querySelector("body");
 
-    setStartAnimation(true)
+ body?.classList.add("page-transition");
+    // setStartAnimation(true)
+
     await sleep(1000);
     router.push(href); 
     await sleep(100);
-    setStartAnimation(false)           
+
+    body?.classList.remove("page-transition");
+    // setStartAnimation(false)           
   };
 
 

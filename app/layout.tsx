@@ -45,7 +45,7 @@ export default function RootLayout({
         className={`${syne.variable} ${Satoshi.variable} bg-white mx-4 md:mx-6 md:mt-3 xl:mx-4 xl:mt-0`}
       >
         <CursorFollower />
-        <PageTransition />
+        {/* <PageTransition /> */}
         <MainMenu /> 
         <main>
         {children}
