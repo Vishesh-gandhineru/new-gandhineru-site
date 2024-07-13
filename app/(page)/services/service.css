@@ -7,3 +7,14 @@
 .serviceSideBar a.active {
   color: hsl(var(--primary));
 }
+
+.process-title:before {
+   content:"";
+   width: 10px;
+    height: 10px;
+    background-color: hsl(var(--primary));
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+}
+

@@ -27,7 +27,7 @@ const ServiceCardSection = () => {
       {data?.map((item: any, i: number) => {
         const bgImage = item.meta["banner-image"];
         const serviceContent = DOMPurify.sanitize(
-          item.meta["overview-content"]
+          item.meta["banner_copy"]
         );
         const targetScale = 1 - (data.length - i) * (0.05);
         return (

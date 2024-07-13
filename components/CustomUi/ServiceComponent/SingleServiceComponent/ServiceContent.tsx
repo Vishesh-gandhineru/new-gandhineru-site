@@ -111,7 +111,7 @@ const ServiceContent = ({ service , setActiveSection }: ServiceContentProps) => 
       <motion.section id="coverages" ref={coverages}>
         <div className=" space-y-4">
           <h3>Coverages</h3>
-          <div>
+          <div className="columns-2 gap-5">
             {coverageList.map((item: any, index: number) => {
               return <li key={index}>{item["coverage-title"]}</li>;
             })}

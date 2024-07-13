@@ -15,7 +15,8 @@ const ProcessTimeLine = ({ ProcessList }: ProcessTimeLineProps) => {
 
 
   return (
-    <div ref={container} className="flex flex-row flex-nowrap overflow-x-scroll hideScroll whitespace-nowrap gap-18 lg:gap-20 relative cursor-grab active:cursor-grabbing">
+    <div ref={container} className="flex flex-row flex-nowrap overflow-x-scroll hideScroll whitespace-nowrap space-x-10 relative cursor-grab active:cursor-grabbing">
+      {/* <div className="w-full h-2 bg-black absolute" /> */}
       {ProcessList.map((item: any, index: number) => {
         return (
           <ProcessContent key={index} item={item} />             
