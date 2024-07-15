@@ -21,11 +21,11 @@ const page = async () => {
     <main>
       <HeroBanner
         buttonHref="/services"
-        className=" bg-hero-home-mob-banner bg-bottom md:bg-center  md:bg-hero-home-banner flex items-center h-[587px] md:h-[500px] lg:h-[640px] container m-auto p-5 md:p-8 lg::p-12"
+        className=" bg-hero-home-mob-banner bg-bottom md:bg-center  md:bg-hero-home-banner flex items-center h-[550px] md:h-[500px] lg:h-[640px] container m-auto p-5 md:p-8 lg:p-12"
         buttonText="Build your Brand"
       >
         <FadeInDiv 
-        className="w-full h-full pt-[50px] pb-[50px] justify-between md:justify-end lg:justify-center md:w-[80%] lg:w-[60%] flex flex-col gap-[80px]">
+        className="w-full h-full pt-[90px] md:pt-[50px] pb-[50px] justify-between md:justify-end lg:justify-center md:w-[80%] lg:w-[60%] flex flex-col gap-[80px]">
           <div className="flex flex-col gap-3 lg:gap-8">
             <h1 className="normal-case">
               Simply put, we design and build brands

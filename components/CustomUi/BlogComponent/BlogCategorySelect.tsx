@@ -1,7 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { Check, ChevronsUpDown } from "lucide-react"
+import { Check, ChevronsUpDown , ArrowDownIcon } from "lucide-react"
+import { ArrowRight } from "@/components/CustomIcons"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -38,18 +39,34 @@ export function BlogCategorySelect({category , value , setValue} : BlogCategoryS
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between p-3 px-5 rounded-full"
+          className="w-[200px] justify-between p-3 px-5 rounded-full bg-transparent"
         >
          {SelectedCategory ? SelectedCategory : "Select Category"}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          <ArrowRight className={cn("blackArrow rotate-90 h-4 w-4 shrink-0 opacity-50 transition-all ease-out duration-300", [
+            open ? "rotate-[-90deg]" : "",
+          ])} />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
-        <Command>
+      <PopoverContent className="w-[200px] p-0 rounded-[20px]">
+        <Command className="bg-white rounded-[20px] py-3 px-2">
          
           <CommandList>
             <CommandEmpty>No framework found.</CommandEmpty>
             <CommandGroup>
+            <CommandItem
+                    
+                    value={"all"}
+                    onSelect={(currentValue) => {
+                        setValue("")
+                        setOpen(false)
+                        setSelectedCategory("All")
+                    }}
+                    className={cn("border-b-2 py-3 last:border-b-0 last:pb-1 hover:font-bold",[
+                      
+                    ])}
+                >
+                    All
+                </CommandItem>
             {category?.map((framework:any) => (
                 <CommandItem
                     key={framework.id}
@@ -59,7 +76,7 @@ export function BlogCategorySelect({category , value , setValue} : BlogCategoryS
                         setOpen(false)
                         setSelectedCategory(he.decode(framework.name))
                     }}
-                    className={cn("",[
+                    className={cn("border-b-2 py-3 last:border-b-0 last:pb-1 hover:font-bold",[
                       framework.count == 0 ? "hidden" : ""
                     ])}
                 >

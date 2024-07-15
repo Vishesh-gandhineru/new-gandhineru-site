@@ -72,7 +72,7 @@ const BlogCarousel = () => {
               setValue={setSelectCategory}
             />
           </div>
-          <div className="relative mt-[50px] hidden md:block">
+          <div className="relative mt-[40px] hidden md:block ml-6">
             <CarouselNext className=" relative" />
             <CarouselPrevious className=" relative" />
           </div>
