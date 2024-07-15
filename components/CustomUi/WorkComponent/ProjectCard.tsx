@@ -27,7 +27,7 @@ const ProjectCard = ({title  , image  , slug , index} : CardProps) => {
     transition={{duration: 0.3 , ease: "easeInOut" , delay: index * 0.1}}
     className=' relative' onMouseOver={()=>{setCursorType("BlogCard"); setCursorText("View")}} onMouseOut={()=>{setCursorText("") ; setCursorType("default")} } onClick={()=>{setCursorText("") ; setCursorType("default")}}>
         <div className='w-full h-[250px] md:h-[300px] relative'>
-          <TransitionLink href={`/works/${slug}`}> 
+          <TransitionLink href={`/work/${slug}`}> 
           
             <Image src={image} fill = {true} sizes='2x' alt={title} className='rounded-[20px] object-cover' quality={100}/>
           </TransitionLink>

@@ -23,8 +23,7 @@ const BlogCarousel = () => {
 
   const fetchPost = () =>
     GetAllPosts({
-      _fields: "id,slug,title,meta,stick,_links,date,featured_media",categories: SelectCategory === "" ? undefined : SelectCategory
-    });
+      _fields: "id,slug,title,meta,stick,_links,date,featured_media",per_page:"6" ,categories: SelectCategory === "" ? undefined : SelectCategory});
   const fetchCategory = () => GetAllPostsCategory({ _fields: "id,name,slug,count" });
   const {
     data: post,
@@ -48,7 +47,7 @@ const BlogCarousel = () => {
       <Carousel
         opts={{
           align: "center",
-          loop: true,
+          loop: false,
         }}
         className="w-full flex flex-col lg:flex-row gap-10"
       >
