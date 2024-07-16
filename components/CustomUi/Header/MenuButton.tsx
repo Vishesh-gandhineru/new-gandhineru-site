@@ -1,6 +1,6 @@
 "use client"
 
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Megamenu from './Megamenu'
 import { cn } from '@/lib/utils'
 import { usePathname } from 'next/navigation'
@@ -17,6 +17,7 @@ const MenuButton = () => {
     setCurrentPath(pathname)
     setIsActive(false)
   }
+ 
 
   return (
     <div className=' relative'>

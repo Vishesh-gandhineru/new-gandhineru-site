@@ -1,7 +1,6 @@
 .MenuBox {
     background: #FCFAF8;
     color: #373737;
-    padding: 30px;
     border-color: #939393;
     display: flex;
     flex-direction: column;

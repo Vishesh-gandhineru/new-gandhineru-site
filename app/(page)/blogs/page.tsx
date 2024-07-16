@@ -9,13 +9,14 @@ import BlogCategoryButton from "@/components/CustomUi/BlogComponent/BlogCategory
 import BlogLoading from "@/components/CustomUi/BlogComponent/BlogLoading";
 import Link from "next/link";
 import LoadMoreBlogBtn from "@/components/CustomUi/BlogComponent/LoadMoreBlogBtn";
+import InfinityLoadBlogSection from "@/components/CustomUi/BlogComponent/InfinityLoadBlogSection";
 
 
 
 const ResourcesPage = async ({searchParams}: {searchParams: {category : number}}) => {
  
   const {category:categoryId} = searchParams;
-  const Posts = await GetAllPosts({ per_page:4, categories: categoryId == 0 ? undefined : categoryId});
+  const Posts = await GetAllPosts({ categories: categoryId == 0 ? undefined : categoryId} , 1);
   const PostsCategory = await GetAllPostsCategory({_fields : 'id,name,slug,count'});
 
 
@@ -44,7 +45,8 @@ const ResourcesPage = async ({searchParams}: {searchParams: {category : number}}
           })}
         </div>
         </div>
-       {Posts ? <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-10 xl:w-[1190px] my-0 m-auto'>
+        <div>
+       {Posts ? <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 xl:w-[1190px] my-0 m-auto'>
           {Posts.map((post : Record<string , any> = {})=>{
             return (
               <BlogCard key={post.id} title={post.title.rendered} date={post.date} image={post._embedded["wp:featuredmedia"][0].source_url} readTime={post.meta["read-time"]} slug={post.slug} />
@@ -53,7 +55,9 @@ const ResourcesPage = async ({searchParams}: {searchParams: {category : number}}
         </div> : <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-10 md:w-[1190px] my-0 m-auto'>
           <BlogLoading /></div>}
       </div>
-      <LoadMoreBlogBtn />
+      <InfinityLoadBlogSection />
+        </div>
+     
       </section>
     </main>
   );

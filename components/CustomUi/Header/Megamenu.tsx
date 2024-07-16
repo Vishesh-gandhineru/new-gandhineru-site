@@ -15,7 +15,7 @@ const Megamenu = ({ isActive }: MegamenuProps) => {
   const variants = {
     open: {
       width: windowWidth > 1200 ? "calc(100vw)" : windowWidth > 880 ? "calc(100vw - 60px)" : windowWidth > 600 ? "calc(100vw - 50px)" : "calc(100vw -  15px)",
-      height: windowWidth > 1200 ?  "700px" : windowWidth > 600 ? "700px" : "655px",
+      height: windowWidth > 1200 ?  "700px" : windowWidth > 600 ? "700px" : "100vh",
       transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] },
       borderRadius: "20px",
       top: "-20px",
@@ -33,7 +33,7 @@ const Megamenu = ({ isActive }: MegamenuProps) => {
   const BgVariants = {
     open: {
       width: "100%",
-      height: windowWidth > 1200 ?  "700px" : windowWidth > 600 ? "700px" : "655px",
+      height: windowWidth > 1200 ?  "700px" : windowWidth > 600 ? "700px" : "100vh",
       transition: {  duration: 0.75, ease: [0.76, 0, 0.24, 1] },
       borderRadius: "20px",
     },
@@ -59,7 +59,7 @@ const Megamenu = ({ isActive }: MegamenuProps) => {
         variants={BgVariants}
         className="bgcover w-full h-full bg-MegaMenu-bg bg-no-repeat bg-cover rounded-[20px] absolute z-[-1] right-0 top-0"
       ></motion.div>
-      <div className="container py-8 h-full flex flex-col justify-end">
+      <div className="container py-5 lg:py-8 h-full flex flex-col justify-end">
         <AnimatePresence>{isActive && <MegaMenuContent />}</AnimatePresence>
       </div>
     </motion.section>
@@ -219,7 +219,7 @@ export function MegaMenuContent() {
       exit="exit"
       className="text-white p-5"
     >
-      <nav className=" border-[1px] rounded-[20px] border-white grid grid-cols-2 lg:grid-cols-5 overflow-hidden mb-5">
+      <nav className=" border-[1px] rounded-[20px] border-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 overflow-hidden mb-5">
         {navItems.map((item, i) => {
           return (
             <motion.div
@@ -231,12 +231,12 @@ export function MegaMenuContent() {
               transition={{ duration: 0.5, ease: "easeInOut" , type:"spring" }}
               key={i}
               layout
-              className="MenuBox justify-end transition-all ease-out duration-300 h-[100px] lg:h-[400px] border-b-[1px] border-r-[1px] last:col-span-2 lg:last:col-span-1 group"
+              className="MenuBox justify-end transition-all ease-out duration-300 h-fit py-5 px-6 lg:p-[30px] lg:h-[400px] border-b-[1px] border-r-[1px] col-span-2 lg:col-span-1 last:col-span-2 lg:last:col-span-1 group"
             >
               <TransitionLink href={item.link}>
                 <h3>{item.title}</h3>
               </TransitionLink>
-              <div className="hidden group-hover:block">
+              <div className="hidden group-hover:flex group-hover:flex-wrap  group-hover:gap-y-1  lg:group-hover:flex-col ">
                 {item.subMenu &&
                   item.subMenu.map((subItem, i) => {
                     return (
@@ -247,7 +247,7 @@ export function MegaMenuContent() {
                       className="flex justify-between group/submenu items-center" 
                       >
                       <TransitionLink href={subItem.link}>
-                        <h4 className=" text-[20px] group-hover/submenu:font-medium">{subItem.title}</h4>
+                        <h4 className="text-[16px] md:text-[20px] group-hover/submenu:font-medium">{subItem.title}</h4>
                       </TransitionLink>
                       <ArrowRight className="scale-150 opacity-0 group-hover/submenu:opacity-100 transition-all ease-in-out duration-300" />
                       </motion.div>
@@ -265,7 +265,7 @@ export function MegaMenuContent() {
           </p>
           <ArrowRight className="blackArrow scale-150" />
         </TransitionLink>
-        <div className=" border-[1px] border-[#939393] bg-white rounded-[20px] text-[#868686]  text-base font-Satoshi py-[20px] px-[30px] flex justify-between items-center">
+        <div className=" border-[1px] border-[#939393] bg-white rounded-[20px] text-[#868686] text-[14px]  md:text-base font-Satoshi py-[20px] px-4 md:px-[30px] flex justify-between items-center">
           <TransitionLink className="hover:text-primary" href="#">
             Instagram
           </TransitionLink>

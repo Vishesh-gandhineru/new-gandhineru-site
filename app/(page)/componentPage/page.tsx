@@ -18,36 +18,29 @@ import ShflleCard from "@/components/CustomUi/ShflleCard";
 import { AnimatePresence, motion } from "framer-motion";
 
 const page = () => {
-
   const variantsEnter = {
     initial: {
-        top: "100%",
-      
+      top: "100%",
     },
-    start : {
-        top : "0%",
-        opacity: [1]
-       
-    } 
-   }
+    start: {
+      top: "0%",
+      opacity: [1],
+    },
+  };
 
-    const variantsExit = {
-      initial: {
-          top: "0%",
-          opacity: 0
-        
-      },
-      start : {
-          top : "100%",
-          opacity: 1
-         
-      } 
-  
-          
-      }
+  const variantsExit = {
+    initial: {
+      top: "0%",
+      opacity: 0,
+    },
+    start: {
+      top: "100%",
+      opacity: 1,
+    },
+  };
   return (
     <section className="h-screen w-screen grid place-content-center">
-       <div className="h-screen">
+      {/* <div className="h-screen">
         
         <motion.div 
         variants={variantsEnter}
@@ -61,7 +54,14 @@ const page = () => {
         animate="start"
         transition={{duration:1 , delay:1.2 ,ease:[0.76, 0, 0.24, 1]}}
         className="fixed top-0 right-0 left-0 w-screen h-screen pointer-events-none z-[100] bg-primary" />
-      </div>
+      </div> */}
+
+
+        <Link href="#" className="flex gap-3 bg-black text-white" >
+          <div>Button</div> 
+          <div>arrow</div>
+        </Link>
+
     </section>
   );
 };

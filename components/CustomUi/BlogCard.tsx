@@ -35,12 +35,11 @@ const BlogCard = ({title , date , image , readTime , slug , index = 0 } : BlogCa
     animate={{opacity: 1 , y: 0}}
     transition={{duration: 0.3 , ease: "easeInOut", delay: 0.1 * index}}
     className=' relative' onMouseOver={()=>{setCursorType("BlogCard"); setCursorText("Read")}} onMouseOut={()=>{setCursorText("") ; setCursorType("default")} } onClick={()=>{setCursorText("") ; setCursorType("default")}}>
+          <TransitionLink href={`/blogs/${slug}`}>          
         <div className='w-full h-[300px] relative'>
-          <TransitionLink href={`/blogs/${slug}`}> 
-          
             <Image src={image} fill alt={title} className='rounded-[20px] object-cover' quality={100}/>
-          </TransitionLink>
         </div>
+          </TransitionLink>
         <div className='flex flex-col gap-2 mt-5'>
         <h3 className=' font-Satoshi text-base'>{title}</h3>
         <p className='text-[12px] uppercase text-gray'>{FormatedDate}</p>
