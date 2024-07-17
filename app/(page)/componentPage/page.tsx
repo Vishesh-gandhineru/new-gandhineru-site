@@ -1,6 +1,3 @@
-"use client";
-
-import React, { useState } from "react";
 import {
   PrimaryButton,
   SecondaryButton,
@@ -19,7 +16,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const page = () => {
 
-  const [hover, setHover] = useState(false);
+ 
   const variantsEnter = {
     initial: {
       top: "100%",

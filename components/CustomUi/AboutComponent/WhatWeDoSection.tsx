@@ -54,7 +54,8 @@ const WhatWeDoSection = () => {
           key areas to deliver impact.
         </p>
       </div>
-      <div className=" flex overflow-x-scroll overflow-y-hidden whitespace-nowrap lg:overflow-visible lg:flex-row gap-5 relative h-full w-full">
+     
+      <div className=" flex overflow-x-scroll overflow-y-visible flex-nowrap whitespace-nowrap lg:flex-row gap-5 relative h-full w-full xl:justify-center">
         <MotionFlipCard
           className="WhatWeDoFlipCards relative text-wrap"
           style={{ translateY: isMobile ? "0" : ProcessY }}

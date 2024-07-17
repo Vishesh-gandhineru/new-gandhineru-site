@@ -90,7 +90,7 @@ const NewsLetterForm = ({ className }: NewsLetterFormProps) => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className={cn("space-y-8", [className])}
+        className={cn("space-y-8 md:flex md:items-end gap-12 xl:flex-col xl:gap-0 xl:items-start", [className])}
       >
         <div className="w-full md:w-fit flex flex-col md:flex-row gap-5 justify-start items-start">
           <FormField

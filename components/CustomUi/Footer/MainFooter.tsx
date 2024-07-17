@@ -11,7 +11,7 @@ import TransitionLink from "@/components/Animations/TransitionLink";
 const MainFooter = () => {
   return (
     <footer className="my-[50px] container m-auto p-0">
-      <div className="footer-content pt-[50px] h-fit lg:h-[600px] bg-footer-bg bg-cover bg-no-repeat bg-center rounded-[20px] relative">
+      <div className="footer-content pt-[50px] h-fit  bg-footer-bg bg-cover bg-no-repeat bg-center rounded-[20px] relative">
         <div className="FooterButton px-8 pb-2 rounded-b-[15px]  absolute top-0 left-[50%] translate-x-[-50%] bg-white">
           <SecondaryButton>Book a Clarity Call</SecondaryButton>
         </div>
@@ -28,19 +28,19 @@ const MainFooter = () => {
               </div>
             </Marquee>
           </div>
-          <div className="px-5 lg:px-8">
+          <div className="px-2 xl:px-8">
             <div className="bg-white w-full h-full py-[50px] px-6 lg:px-14 flex flex-col gap-12 container rounded-[30px]">
-              <div className="flex  flex-col lg:flex-row gap-8">
-                <div className="w-full lg:w-[40%] flex flex-col gap-5 md:gap-8">
+              <div className="flex  flex-col xl:flex-row gap-8 md:gap-16">
+                <div className="w-full xl:w-[40%] flex flex-col gap-5 md:gap-8">
                   <LogoBlack className="w-[200px] h-full"/>
-                  <div className="flex flex-col gap-8">
+                  <div className="flex flex-col gap-8 md:gap-0">
                     <h2 className=" text-2xl">
-                      Get the latest <br /> news in your inbox
+                      Get the latest <img src="/Images/footer text icon.png" className=" inline w-[60px]" /> <br /> news in your inbox
                     </h2>
                     <NewsLetterForm />
                   </div>
                 </div>
-                <div className="w-full lg:w-[60%] flex flex-col justify-between">
+                <div className="w-full xl:w-[60%] flex flex-col justify-between">
                   {/* Footer menu */}
                   <div className=" grid grid-cols-1 md:grid-cols-3 items-end gap-5">
                     <div className="w-full col-span-1">

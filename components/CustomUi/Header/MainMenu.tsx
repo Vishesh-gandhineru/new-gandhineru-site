@@ -18,7 +18,7 @@ const MainMenu = () => {
           </TransitionLink>
         </div>
         <div className="flex justify-center items-start gap-3">
-          <ContactButton icon={<ContactIcon />} className=" hidden md:flex">
+          <ContactButton icon={<ContactIcon />} href="/contact" className=" hidden md:flex">
             Lets Chat?
           </ContactButton>
          

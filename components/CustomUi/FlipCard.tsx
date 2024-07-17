@@ -24,7 +24,7 @@ const FlipCard: React.FC<FlipCardProps> = forwardRef ( ({ children , className ,
   };
 
   return (
-    <div ref={ref} className={cn("FlipCard perspective-1000 w-80 h-96 text-wrap", [
+    <div ref={ref} className={cn("FlipCard perspective-1000 min-w-80 lg:min-w-72 h-96 text-wrap", [
         className
     ])} 
     style={style}

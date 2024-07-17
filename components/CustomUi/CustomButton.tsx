@@ -2,9 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "@/components/CustomIcons";
-
-
-import Link from "next/link";
 import { cn } from "@/lib/utils";
 import TransitionLink from "../Animations/TransitionLink";
 
@@ -131,16 +128,16 @@ export function ContactButton({
     <>
     <svg width="0" height="0" className="absolute hidden" colorInterpolationFilters="sRGB">
       <defs>
-        <filter id="buttonFilter">
+        <filter id="SocialbuttonFilter">
           <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur"></feGaussianBlur>
           <feColorMatrix
             in="blur"
             mode="matrix"
             values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
-            result="buttonFilter"
+            result="SocialbuttonFilter"
           ></feColorMatrix>
-          <feComposite in="SourceGraphic" in2="buttonFilter" operator="atop"></feComposite>
-          <feBlend in="SourceGraphic" in2="buttonFilter"></feBlend>
+          <feComposite in="SourceGraphic" in2="SocialbuttonFilter" operator="atop"></feComposite>
+          <feBlend in="SourceGraphic" in2="SocialbuttonFilter"></feBlend>
         </filter>
       </defs>
     </svg>
@@ -152,7 +149,7 @@ export function ContactButton({
         "relative group px-5  md:py-2 md:px-3",
         className
       )}
-      style={{ filter: 'url(#buttonFilter)' }}
+      style={{ filter: 'url(#SocialbuttonFilter)' }}
     >
       <TransitionLink href={href ? href : "#"}>
         <span className={cn(

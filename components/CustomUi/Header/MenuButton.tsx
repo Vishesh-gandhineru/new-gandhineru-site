@@ -17,7 +17,7 @@ const MenuButton = () => {
     setCurrentPath(pathname)
     setIsActive(false)
   }
- 
+
 
   return (
     <div className=' relative'>

@@ -23,7 +23,7 @@ const BlogSinglePage = async ({ params }: BlogSinglePageProps) => {
   const SinglePost = await GetPostBySlug(slug);
   const Posts = await GetAllPosts({
     _fields: "id,slug,title,meta,stick,_links,date,featured_media",
-  });
+  },1);
   const post = SinglePost[0];
 
   const PostDate = new Date(post.date);

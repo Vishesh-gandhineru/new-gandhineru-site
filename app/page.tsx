@@ -56,12 +56,12 @@ const page = async () => {
       className="sectionContainer w-full md:max-w-[1000px]">
         <Work />
       </FadeInSection>
-      <FadeInSection className="sectionContainer flex flex-col lg:flex-row gap-5 md-flex-row justify-between items-start md:items-center space-y-8">
+      <FadeInSection className="sectionContainer flex flex-col lg:flex-row gap-5 md-flex-row justify-between items-start xl:items-center space-y-8">
         <Heading
           Heading="Trust earned the right way"
           subHeading="Thanks for rolling the dice on us"
         />
-        <div className="w-full md:w-[60%]">
+        <div className="w-full md:w-[90%]">
           <TestimonialCard />
         </div>
       </FadeInSection>
