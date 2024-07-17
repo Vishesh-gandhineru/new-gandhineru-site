@@ -34,7 +34,7 @@ const page = async () => {
           </div>
           <div className="flex justify-between md:justify-start md:gap-12">
             <PrimaryButton
-              className="to-[#F7DB85]  bg-white text-primary text-[12px] md:text-base "
+              className="bg-white text-primary text-[12px] md:text-base "
               iconClassName="bg-white before:bg-white"
               iconColor="blackArrow"
               href="/about"

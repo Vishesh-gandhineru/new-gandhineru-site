@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   PrimaryButton,
   SecondaryButton,
@@ -18,6 +18,8 @@ import ShflleCard from "@/components/CustomUi/ShflleCard";
 import { AnimatePresence, motion } from "framer-motion";
 
 const page = () => {
+
+  const [hover, setHover] = useState(false);
   const variantsEnter = {
     initial: {
       top: "100%",
@@ -57,11 +59,8 @@ const page = () => {
       </div> */}
 
 
-        <Link href="#" className="flex gap-3 bg-black text-white" >
-          <div>Button</div> 
-          <div>arrow</div>
-        </Link>
-
+<PrimaryButton className="bg-red-500" href="#"> All</PrimaryButton>
+<a href="www.google.com">Google</a>
     </section>
   );
 };

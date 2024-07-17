@@ -287,7 +287,7 @@
     position: absolute;
     width: 0%;
     height: 2px;
-    background:#373737;
+    background:currentColor;
     bottom:0; 
     left:0;
     transition: all ease-in-out 0.3s;

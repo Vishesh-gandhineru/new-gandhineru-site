@@ -1,7 +1,7 @@
 import React from "react";
 import { LogoBlack } from "@/components/CustomIcons";
 import MenuButton from "./MenuButton";
-import { ContactButton } from "../CustomButton";
+import { ContactButton, PrimaryButton } from "../CustomButton";
 import { ContactIcon } from "@/components/CustomIcons";
 import Link from "next/link";
 import StickyMenu from "./StickyMenu";
@@ -21,6 +21,7 @@ const MainMenu = () => {
           <ContactButton icon={<ContactIcon />} className=" hidden md:flex">
             Lets Chat?
           </ContactButton>
+         
           <MenuButton />
         </div>
       </div>

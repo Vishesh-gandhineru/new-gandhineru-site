@@ -1,6 +1,6 @@
+"use client"
 
-
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "@/components/CustomIcons";
 
@@ -31,23 +31,51 @@ export function PrimaryButton({
   icon,
   type,
 }: PrimaryButtonProps & globalsButtonProps) {
+  const [hover, setHover] = useState(false);
+
   return (
-    <Button
-      variant="Primary"
-      type={type}
-      asChild
-      className={cn("relative group primaryButton mr-[40px] px-5 md:py-2 md:px-8 before:bg-gradient-to-b after:bg-gradient-to-t from-transparent from-80% to-50% to-current" , [className] )}
-    >
-      <TransitionLink href={href ? href : "#"}>
-        <span>{children}</span>
-        <span className={cn("PrimaryButtonArrow absolute top-1/2 left-[100%] group-hover:left-[105%] group-hover:rotate-[-45deg] transition-all ease-in-out duration-300 -translate-y-1/2 bg-inherit before:bg-inherit w-[40px] rounded-full h-full grid place-content-center" , [
-          iconClassName
-        
-        ])}>
-          {icon ? icon : <ArrowRight className={iconColor ? iconColor : ""} />}
-        </span>
-      </TransitionLink>
-    </Button>
+    <>
+      <svg width="0" height="0" className="absolute hidden" colorInterpolationFilters="sRGB">
+        <defs>
+          <filter id="buttonFilter">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur"></feGaussianBlur>
+            <feColorMatrix
+              in="blur"
+              mode="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+              result="buttonFilter"
+            ></feColorMatrix>
+            <feComposite in="SourceGraphic" in2="buttonFilter" operator="atop"></feComposite>
+            <feBlend in="SourceGraphic" in2="buttonFilter"></feBlend>
+          </filter>
+        </defs>
+      </svg>
+
+      <Button
+        variant="Primary"
+        type={type}
+        asChild
+        className={cn(
+          "relative group px-5 mr-[40px] md:py-2 md:px-6",
+          className
+        )}
+        style={{ filter: 'url(#buttonFilter)' }}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      >
+        <TransitionLink href={href ? href : "#"}>
+          <span>{children}</span>
+          <span
+            className={cn(
+              "absolute top-1/2 left-[100%] group-hover:left-[calc(100%+10px)] group-hover:rotate-[-45deg] transition-all ease-in-out duration-300 -translate-y-1/2 bg-inherit before:bg-inherit w-[40px] rounded-full h-full grid place-content-center",
+              iconClassName
+            )}
+          >
+            {icon ? icon : <ArrowRight className={iconColor ? iconColor : ""} />}
+          </span>
+        </TransitionLink>
+      </Button>
+    </>
   );
 }
 
@@ -60,9 +88,9 @@ export function SecondaryButton({ children, href , className , arrowColor = "bla
       className={cn("SecondaryButton relative group mr-[30px]" , [className])}
     >
       <TransitionLink href={href ? href : "#"}>
-        {children}{" "}
+        {children}
         <span className="absolute top-1/2 left-[100%] group-hover:left-[105%] group-hover:rotate-[-45deg] transition-all ease-in-out duration-300 -translate-y-1/2  w-[40px] h-full grid place-content-center">
-          {" "}
+        
           <ArrowRight className={arrowColor} />
         </span>
       </TransitionLink>
@@ -103,19 +131,50 @@ export function ContactButton({
   icon,
   className
 }: globalsButtonProps & ContactButtonProps) {
-
+  const [hover, setHover] = useState(false);
   return (
-    <Button asChild className={cn("relative", [className] )}>
-      <TransitionLink
-        href={href ? href : "#"}
-        className="w-[40px] h-[40px] before:left-[-10px] after:left-[-10px] relative py-0 px-0 md:px-0 primaryButton before:bg-gradient-to-b after:bg-gradient-to-t from-transparent from-80% to-50% to-current"
-      >
-        <span>{icon}</span>
-        <span 
-        className="PrimaryButtonArrow ContactButtonBox opacity-0 before:right-[-10px]  bg-primary absolute right-full top-[50%] translate-y-[-50%] w-fit h-[40px] flex items-center justify-center px-4 rounded-full transition-all ease-in-out duration-300">
-          {children}
+  
+    <>
+    <svg width="0" height="0" className="absolute hidden" colorInterpolationFilters="sRGB">
+      <defs>
+        <filter id="buttonFilter">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur"></feGaussianBlur>
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+            result="buttonFilter"
+          ></feColorMatrix>
+          <feComposite in="SourceGraphic" in2="buttonFilter" operator="atop"></feComposite>
+          <feBlend in="SourceGraphic" in2="buttonFilter"></feBlend>
+        </filter>
+      </defs>
+    </svg>
+
+    <Button
+      variant="Primary"
+      asChild
+      className={cn(
+        "relative group px-5  md:py-2 md:px-3",
+        className
+      )}
+      style={{ filter: 'url(#buttonFilter)' }}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <TransitionLink href={href ? href : "#"}>
+        <span className={cn(
+            "absolute top-1/2 right-[100%] opacity-0 group-hover:opacity-100 transition-all ease-in-out duration-300 -translate-y-1/2 bg-inherit before:bg-inherit w-[calc(100%+80px)] rounded-full h-full grid place-content-center",
+            
+          )}>{children}</span>
+        <span className="w-fit h-fit">
+          {icon ? icon : <ArrowRight />}
         </span>
       </TransitionLink>
     </Button>
+  </>
+    
+
+    
   );
 }
