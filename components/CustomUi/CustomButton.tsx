@@ -1,6 +1,5 @@
-"use client"
 
-import React, { useState } from "react";
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "@/components/CustomIcons";
 
@@ -31,8 +30,6 @@ export function PrimaryButton({
   icon,
   type,
 }: PrimaryButtonProps & globalsButtonProps) {
-  const [hover, setHover] = useState(false);
-
   return (
     <>
       <svg width="0" height="0" className="absolute hidden" colorInterpolationFilters="sRGB">
@@ -60,8 +57,6 @@ export function PrimaryButton({
           className
         )}
         style={{ filter: 'url(#buttonFilter)' }}
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
       >
         <TransitionLink href={href ? href : "#"}>
           <span>{children}</span>
@@ -131,7 +126,6 @@ export function ContactButton({
   icon,
   className
 }: globalsButtonProps & ContactButtonProps) {
-  const [hover, setHover] = useState(false);
   return (
   
     <>
@@ -159,8 +153,6 @@ export function ContactButton({
         className
       )}
       style={{ filter: 'url(#buttonFilter)' }}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
     >
       <TransitionLink href={href ? href : "#"}>
         <span className={cn(
