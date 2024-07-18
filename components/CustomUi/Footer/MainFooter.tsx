@@ -77,8 +77,8 @@ const MainFooter = () => {
               <div className="flex flex-wrap md:flex-nowrap justify-between gap-5 items-center text-[#878787] text-sm">
                 <span className="w-full md:w-fit  text-center order-1">©2025 Gandhi & Neru</span>
                 <span className="w-0 md:w-[200px] lg:w-[300px] xl:w-[750px] h-[2px] bg-[#C7C7C7] mt-1 md:order-2"></span>
-                <span className="md:order-3">Privacy Policy</span>
-                <span className="md:order-4">Terms & Conditions</span>
+                <span className="md:order-3"><Link href="/privacy-policy">Privacy Policy</Link></span>
+                <span className="md:order-4"><Link href="terms-and-condition">Terms & Conditions</Link></span>
               </div>
             </div>
           </div>

@@ -7,7 +7,7 @@ export const MotionDiv = motion.div;
 export const MotionSection = motion.section;
 export const MotionButton = motion.button;
 
-export const FadeInDiv = ({ children , className , ...props } : {children : React.ReactNode , className:string}) => {
+export const FadeInDiv = ({ children , className , ...props } : {children : React.ReactNode , className?:string}) => {
     return (
         <MotionDiv
         initial={{ opacity: 0 , y:100 }}
@@ -23,7 +23,7 @@ export const FadeInDiv = ({ children , className , ...props } : {children : Reac
 }
 
 
-export const FadeInSection = ({ children , className , ...props } : {children : React.ReactNode , className:string}) => {
+export const FadeInSection = ({ children , className , ...props } : {children : React.ReactNode , className?:string}) => {
     return (
         <MotionSection
         initial={{ opacity: 0 , y:100 }}
