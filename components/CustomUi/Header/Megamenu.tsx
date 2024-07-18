@@ -120,7 +120,7 @@ export function MegaMenuContent() {
               transition={{ duration: 0.5, ease: "easeInOut" , type:"spring" }}
               key={i}
               layout
-              className="MenuBox justify-end transition-all ease-out duration-300 h-fit py-5 px-6 md:h-[230px] md:last:h-fit lg:h-[280px] lg:p-[30px] xl:h-[400px] border-b-[1px] border-r-[1px] col-span-2 md:col-span-1 xl:col-span-1 last:col-span-2 xl:last:col-span-1 group"
+              className="MenuBox justify-end transition-all ease-out duration-300 h-fit py-5 px-6 md:h-[230px] md:last:h-fit xl:last:h-full lg:h-[280px] lg:p-[30px] xl:h-[400px] border-b-[1px] border-r-[1px] col-span-2 md:col-span-1 xl:col-span-1 last:col-span-2 xl:last:col-span-1 group"
             >
               <TransitionLink href={item.link} className="w-fit">
                 <h3 className="w-fit">{item.title}</h3>
