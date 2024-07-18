@@ -1,6 +1,6 @@
 "use client";
 
-import { GetAllPosts, GetAllPostsCategory } from "@/ServerActions/FetchPost";
+import { GetAllPosts, GetAllPostsCategory, GetPosts } from "@/ServerActions/FetchPost";
 import React from "react";
 import useSWR from "swr";
 
@@ -22,7 +22,7 @@ const BlogCarousel = () => {
   const [SelectCategory, setSelectCategory] = React.useState("");
 
   const fetchPost = () =>
-    GetAllPosts({
+  GetPosts({
       _fields: "id,slug,title,meta,stick,_links,date,featured_media",per_page:"6" ,categories: SelectCategory === "" ? undefined : SelectCategory}, 1);
   const fetchCategory = () => GetAllPostsCategory({ _fields: "id,name,slug,count" });
   const {
@@ -35,6 +35,8 @@ const BlogCarousel = () => {
     isLoading: categoryLoading,
     error: categoryError,
   } = useSWR("GetAllPostsCategory", fetchCategory);
+
+
 
   type CategoryType = {
     id: string;

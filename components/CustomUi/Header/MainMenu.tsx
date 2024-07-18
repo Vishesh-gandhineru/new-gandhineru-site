@@ -14,7 +14,7 @@ const MainMenu = () => {
       <div className="flex justify-between items-center z-30">
         <div className="Logo">
           <TransitionLink href="/">
-            <LogoBlack className="h-full w-[200px]" />
+            <LogoBlack className="h-full w-[150px] md:w-[200px]" />
           </TransitionLink>
         </div>
         <div className="flex justify-center items-start gap-3">

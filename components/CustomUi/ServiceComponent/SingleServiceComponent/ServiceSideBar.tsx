@@ -59,13 +59,13 @@ const ServiceSideBar = ({ className , activeSection , setActiveSection  }: Servi
 
   return (
     <div className={cn("serviceSideBar relative justify-start flex flex-col gap-4 h-fit text-base text-[#C7C7C7]", [className])}>
-      <TransitionLink href="#overview" className="active" onClick={handleActiveLink}>Overview</TransitionLink>
-      <TransitionLink href="#why" onClick={handleActiveLink}>Why</TransitionLink>
-      <TransitionLink href="#coverages" onClick={handleActiveLink}>Coverages</TransitionLink>
-      <TransitionLink href="#process" onClick={handleActiveLink}>Process</TransitionLink>
-      <TransitionLink href="#relevant-projects" onClick={handleActiveLink}>Relevant Projects</TransitionLink>
-      <TransitionLink href="#testimonials" onClick={handleActiveLink}>Testimonials</TransitionLink>
-      <TransitionLink href="#faqs" onClick={handleActiveLink}>FAQs</TransitionLink>
+      <Link href="#overview" className="active" onClick={handleActiveLink}>Overview</Link>
+      <Link href="#why" onClick={handleActiveLink}>Why</Link>
+      <Link href="#coverages" onClick={handleActiveLink}>Coverages</Link>
+      <Link href="#process" onClick={handleActiveLink}>Process</Link>
+      <Link href="#relevant-projects" onClick={handleActiveLink}>Relevant Projects</Link>
+      <Link href="#testimonials" onClick={handleActiveLink}>Testimonials</Link>
+      <Link href="#faqs" onClick={handleActiveLink}>FAQs</Link>
      
         <motion.span
           initial={{ y: 8 }}

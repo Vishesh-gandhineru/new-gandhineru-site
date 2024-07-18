@@ -1,52 +1,44 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import BlogCard from "../BlogCard";
 import { useInView } from "framer-motion";
 import { Spinner } from "@/components/CustomIcons";
-import axios from "axios";
-import { GetAllPosts } from "@/ServerActions/FetchPost";
 
-const InfinityLoadBlogSection = () => {
-  const searchParams = useSearchParams();
-  const categoryId: string | null = searchParams.get("category");
-  const [Posts, setPosts] = useState<any[]>([]);
-  const [PostLoading, setPostLoading] = useState(true);
+import { GetAllPosts } from "@/ServerActions/FetchPost";
+import { fetchPostFromWordpress } from "@/utils/GlobalAxiosFunction";
+import axios from "axios";
+
+
+type InfinityLoadProps = {
+  initialPost: any[];
+  MaxPage: number;
+}
+
+
+const InfinityLoadBlogSection = ({initialPost  , MaxPage} : InfinityLoadProps) => {
+ 
+  const [Posts, setPosts] = useState<any[]>(initialPost);
   const [PostPage, setPostPage] = useState(1);
-  const [maxPostPage, setMaxPostPage] = useState<number>(0);
+  const [maxPostPage, setMaxPostPage] = useState<number>(MaxPage);
   const [maxPostReached, setMaxPostReached] = useState(false);
-  const [totalPosts, setTotalPosts] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref);
 
-  const loadMorePosts = async () => {
-    const nextpage = maxPostPage >= PostPage ? maxPostPage : PostPage + 1;
-    const baseUrl = "https://cms.gandhineru.com/wp-json/wp/v2";
+ 
+ async function loadMorePosts () {
+    const nextpage = maxPostPage <= PostPage ? maxPostPage : PostPage + 1;
+    // const newPosts = await fetchPostFromWordpress('posts', { _embed: true ,_fields: "id,slug,title,meta,stick,_links,date,featured_media",per_page:4 ,page:nextpage});
+    const params = { _embed: true ,_fields: "id,slug,title,meta,stick,_links,date,featured_media",per_page:4 ,page:nextpage}
+    const baseUrl = `https://cms.gandhineru.com/wp-json/wp/v2`; // Replace with your actual REST API URL
+    setPostPage(nextpage);
     const url = `${baseUrl}/posts`;
-    const params = {
-      _embed: true,
-      _fields: "id,slug,title,meta,stick,_links,date,featured_media,categories",
-      per_page: 4,
-      page: nextpage,
-    };
-
     try {
-      const response = await axios.get(url, { params });
-      const totalPosts: number = response.headers["x-wp-total"];
-      const totalPages: number = response.headers["x-wp-totalpages"];
-      setMaxPostPage(totalPages);
-      if (totalPages == PostPage) {
-        setMaxPostReached(true);
-      }
-      setTotalPosts(totalPosts);
-      if (totalPosts > Posts.length && totalPages > PostPage) {
-        setPostPage(nextpage);
-        return setPosts((prev) => [...prev, ...response.data]);
-      }
+      const response = await axios.get(url, { params });      
+      return setPosts( (prev) =>  [...prev, ...response.data]);
     } catch (error) {
-      console.error("Error fetching data:", error);
-      throw error;
+      console.error('Error fetching data:', error);
+      throw error; // Or handle the error differently (e.g., return a default value)
     }
   };
 
@@ -54,25 +46,13 @@ const InfinityLoadBlogSection = () => {
     if (isInView) {
       loadMorePosts();
     }
+    if(maxPostPage <= PostPage){
+      setMaxPostReached(true);
+    }
   }, [isInView]);
 
-//   useEffect(() => {
-   
-//       const FilterPosts = async () => {
-//         const getPosts = await GetAllPosts(
-//           {
-//             categories: categoryId == "0" ? undefined : categoryId,
-//             per_page: totalPosts,
-//           },
-//           1
-//         );
-//         return setPosts([...getPosts]);
-//       };
-//   if (categoryId != "0" || categoryId != null) {
-//       FilterPosts();
-//   }
-    
-//   }, [categoryId]);
+ 
+
 
   return (
     <div>
