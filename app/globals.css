@@ -8,7 +8,7 @@
 
   html {
     font-size: 16px;
-    scroll-behavior: smooth;
+
     overflow-x: hidden !important;
     scroll-padding-top: 100px; 
   }
@@ -16,12 +16,27 @@
 
   body {
     @apply font-Satoshi;
-    scroll-behavior: smooth;   
     /* overflow: hidden; */
     transition-property: all;
     transition-timing-function: ease-in-out;
     transition-duration: 500ms;
 
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
   }
 
  body[data-scroll-locked] {
@@ -31,11 +46,11 @@
  }
 
   h1 , h2 , h3 , h4 , h5 , h6 {
-    @apply font-Syne;
+    @apply font-Syne text-primary;
   }
 
   h1 {
-    @apply text-h1;
+    @apply text-h1 ;
   }
 
   h2 {
@@ -59,7 +74,7 @@
   }
 
   p{
-    @apply text-body font-normal tracking-[1px];
+    @apply text-body font-normal tracking-[1px] text-primary;
   }
 
   

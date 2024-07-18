@@ -48,17 +48,17 @@ export const AnimatedAccordionHeader = ({
   }
 
   const { isOpen, setIsOpen } = context;
-
   return (
     <div
       className={cn(
         "border-[1px] py-5 pr-40 md:pr-20 pl-5 rounded-[20px] text-start relative overflow-hidden z-10 cursor-pointer bg-white",
-        [className],
-        isOpen ? "text-white" : "text-black"
+        [className]
       )}
       onClick={() => setIsOpen(!isOpen)}
     >
-      {children}
+     <h4 className={cn("" , [
+      isOpen ? "!text-white" : "!text-black"
+     ])}>{children}</h4> 
       <motion.div
         initial={{
           opacity: 1,

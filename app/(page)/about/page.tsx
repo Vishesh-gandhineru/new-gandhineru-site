@@ -142,7 +142,7 @@ const AboutPage = async () => {
           <div className="flex flex-row overflow-scroll justify-start whitespace-nowrap lg:grid lg:grid-cols-3 lg:overflow-visible">
             <AnimatedAccordion>
               <AnimatedAccordionHeader bgImage="bg-transparency-bg">
-                <h4>Transparency</h4>
+              Transparency
               </AnimatedAccordionHeader>
               <AnimatedAccordionContent>
                 We believe in a two-way open and honest dialogue. Communication
@@ -151,7 +151,7 @@ const AboutPage = async () => {
             </AnimatedAccordion>
             <AnimatedAccordion>
               <AnimatedAccordionHeader bgImage="bg-flexibility-bg">
-                <h4>Flexibility</h4>
+                Flexibility
               </AnimatedAccordionHeader>
               <AnimatedAccordionContent>
                 We believe in a two-way open and honest dialogue. Communication
@@ -160,7 +160,7 @@ const AboutPage = async () => {
             </AnimatedAccordion>
             <AnimatedAccordion>
               <AnimatedAccordionHeader bgImage="bg-creativity-bg">
-                <h4>Creativity</h4>
+                Creativity
               </AnimatedAccordionHeader>
               <AnimatedAccordionContent>
                 We believe in a two-way open and honest dialogue. Communication

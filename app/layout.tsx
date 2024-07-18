@@ -5,6 +5,7 @@ import MainMenu from "@/components/CustomUi/Header/MainMenu";
 import MainFooter from "@/components/CustomUi/Footer/MainFooter";
 import PageTransition from "@/components/Animations/PageTransition";
 import CursorFollower from "@/components/Animations/customCursor";
+import SmoothScroller from "@/components/Animations/SmoothScroll";
 import "./globals.css";
 
 
@@ -45,6 +46,7 @@ export default function RootLayout({
         className={`${syne.variable} ${Satoshi.variable} bg-white mx-4 md:mx-6 md:mt-3 xl:mx-4 xl:mt-0`}
       >
         <CursorFollower />
+        <SmoothScroller />
         {/* <PageTransition /> */}
         <MainMenu /> 
         <main>
