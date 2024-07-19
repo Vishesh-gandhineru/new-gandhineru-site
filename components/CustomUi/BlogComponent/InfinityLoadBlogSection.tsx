@@ -4,10 +4,8 @@ import React, { useEffect, useRef, useState } from "react";
 import BlogCard from "../BlogCard";
 import { useInView } from "framer-motion";
 import { Spinner } from "@/components/CustomIcons";
-
-import { GetAllPosts } from "@/ServerActions/FetchPost";
-import { fetchPostFromWordpress } from "@/utils/GlobalAxiosFunction";
 import axios from "axios";
+
 
 
 type InfinityLoadProps = {
