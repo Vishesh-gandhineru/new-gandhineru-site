@@ -32,7 +32,7 @@ const page = () => {
                 src="https://cms.gandhineru.com/wp-content/uploads/2024/07/a_tap_on_the_wall_flowing_popcorns_out_and_that_popcorns_in_getting_collected_into_the_blow__and_the_dd4b05.mp4"
                 autoPlay
                 loop
-                controls={false}
+                muted
                 className="w-full h-full object-cover object-right rounded-[20px] absolute top-0 left-0 -z-10"
               ></video>
               <motion.div
