@@ -26,7 +26,7 @@ const HeroBanner = ({
       style={style}
     >
       {children}{" "}
-      <div className="HeroBannerButton px-6 pt-2 rounded-t-[15px]  absolute bottom-0 left-[50%] translate-x-[-50%] bg-white">
+      <div className="HeroBannerButton px-6 pt-2 rounded-t-[15px]  absolute bottom-0 left-[50%] translate-x-[-50%] bg-white z-[50]">
         <SecondaryButton href={buttonHref ? buttonHref : "#"}>
           {buttonText ? buttonText : "Book a Clarity Call"}
         </SecondaryButton>
