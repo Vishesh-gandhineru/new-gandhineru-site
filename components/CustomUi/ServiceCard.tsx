@@ -7,9 +7,11 @@ import { cn } from "@/lib/utils";
 
 import { PrimaryButton, SecondaryButton } from "./CustomButton";
 import { MotionDiv } from "./MotionDiv";
+import useWindowSize from "@/hooks/useWindowsize";
 
 type ServiceCardProps = {
   bgImage: string;
+  mobBgImage: string;
   serviceContent: string;
   title: string;
   slug: string;
@@ -21,6 +23,7 @@ type ServiceCardProps = {
 
 const ServiceCards = ({
   bgImage,
+  mobBgImage,
   serviceContent,
   title,
   slug,
@@ -32,6 +35,10 @@ const ServiceCards = ({
  
  
   const stackScale = useTransform(Progress, range, [1, targetScale]);
+
+  const { width } = useWindowSize();
+  const isMobile = width < 768;
+  const bgImages = isMobile ? mobBgImage : bgImage;
   return (
     <MotionDiv
       id={slug}
@@ -41,8 +48,8 @@ const ServiceCards = ({
       className={cn(" h-full sticky grid place-content-center top-[20%]")}
     >
       <motion.div     
-        className="w-full relative h-[420px] md:h-[350px] lg:h-[420px] bg-cover rounded-[20px] bg-center p-10 lg:p-16 flex flex-col justify-end pb-[50px] lg:pb-[80px]"
-        style={{ backgroundImage: `url(${bgImage})`, scale: stackScale , top: `calc(-5vh + ${i * 25}px)` }}
+        className="w-full relative h-[420px] md:h-[350px] lg:h-[420px] bg-cover rounded-[20px] bg-center px-6 py-10 lg:p-16 flex flex-col justify-start lg:justify-end pb-[50px] lg:pb-[80px]"
+        style={{ backgroundImage: `url(${bgImages})`, scale: stackScale , top: `calc(-5vh + ${i * 25}px)` }}
       >
         <motion.div 
         initial={{opacity: 0 , y: 50}}
@@ -57,7 +64,7 @@ const ServiceCards = ({
 
           <div className="flex gap-12">
             <PrimaryButton
-              className="text-white bg-[#242120] text-[12px] md:text-base"
+              className="text-white bg-[#242120] text-[12px] md:text-base hidden md:block"
               href={`/services/${slug}`}
             >
               Take it ahead

@@ -12,6 +12,7 @@ import Work from "@/components/CustomUi/HomeComponent/Work";
 import ServiceCardSection from "@/components/CustomUi/ServiceComponent/ServiceCardSection";
 import { MotionDiv , MotionSection , FadeInDiv , FadeInSection } from "@/components/CustomUi/MotionDiv";
 import { Skeleton } from "@/components/ui/skeleton";
+import HeroImageCarousel from "@/components/CustomUi/HomeComponent/HeroImageCarousel";
 
 
 
@@ -21,9 +22,10 @@ const page = async () => {
     <main>
       <HeroBanner
         buttonHref="/services"
-        className=" bg-hero-home-mob-banner bg-bottom md:bg-center  md:bg-hero-home-banner flex items-center h-[550px] md:h-[500px] lg:h-[640px] container m-auto p-5 md:p-8 lg:p-12"
+        className=" bg-bottom md:bg-center  flex items-center h-[550px] md:h-[500px] lg:h-[640px] container m-auto p-5 md:p-8 lg:p-12 relative"
         buttonText="Build your Brand"
       >
+      <HeroImageCarousel />
         <FadeInDiv 
         className="w-full h-full pt-[90px] md:pt-[50px] pb-[50px] justify-between md:justify-end lg:justify-center md:w-[80%] lg:w-[60%] flex flex-col gap-[80px]">
           <div className="flex flex-col gap-3 lg:gap-8">
@@ -66,7 +68,7 @@ const page = async () => {
           <TestimonialCard />
         </div>
       </FadeInSection>
-      <FadeInSection className="sectionContainer flex-col flex gap-[80px]">
+      <FadeInSection className="sectionContainer flex-col flex gap-[80px] lg:gap-[100px] xl:gap-[80px]">
         <Heading
           Heading="Our Services"
           subHeading="A Toolkit of Insight, Intuition & Tech"

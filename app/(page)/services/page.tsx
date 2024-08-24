@@ -16,7 +16,7 @@ const ServicePage = () => {
     <main>
       <HeroBanner
         buttonHref="/contact"
-        className=" bg-hero-server-banner container"
+        className="bg-hero-server-mob-banner md:bg-hero-server-banner container"
         buttonText="Book a Clarity Call"
       ></HeroBanner>
       <section className="sectionContainer space-y-8 text-center ">

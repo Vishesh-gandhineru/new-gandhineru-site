@@ -24,7 +24,7 @@ const ResourcesPage = async ({searchParams}: {searchParams: {category : number}}
         buttonHref="/contact"
         className={cn(
           "md:container bg-right h-[360px] bg-cover md:bg-center bg-no-repeat",
-          ["bg-hero-blog-banner"]
+          ["bg-blog-cover-mobile md:bg-hero-blog-banner"]
         )}
         buttonText="Book a Clarity Call"
       ></HeroBanner>

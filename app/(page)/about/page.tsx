@@ -50,7 +50,7 @@ const AboutPage = async () => {
     <main>
       <HeroBanner
         buttonHref="/contact"
-        className=" bg-hero-about-banner container"
+        className=" bg-hero-about-mob-banner md:bg-hero-about-banner container"
         buttonText="Book a Clarity Call"
       ></HeroBanner>
       {/* first fold */}

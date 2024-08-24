@@ -26,6 +26,7 @@ const ServiceCardSection = () => {
     >
       {data?.map((item: any, i: number) => {
         const bgImage = item.meta["banner-image"];
+        const mobBgImg = item.meta["mob-banner-image"];
         const serviceContent = DOMPurify.sanitize(
           item.meta["banner_copy"]
         );
@@ -36,6 +37,7 @@ const ServiceCardSection = () => {
             i={i}
             title={item.title.rendered}
             bgImage={bgImage}
+            mobBgImage={mobBgImg}
             serviceContent={serviceContent}
             slug={item.slug}
             range={[i * 0.07, 1]}

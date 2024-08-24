@@ -52,7 +52,7 @@ const Megamenu = ({ isActive }: MegamenuProps) => {
       initial="close"
       animate={isActive ? "open" : "close"}
       variants={variants}
-      className="container m-auto right-2 top-2 bg-primary py-8 absolute z-[100]"
+      className="container m-auto right-2 top-2 bg-primary py-8 absolute z-[999]"
     >
       <motion.div
         initial="close"
