@@ -17,7 +17,7 @@ import WhatWeDoSection from "@/components/CustomUi/AboutComponent/WhatWeDoSectio
 import TeamsSection from "@/components/CustomUi/AboutComponent/TeamsSection";
 
 const AboutPage = async () => {
-  const teams = await GetAllteam();
+  // const teams = await GetAllteam();
 
   const MarqueeItem = [
     {
@@ -174,7 +174,7 @@ const AboutPage = async () => {
         <div className="mb-[30px] text-center">
           <h3>Meet the team</h3>
         </div>
-       <TeamsSection teams={teams}/>
+       {/* <TeamsSection teams={teams}/> */}
       </section>
     </main>
   );
