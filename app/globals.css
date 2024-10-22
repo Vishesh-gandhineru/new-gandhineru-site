@@ -450,9 +450,10 @@
   -webkit-backdrop-filter: blur( 50.5px ); 
 }
 
-.page-transition {
+/* .page-transition {
   opacity: 0;
   background:#fff;
   transform : translateY(400px);
-  /* filter : blur(12px) */
-}
+  /* filter : blur(12px) 
+  }*/
+
