@@ -38,8 +38,8 @@ const WorkCard = ({ image, title, tags, slug , className, comingSoon ,i}: WorksP
           className=" object-cover object-center rounded-[20px]"
         />
         {comingSoon === "true" && (
-          <div className=" absolute top-0 left-0 w-full h-full hover:bg-black/50  flex justify-center items-center rounded-[20px] transition-all ease-in-out duration-300 group">
-            <span className=" text-white text-lg font-semibold text-center rounded-full w-28 h-28 grid place-content-center opacity-0 group-hover:opacity-100 transition-all ease-in-out duration-300 bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 border border-gray-100" >Coming <br></br>Soon</span>
+          <div className=" absolute top-0 left-0 w-full h-full hover:bg-black/30  flex justify-center items-center rounded-[20px] transition-all ease-in-out duration-300 group">
+            <span className=" text-[#373737] text-lg font-semibold bg-white text-center px-4 py-2 absolute top-4 left-4 rounded-full grid place-content-center opacity-0 group-hover:opacity-100 transition-all ease-in-out duration-300" >Coming Soon</span>
           </div>
         )}
         </TransitionLink>

@@ -55,11 +55,11 @@ const ServiceCards = ({
         initial={{opacity: 0 , y: 50}}
         whileInView={{opacity: 1 , y: 0}}
         transition={{duration: 0.5 , ease: "easeInOut"}}
-        className="w-full md:w-[65%] lg:w-[50%] flex flex-col gap-6">
-          <h2 className="text-white">{title}</h2>
+        className="w-[90vw] md:w-[65%] lg:w-[50%] flex flex-col gap-6">
+          <h2 className="text-white text-[48px] leading-[1.1em]">{title}</h2>
           <div
             dangerouslySetInnerHTML={{ __html: serviceContent }}
-            className="text-wrap"
+            className="text-wrap hidden md:block" 
           />
 
           <div className="flex gap-12">
@@ -72,8 +72,8 @@ const ServiceCards = ({
 
             <SecondaryButton
               href="/services"
-              className="text-base text-white text-[12px] md:text-base"
-              arrowColor="white"
+              className="text-base text-#373737 text-[18px] md:text-base"
+              arrowColor="blackArrow"
             >
               View Projects
             </SecondaryButton>

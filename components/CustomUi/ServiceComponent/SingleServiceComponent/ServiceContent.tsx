@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { PrimaryButton } from "../../CustomButton";
 import { ContactIcon } from "@/components/CustomIcons";
 import Image from "next/image";
@@ -12,7 +12,7 @@ import ProjectCard from "../../WorkComponent/ProjectCard";
 
 import useSWR from "swr";
 import { motion, useScroll, useInView, useTransform } from "framer-motion";
-import { useRouter } from "next/navigation";
+import {  useParams } from "next/navigation";
 
 
 type ServiceContentProps = {
@@ -44,6 +44,8 @@ const ServiceContent = ({ service , setActiveSection }: ServiceContentProps) => 
   const faqsInView = useInView(faqs);
   const testimonialsInView = useInView(testimonials);
   const relevantProjectsInView = useInView(relevantProjects);
+
+  const [backgroundColor, setBackgroundColor] = useState("");
   
   useEffect(() => {
     if (overViewInView) {
@@ -68,6 +70,29 @@ const ServiceContent = ({ service , setActiveSection }: ServiceContentProps) => 
       setActiveSection("relevant-projects");
     }
   } , [overViewInView , whyInView , coveragesInView , processInView , faqsInView , testimonialsInView , relevantProjectsInView])
+
+  // get slug from url and then add dynamic backgorund color if slug is branding-design then the background color will be #FFEBC7
+  const params = useParams();
+  const slug = params?.slug;
+  useEffect(() => {
+    if (slug === "branding-design") {
+    setBackgroundColor("#FFEBC7");
+  } else if (slug === "web-development") {
+    setBackgroundColor("#D7F8FF");}
+  else if (slug === "illustration") {
+    setBackgroundColor("#EFF9D1");}
+  else if (slug === "no-code-process") {
+    setBackgroundColor("#F2DBED");}
+  else if (slug === "marketing-asset-design") {
+    setBackgroundColor("#FFE0E7");}
+  else if (slug === "guardianship") {
+    setBackgroundColor("#DBEFFF");}
+    else if (slug === "product-development") {
+    setBackgroundColor("#E2FFEC");}
+  }, [slug]);
+ 
+  
+
 
   return (
     <div className="content w-full lg:w-[80%] space-y-[50px]" ref={container}>
@@ -109,7 +134,7 @@ const ServiceContent = ({ service , setActiveSection }: ServiceContentProps) => 
       </motion.section>
 
       <motion.section id="coverages" ref={coverages}>
-        <div className=" space-y-4">
+        <div className=" space-y-4 p-10 rounded-[20px]" style={{ backgroundColor }}>
           <h3>Coverages</h3>
           <div className="columns-2 gap-5">
             {coverageList.map((item: any, index: number) => {
