@@ -20,7 +20,7 @@ type WorkPageProps = {
 
 const WorKPage = async ({searchParams} : WorkPageProps) => {
   const {category, id} = searchParams
-  const works = await GetAllWork( id ? id : 0 , {order : "asc"}); 
+  const works = await GetAllWork( id ? id : 0 , {order : "asc" , per_page: 50}); 
   const workCategory = await GetAllWorkCategory({_field:"id,count,name,slug"});
   
    
@@ -37,18 +37,19 @@ const WorKPage = async ({searchParams} : WorkPageProps) => {
 
         </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-x-5 gap-y-14">   
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-14">   
         
         {works.map((work: any , i: number) => {
           return (
             <WorkCard 
             i={i}  
             key={work.id}           
-              className="workCard"
+              className=""
                 image={work._embedded["wp:featuredmedia"][0].source_url}
                 title={work?.title.rendered}
                 tags={work._embedded["wp:term"][0]}
                 slug={work.slug}
+                comingSoon={work.meta?.coming_soon}
               />
               );
             })}     

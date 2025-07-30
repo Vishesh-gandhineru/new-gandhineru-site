@@ -13,25 +13,35 @@ type WorksProps = {
   tags: Array<{ name: string }>;
   slug: string;
   className?: string;
-  i: number
+  i: number;
+  comingSoon?: string;
 };
 
-const WorkCard = ({ image, title, tags, slug , className, i}: WorksProps) => {
+const WorkCard = ({ image, title, tags, slug , className, comingSoon ,i}: WorksProps) => {
+
+  console.log(comingSoon, "coming soon in work card");
+
   return (
     <MotionDiv 
     initial={{opacity: 0 , y: 50}}
     whileInView={{opacity: 1 , y: 0}}
     viewport={{ once: true }}
-    transition={{duration: 0.3 , ease: "easeInOut" , delay: i * 0.1}}
+    transition={{duration: 0.3 , ease: "easeInOut" , delay: 0.1}}
     className={cn(" space-y-8", [className])}>
       <div className=" workCardImage relative w-full h-[330px] md:h-[300px] lg:h-[450px]">
-        <TransitionLink href={`/work/${slug}`}>
+       
+        <TransitionLink href={comingSoon === "true" ? "#" : `/work/${slug}`}>
         <Image
           src={image}
           alt={title}
           fill={true}
           className=" object-cover object-center rounded-[20px]"
         />
+        {comingSoon === "true" && (
+          <div className=" absolute top-0 left-0 w-full h-full hover:bg-black/50  flex justify-center items-center rounded-[20px] transition-all ease-in-out duration-300 group">
+            <span className=" text-white text-lg font-semibold text-center rounded-full w-28 h-28 grid place-content-center opacity-0 group-hover:opacity-100 transition-all ease-in-out duration-300 bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 border border-gray-100" >Coming <br></br>Soon</span>
+          </div>
+        )}
         </TransitionLink>
       </div>
       <div>
