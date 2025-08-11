@@ -24,14 +24,6 @@ const ServicePage = () => {
           Creating Brand Identity Systems empowered through Technology &
           Copywriting.
         </h2>
-
-        <Image
-          src="/Images/Blog cover.png"
-          width={1260}
-          height={360}
-          alt="Picture of the author"
-          className="m-auto w-full h-[200px] md:h-[400px] object-cover object-[80%] rounded-2xl"
-        />
         <PrimaryButton className="to-white" href="/contact" icon={<ContactIcon />}>
           Let&apos;s Chat?
         </PrimaryButton>
