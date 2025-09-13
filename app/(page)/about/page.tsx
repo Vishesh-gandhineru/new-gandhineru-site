@@ -17,7 +17,7 @@ import WhatWeDoSection from "@/components/CustomUi/AboutComponent/WhatWeDoSectio
 import TeamsSection from "@/components/CustomUi/AboutComponent/TeamsSection";
 
 const AboutPage = async () => {
-  // const teams = await GetAllteam();
+  const teams = await GetAllteam();
 
   const MarqueeItem = [
     {
@@ -60,7 +60,11 @@ const AboutPage = async () => {
             If you&apos;ve made it here, you must be curious about our story.
             Let&apos;s get to it.
           </h2>
-          <PrimaryButton href="/contact" className="to-white" icon={<ContactIcon />}>
+          <PrimaryButton
+            href="/contact"
+            className="to-white"
+            icon={<ContactIcon />}
+          >
             Let&apos;s Chat?
           </PrimaryButton>
         </div>
@@ -142,7 +146,7 @@ const AboutPage = async () => {
           <div className="flex flex-row overflow-scroll justify-start whitespace-nowrap lg:grid lg:grid-cols-3 lg:overflow-visible">
             <AnimatedAccordion>
               <AnimatedAccordionHeader bgImage="bg-transparency-bg">
-              Transparency
+                Transparency
               </AnimatedAccordionHeader>
               <AnimatedAccordionContent>
                 We believe in a two-way open and honest dialogue. Communication
@@ -174,7 +178,7 @@ const AboutPage = async () => {
         <div className="mb-[30px] text-center">
           <h3>Meet the team</h3>
         </div>
-       {/* <TeamsSection teams={teams}/> */}
+        <TeamsSection teams={teams} />
       </section>
     </main>
   );

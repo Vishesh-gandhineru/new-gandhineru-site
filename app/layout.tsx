@@ -9,7 +9,6 @@ import SmoothScroller from "@/components/Animations/SmoothScroll";
 import "./globals.css";
 import { Suspense } from "react";
 
-
 const syne = Syne({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
@@ -42,19 +41,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-     
       <body
         className={`${syne.variable} ${Satoshi.variable} bg-white mx-4 md:mx-6 md:mt-3 xl:mx-4 xl:mt-0`}
       >
         <CursorFollower />
         <Suspense fallback={"loading"}>
-        <SmoothScroller />
+          <SmoothScroller />
         </Suspense>
         {/* <PageTransition /> */}
-        <MainMenu /> 
-        <main>
+        <MainMenu />
         {children}
-        </main>
         <MainFooter />
       </body>
     </html>
