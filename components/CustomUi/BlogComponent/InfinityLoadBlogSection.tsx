@@ -6,16 +6,15 @@ import { useInView } from "framer-motion";
 import { Spinner } from "@/components/CustomIcons";
 import axios from "axios";
 
-
-
 type InfinityLoadProps = {
   initialPost: any[];
   MaxPage: number;
-}
+};
 
-
-const InfinityLoadBlogSection = ({initialPost  , MaxPage} : InfinityLoadProps) => {
- 
+const InfinityLoadBlogSection = ({
+  initialPost,
+  MaxPage,
+}: InfinityLoadProps) => {
   const [Posts, setPosts] = useState<any[]>(initialPost);
   const [PostPage, setPostPage] = useState(1);
   const [maxPostPage, setMaxPostPage] = useState<number>(MaxPage);
@@ -23,34 +22,35 @@ const InfinityLoadBlogSection = ({initialPost  , MaxPage} : InfinityLoadProps) =
   const ref = useRef(null);
   const isInView = useInView(ref);
 
- 
- async function loadMorePosts () {
+  async function loadMorePosts() {
     const nextpage = maxPostPage <= PostPage ? maxPostPage : PostPage + 1;
     // const newPosts = await fetchPostFromWordpress('posts', { _embed: true ,_fields: "id,slug,title,meta,stick,_links,date,featured_media",per_page:4 ,page:nextpage});
-    const params = { _embed: true ,_fields: "id,slug,title,meta,stick,_links,date,featured_media",per_page:4 ,page:nextpage}
+    const params = {
+      _embed: true,
+      _fields: "id,slug,title,meta,stick,_links,date,featured_media",
+      per_page: 4,
+      page: nextpage,
+    };
     const baseUrl = `https://cms.gandhineru.com/wp-json/wp/v2`; // Replace with your actual REST API URL
     setPostPage(nextpage);
     const url = `${baseUrl}/posts`;
     try {
-      const response = await axios.get(url, { params });      
-      return setPosts( (prev) =>  [...prev, ...response.data]);
+      const response = await axios.get(url, { params });
+      return setPosts((prev) => [...prev, ...response.data]);
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error("Error fetching data:", error);
       throw error; // Or handle the error differently (e.g., return a default value)
     }
-  };
+  }
 
   useEffect(() => {
     if (isInView) {
       loadMorePosts();
     }
-    if(maxPostPage <= PostPage){
+    if (maxPostPage <= PostPage) {
       setMaxPostReached(true);
     }
   }, [isInView]);
-
- 
-
 
   return (
     <div>
