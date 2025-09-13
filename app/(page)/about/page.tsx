@@ -9,15 +9,23 @@ import {
   AnimatedAccordionContent,
   AnimatedAccordionHeader,
 } from "@/components/CustomUi/AboutComponent/AnimatedAccordion";
-import { Accordion } from "@radix-ui/react-accordion";
 import { GetAllteam } from "@/ServerActions/FetchTeam";
-import TeamCard from "@/components/CustomUi/AboutComponent/TeamCard";
 import "./about.css";
 import WhatWeDoSection from "@/components/CustomUi/AboutComponent/WhatWeDoSection";
 import TeamsSection from "@/components/CustomUi/AboutComponent/TeamsSection";
 
 const AboutPage = async () => {
-  const teams = await GetAllteam();
+  let teams = []; // Initialize teams with a default empty array
+
+  try {
+    // Attempt to fetch the team data
+    teams = await GetAllteam();
+  } catch (error) {
+    // If the fetch fails, log the error for debugging on the server
+    console.error("Failed to fetch team data during build:", error);
+    // The 'teams' variable will remain an empty array,
+    // preventing the build from crashing.
+  }
 
   const MarqueeItem = [
     {
@@ -178,7 +186,16 @@ const AboutPage = async () => {
         <div className="mb-[30px] text-center">
           <h3>Meet the team</h3>
         </div>
-        <TeamsSection teams={teams} />
+        {teams && Array.isArray(teams) && teams.length > 0 ? (
+          <TeamsSection teams={teams} />
+        ) : (
+          <div className="text-center py-8">
+            <p className="text-gray-600">
+              Our team information will be updated soon. Please check back
+              later!
+            </p>
+          </div>
+        )}
       </section>
     </main>
   );
