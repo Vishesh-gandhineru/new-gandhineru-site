@@ -89,7 +89,10 @@ const MainFooter = () => {
 
                   {/* Social button */}
                   <div className="mt-8 md:mt-8 flex flex-row gap-y-3 flex-wrap md:gap-y-4  ">
-                    <SocialButton className="px-4 md:px-7 text-[12px] md:text-base">
+                    <SocialButton
+                      href="https://www.facebook.com/gandhineruofficial/"
+                      className="px-4 md:px-7 text-[12px] md:text-base"
+                    >
                       Facebook
                     </SocialButton>
                     <SocialButton className="px-4 md:px-7 text-[12px] md:text-base">
@@ -98,10 +101,16 @@ const MainFooter = () => {
                     <SocialButton className="px-4 md:px-7 text-[12px] md:text-base">
                       Clutch
                     </SocialButton>
-                    <SocialButton className="px-4 md:px-7 text-[12px] md:text-base">
+                    <SocialButton
+                      href="https://in.linkedin.com/company/gandhi-neru"
+                      className="px-4 md:px-7 text-[12px] md:text-base"
+                    >
                       LinkedIn
                     </SocialButton>
-                    <SocialButton className="px-4 md:px-7 text-[12px] md:text-base">
+                    <SocialButton
+                      href="https://www.instagram.com/gandhineru/?hl=en"
+                      className="px-4 md:px-7 text-[12px] md:text-base"
+                    >
                       Instagram
                     </SocialButton>
                   </div>

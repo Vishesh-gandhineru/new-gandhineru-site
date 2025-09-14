@@ -1,5 +1,9 @@
 import React from "react";
-import { GetAllPosts, GetPostBySlug, GetPosts } from "@/ServerActions/FetchPost";
+import {
+  GetAllPosts,
+  GetPostBySlug,
+  GetPosts,
+} from "@/ServerActions/FetchPost";
 import HeroBanner from "@/components/CustomUi/HeroBanner";
 import DOMPurify from "isomorphic-dompurify";
 import NewsLetterForm from "@/components/CustomUi/Footer/FooterNewsLetterForm";
@@ -10,7 +14,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel"
+} from "@/components/ui/carousel";
 
 type BlogSinglePageProps = {
   params: {
@@ -21,11 +25,13 @@ type BlogSinglePageProps = {
 const BlogSinglePage = async ({ params }: BlogSinglePageProps) => {
   const { slug } = params;
   const SinglePost = await GetPostBySlug(slug);
-  const Posts = await GetPosts({
-    _fields: "id,slug,title,meta,stick,_links,date,featured_media",
-  },1);
+  const Posts = await GetPosts(
+    {
+      _fields: "id,slug,title,meta,stick,_links,date,featured_media",
+    },
+    1
+  );
   const post = SinglePost[0];
- 
 
   const PostDate = new Date(post.date);
   const Months = [
@@ -58,12 +64,16 @@ const BlogSinglePage = async ({ params }: BlogSinglePageProps) => {
 
       <div className=" my-[30px] md:container md:my-[50px] flex flex-col gap-[30px] md:gap-[50px] lg:w-[90%] xl:w-[80%]">
         <div className="flex flex-col gap-[20px] justify-start items-start">
-          <h2 className="text-[24px] leading-[34px] md:text-[36px] md:leading-[46px]">{post.title.rendered}</h2>
+          <h2 className="text-[24px] leading-[34px] md:text-[36px] md:leading-[46px]">
+            {post.title.rendered}
+          </h2>
           <div className=" flex gap-[30px] items-center justify-start w-full h-full">
             <span className="border-[1px] border-[#D0D0D0] rounded-full px-5 py-2 text-primary text-[12px] md:text-sm uppercase">
               {post.meta["read-time"]} min read
             </span>
-            <p className="text-[12px] md:text-[14px] uppercase text-gray">{FormatedDate}</p>
+            <p className="text-[12px] md:text-[14px] uppercase text-gray">
+              {FormatedDate}
+            </p>
           </div>
         </div>
         <div>
@@ -73,32 +83,33 @@ const BlogSinglePage = async ({ params }: BlogSinglePageProps) => {
       <div className="md:container flex flex-col gap-[40px] md:gap-[50px]">
         <div className="bg-[#F3F3F3] xl:w-[85%] xl:m-auto flex flex-col md:gap-[30px] lg:flex-row justify-between items-center p-8 md:py-12 md:px-12 rounded-[20px]">
           <h3 className="lg:w-[500px]">Get the latest news in your inbox!</h3>
-          <NewsLetterForm className="flex flex-col md:flex-row w-full justify-start md:justify-center xl:justify-end xl:flex-row items-start lg:items-end gap-4 space-y-0" />
+          <NewsLetterForm className="flex flex-col md:flex-row justify-start md:justify-center xl:justify-end xl:flex-row items-start lg:items-end gap-4 space-y-0 w-fit" />
         </div>
 
-
-          <div className="w-full xl:w-[1190px] my-0 m-auto flex flex-col gap-5 lg:gap-8">
+        <div className="w-full xl:w-[1190px] my-0 m-auto flex flex-col gap-5 lg:gap-8">
           <h3>Recommended Resources/ Reads</h3>
           <Carousel>
-  <CarouselContent>    
-            {Posts?.map((post: Record<string, any> = {} , i:number) => {
-              return (
-                <CarouselItem key={post.id} className=" basis-[80%] sm:basis-[40%] lg:basis-[30%] xl:basis-1/4">
-                  <BlogCard   
-                    index={i}                 
-                    title={post.title.rendered}
-                    date={post.date}
-                    image={post._embedded["wp:featuredmedia"][0].source_url}
-                    readTime={post.meta["read-time"]}
-                    slug={post.slug}
-                  />
-                </CarouselItem>
-              );
-            })}
-  </CarouselContent>
-</Carousel>
-          </div>
-
+            <CarouselContent>
+              {Posts?.map((post: Record<string, any> = {}, i: number) => {
+                return (
+                  <CarouselItem
+                    key={post.id}
+                    className=" basis-[80%] sm:basis-[40%] lg:basis-[30%] xl:basis-1/4"
+                  >
+                    <BlogCard
+                      index={i}
+                      title={post.title.rendered}
+                      date={post.date}
+                      image={post._embedded["wp:featuredmedia"][0].source_url}
+                      readTime={post.meta["read-time"]}
+                      slug={post.slug}
+                    />
+                  </CarouselItem>
+                );
+              })}
+            </CarouselContent>
+          </Carousel>
+        </div>
       </div>
     </section>
   );

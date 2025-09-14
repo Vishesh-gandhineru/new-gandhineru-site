@@ -91,7 +91,7 @@ const NewsLetterForm = ({ className }: NewsLetterFormProps) => {
       <form
         onSubmit={form.handleSubmit(onSubmit)}
         className={cn(
-          "space-y-8 md:flex md:items-end gap-12 xl:flex-col xl:gap-0 xl:items-start",
+          "space-y-8 md:flex md:items-end gap-12 xl:flex-col xl:gap-0 xl:items-start relative",
           [className]
         )}
       >
@@ -166,7 +166,11 @@ const NewsLetterForm = ({ className }: NewsLetterFormProps) => {
               </svg>
             )}
             {isSubmitted && (
-              <span className="mt-5">Thank you we will get in touch soon</span>
+              <div className="absolute w-full left-0 bottom-[-30px] my-auto text-green-700">
+                <span className="mt-5">
+                  Thank you we will get in touch soon
+                </span>
+              </div>
             )}
           </div>
         </div>
