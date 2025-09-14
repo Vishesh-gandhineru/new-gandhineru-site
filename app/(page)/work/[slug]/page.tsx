@@ -52,19 +52,20 @@ const page = async ({ params }: PageProps) => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className=" relative w-full h-[400px] mt-[30px]"
+          className=" relative w-full h-[200px] lg:h-[400px] mt-[30px]"
         >
           <Image
             src={banner_image}
             alt="title"
             fill
             sizes="100vw"
+            quality={100}
             className=" object-cover object-center rounded-[20px]"
           />
         </MotionDiv>
       </section>
       {/* Hero Content */}
-      <section className="sectionContainer flex flex-col lg:flex-row flex-wrap gap-8 items-center justify-between">
+      <section className="sectionContainer !pt-0 flex flex-col lg:flex-row flex-wrap gap-8 items-center justify-between ">
         <MotionDiv
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -115,7 +116,7 @@ const page = async ({ params }: PageProps) => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className=" relative w-full h-[300px] md:h-[400px] lg:h-[730px]"
+          className=" relative w-full h-[200px] md:h-[400px] lg:h-[730px]"
         >
           <Image
             src={hero_image}
@@ -168,7 +169,7 @@ const page = async ({ params }: PageProps) => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className=" relative w-full h-[400px] lg:h-[730px]"
+          className=" relative w-full h-[200px] md:h-[400px] lg:h-[730px]"
         >
           <Image
             src={second_banner_image}
@@ -249,9 +250,12 @@ const page = async ({ params }: PageProps) => {
       </section>
       {/* Approach banner */}
       <section className="max-w-[1400px] m-auto">
-        <MotionDiv  initial={{opacity: 0 , y: 50}}
-        whileInView={{opacity: 1 , y: 0}}
-        transition={{duration: 0.8 , ease:"easeInOut"}}    className=" relative w-full h-[400px] lg:h-[660px]">
+        <MotionDiv
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          className=" relative w-full h-[200px] md:h-[400px] lg:h-[660px]"
+        >
           <Image
             src={approach_banner}
             alt={title}
@@ -262,10 +266,13 @@ const page = async ({ params }: PageProps) => {
       </section>
       {/* Impact */}
       <section className="sectionContainer flex flex-row flex-wrap gap-8 items-center justify-between">
-        <MotionDiv initial={{opacity: 0 , y: 50}}
-        whileInView={{opacity: 1 , y: 0}}
-        transition={{duration: 0.8 , ease:"easeInOut"}}    className="WorkContent w-full lg:w-[50%]">
-          <h4 className="mb-[00px]">Impact :</h4>
+        <MotionDiv
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          className="WorkContent w-full lg:w-[50%]"
+        >
+          <h4 className="mb-[0px]">Impact :</h4>
           <div
             dangerouslySetInnerHTML={{ __html: impact }}
             className="text-base"
@@ -276,9 +283,14 @@ const page = async ({ params }: PageProps) => {
       <section className="max-w-[1400px] m-auto grid grid-cols-2 gap-5 ">
         {impact_gallery.map((image: string, index: number) => {
           return (
-            <MotionDiv  initial={{opacity: 0 , y: 50}}
-            whileInView={{opacity: 1 , y: 0}}
-            transition={{duration: 0.8 , ease:"easeInOut" , delay: index * 0.1}}   
+            <MotionDiv
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.8,
+                ease: "easeInOut",
+                delay: index * 0.1,
+              }}
               key={index}
               className=" ImpactGallery relative w-full h-[200px] md:h-[400px] lg:h-[500px]"
             >
@@ -295,9 +307,11 @@ const page = async ({ params }: PageProps) => {
       </section>
       {/* client testimonial */}
       <section className="max-w-[1400px] m-auto grid grid-cols-1 md:grid-cols-2 gap-[80px] my-[50px] justify-center items-center">
-        <MotionDiv  initial={{opacity: 0 , y: 50}}
-        whileInView={{opacity: 1 , y: 0}}
-        transition={{duration: 0.8 , ease:"easeInOut"}}   >
+        <MotionDiv
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+        >
           <Image
             src={client_testimonial_image}
             alt={`${title} testimonial`}
@@ -306,9 +320,11 @@ const page = async ({ params }: PageProps) => {
             className=" rounded-[20px]"
           />
         </MotionDiv>
-        <MotionDiv initial={{opacity: 0 , y: 50}}
-        whileInView={{opacity: 1 , y: 0}}
-        transition={{duration: 0.8 , ease:"easeInOut"}}   >
+        <MotionDiv
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+        >
           <h3 className="mb-3">{client_testimonial_tiitle}</h3>
           <div
             dangerouslySetInnerHTML={{ __html: client_testimonial_content }}
@@ -324,10 +340,10 @@ const page = async ({ params }: PageProps) => {
           <h3 className=" text-primary">View more projects</h3>
         </MotionDiv>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-10 lg:gap-y-14">
-          {Projects.map((project: any , index : number) => {
+          {Projects.map((project: any, index: number) => {
             return (
               <ProjectCard
-              index={index}
+                index={index}
                 key={project.id}
                 image={project._embedded["wp:featuredmedia"][0].source_url}
                 title={project?.title.rendered}
