@@ -45,15 +45,15 @@ export default function RootLayout({
       <body
         className={`${syne.variable} ${Satoshi.variable} bg-white mx-4 md:mx-6 md:mt-3 xl:mx-4 xl:mt-0`}
       >
-        {/* <CursorFollower />
+        <CursorFollower />
         <Suspense fallback={"loading"}>
           <SmoothScroller />
-        </Suspense> */}
-        {/* <PageTransition /> */}
-        {/* <MainMenu />
+        </Suspense>
+        <PageTransition />
+        <MainMenu />
         {children}
-        <MainFooter /> */}
         <Upcoming />
+        <MainFooter />
       </body>
     </html>
   );
