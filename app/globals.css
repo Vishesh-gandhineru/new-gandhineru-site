@@ -1,453 +1,435 @@
-
-
-
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind components;
+@tailwind utilities;
 
+html {
+  font-size: 16px;
 
-  html {
-    font-size: 16px;
+  overflow-x: hidden !important;
+  scroll-padding-top: 100px;
+}
 
-    overflow-x: hidden !important;
-    scroll-padding-top: 100px; 
-  }
+body {
+  @apply font-Satoshi;
+  /* overflow: hidden; */
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
+}
 
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
 
-  body {
-    @apply font-Satoshi;
-    /* overflow: hidden; */
-    transition-property: all;
-    transition-timing-function: ease-in-out;
-    transition-duration: 500ms;
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
 
-  }
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
 
-  .lenis.lenis-smooth {
-    scroll-behavior: auto !important;
-  }
-  
-  .lenis.lenis-smooth [data-lenis-prevent] {
-    overscroll-behavior: contain;
-  }
-  
-  .lenis.lenis-stopped {
-    overflow: hidden;
-  }
-  
-  .lenis.lenis-smooth iframe {
-    pointer-events: none;
-  }
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
 
- body[data-scroll-locked] {
+body[data-scroll-locked] {
   padding: 2rem !important;
   --removed-body-scroll-bar-size: 0 !important;
   overflow: scroll !important;
- }
+}
 
-  h1 , h2 , h3 , h4 , h5 , h6 {
-    @apply font-Syne ;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-Syne;
+}
+
+h1 {
+  @apply text-h1 text-primary;
+}
+
+h2 {
+  @apply text-h2;
+}
+
+h3 {
+  @apply text-h3;
+}
+
+h4 {
+  @apply text-h4;
+}
+
+h5 {
+  @apply text-h5;
+}
+
+h6 {
+  @apply text-h6;
+}
+
+p {
+  @apply text-body font-normal tracking-[1px] text-primary;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 0, 0%, 22%, 1;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 20%, 3%, 40%, 1;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    /* Typography */
+    --fs-h1: 4.5rem;
+    --lh-h1: 5.25rem;
+    --fs-h2: 3.25rem;
+    --lh-h2: 3.875rem;
+    --fs-h3: 2.25rem;
+    --lh-h3: 2.875rem;
+    --fs-h4: 1.5rem;
+    --lh-h4: 2.125rem;
+    --fs-h5: 1.125rem;
+    --lh-h5: 1.25rem;
+    --fs-h6: 1rem;
+    --lh-h6: 1.125rem;
+    --fs-body: 1rem;
+    --lh-body: 1.5rem;
+
+    --borderHideColor: #fff;
   }
-
-  h1 {
-    @apply text-h1 text-primary ;
-  }
-
-  h2 {
-    @apply text-h2;
-  }
-
-  h3 {
-    @apply text-h3;
-  }
-
-  h4 {
-    @apply text-h4;
-  }
-
-  h5 {
-    @apply text-h5;
-  }
-
-  h6 {
-    @apply text-h6;
-  }
-
-  p{
-    @apply text-body font-normal tracking-[1px] text-primary;
-  }
-
-  
-  @layer base {
+  @media (max-width: 1025px) {
     :root {
-      --background: 0 0% 100%;
-      --foreground: 222.2 84% 4.9%;
-
-      --card: 0 0% 100%;
-      --card-foreground: 222.2 84% 4.9%;
-
-      --popover: 0 0% 100%;
-      --popover-foreground: 222.2 84% 4.9%;
-
-      --primary:0, 0%, 22%, 1;
-      --primary-foreground: 210 40% 98%;
-
-      --secondary: 20%, 3% ,40% , 1;
-      --secondary-foreground: 222.2 47.4% 11.2%;
-
-      --muted: 210 40% 96.1%;
-      --muted-foreground: 215.4 16.3% 46.9%;
-
-      --accent: 210 40% 96.1%;
-      --accent-foreground: 222.2 47.4% 11.2%;
-
-      --destructive: 0 84.2% 60.2%;
-      --destructive-foreground: 210 40% 98%;
-
-      --border: 214.3 31.8% 91.4%;
-      --input: 214.3 31.8% 91.4%;
-      --ring: 222.2 84% 4.9%;
-
-      --radius: 0.5rem;
-
-      /* Typography */
-      --fs-h1 : 4.5rem;
-      --lh-h1 : 5.25rem;
-      --fs-h2 : 3.25rem;
-      --lh-h2 : 3.875rem;
-      --fs-h3 : 2.25rem;
-      --lh-h3 : 2.875rem;
-      --fs-h4 : 1.5rem;
-      --lh-h4 : 2.125rem;
-      --fs-h5 : 1.125rem;
-      --lh-h5 : 1.25rem;
-      --fs-h6 : 1rem;
-      --lh-h6 : 1.125rem;
-      --fs-body : 1rem;
-      --lh-body : 1.5rem;
-
-      --borderHideColor : #fff
+      --fs-h1: 4.25rem;
+      --lh-h1: 4.875rem;
+      --fs-h2: 3.25rem;
+      --lh-h2: 3.875rem;
+      --fs-h3: 2.25rem;
+      --lh-h3: 2.875rem;
+      --fs-h4: 1.5rem;
+      --lh-h4: 2.125rem;
+      --fs-h5: 1.5rem;
+      --lh-h5: 1.5rem;
+      --fs-h6: 1.125rem;
+      --lh-h6: 1.25rem;
+      --fs-body: 0.875rem;
+      --lh-body: 1.25rem;
     }
-    @media (max-width: 1025px) {
-      :root {
-        --fs-h1 : 4.25rem;
-        --lh-h1 : 4.875rem;
-        --fs-h2 : 3.25rem;
-        --lh-h2 : 3.875rem;
-        --fs-h3 : 2.25rem;
-        --lh-h3 : 2.875rem;
-        --fs-h4 : 1.5rem;
-        --lh-h4 : 2.125rem;
-        --fs-h5 : 1.5rem;
-        --lh-h5 : 1.5rem;
-        --fs-h6 : 1.125rem;
-        --lh-h6 : 1.25rem;
-        --fs-body : 0.875rem;
-        --lh-body : 1.25rem;
-      }
-    }
-    @media (max-width: 880px) {
-      :root {
-        --fs-h1 : 3.25rem;
-        --lh-h1 : 3.875rem;
-        --fs-h2 : 2.5rem;
-        --lh-h2 : 2.875rem;
-        --fs-h3 : 2rem;
-        --lh-h3 : 2.5rem;
-        --fs-h4 : 1.25rem;
-        --lh-h4 : 2.25rem;
-        --fs-h5 : 1.25rem;
-        --lh-h5 : 1.5rem;
-        --fs-h6 : 1.125rem;
-        --lh-h6 : 1.25rem;
-        --fs-body : 0.875rem;
-        --lh-body : 1.25rem;
-      }
-    }
-
-    @media (max-width: 640px) {
-      :root {
-        --fs-h1 : 2.25rem;
-        --lh-h1 : 2.875rem;
-        --fs-h2 : 1.5rem;
-        --lh-h2 : 2rem;
-        --fs-h3 : 1.5rem;
-        --lh-h3 : 1.875rem;
-        --fs-h4 : 1.25rem;
-        --lh-h4 : 2.25rem;
-        --fs-h5 : 1.25rem;
-        --lh-h5 : 1.5rem;
-        --fs-h6 : 1.125rem;
-        --lh-h6 : 1.25rem;
-        --fs-body : 0.875rem;
-        --lh-body : 1.25rem;
-      }
-    }
-
-    .dark {
-      --background: 222.2 84% 4.9%;
-      --foreground: 210 40% 98%;
-
-      --card: 222.2 84% 4.9%;
-      --card-foreground: 210 40% 98%;
-
-      --popover: 222.2 84% 4.9%;
-      --popover-foreground: 210 40% 98%;
-
-      --primary: 210 40% 98%;
-      --primary-foreground: 222.2 47.4% 11.2%;
-
-      --secondary: 217.2 32.6% 17.5%;
-      --secondary-foreground: 210 40% 98%;
-
-      --muted: 217.2 32.6% 17.5%;
-      --muted-foreground: 215 20.2% 65.1%;
-
-      --accent: 217.2 32.6% 17.5%;
-      --accent-foreground: 210 40% 98%;
-
-      --destructive: 0 62.8% 30.6%;
-      --destructive-foreground: 210 40% 98%;
-
-      --border: 217.2 32.6% 17.5%;
-      --input: 217.2 32.6% 17.5%;
-      --ring: 212.7 26.8% 83.9%;
-    }
-  
-
-
   }
-
-  @layer base {
-    * {
-      @apply border-border;
-    }
-    body {
-      @apply bg-background text-foreground;
+  @media (max-width: 880px) {
+    :root {
+      --fs-h1: 3.25rem;
+      --lh-h1: 3.875rem;
+      --fs-h2: 2.5rem;
+      --lh-h2: 2.875rem;
+      --fs-h3: 2rem;
+      --lh-h3: 2.5rem;
+      --fs-h4: 1.25rem;
+      --lh-h4: 2.25rem;
+      --fs-h5: 1.25rem;
+      --lh-h5: 1.5rem;
+      --fs-h6: 1.125rem;
+      --lh-h6: 1.25rem;
+      --fs-body: 0.875rem;
+      --lh-body: 1.25rem;
     }
   }
 
-
-  .sectionContainer {
-    @apply py-8 max-w-[1300px] w-full mx-auto my-[20px];
-  }
-  
- 
-  
- 
-  .primaryButton::before {
-    content: "";
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    left: calc(100% - 10px);
-    top: -6.5%;
-    transform: translateY(-50%);
-    border-radius: 10px 10px 10px 10px ;
-    z-index: 1;
-    pointer-events: none;
-   }
- 
-  .primaryButton::after {
-    content: "";
-    width: 20px;
-    height: 20px;
-
-    position: absolute;
-    left: calc(100% - 10px);
-    top: calc(100% + 6.5%);
-    transform: translateY(-50%);
-    border-radius: 10px 10px 10px 10px ;
-    z-index: 1;
-    pointer-events: none;
-   }
-
-  
-
-   .PrimaryButtonArrow::before {
-    content: "";
-   width: 20px;
-   height: 30px;
-   background: #373737;
-   position: absolute;
-   right: calc(100% - 10px);
-   top: 50%;
-   transform: translateY(-50%);
-   opacity: 1;
-   transition: opacity 0.4s ease-in-out;
-   }
-
-
-   .primaryButton:hover .PrimaryButtonArrow::before {
-    opacity: 0;
-    transition: opacity 0.1s ease-in-out;
-   }
-   .primaryButton:hover .ContactButtonBox {
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
-   }
-
-   .primaryButton:hover .ContactButtonBox::before {
-    opacity: 1;
-   }
-
- 
-
-   .blackArrow .ArrowRight_svg__rightArrow {
-    stroke: #373737;
-   }
-
-   .SecondaryButton:before {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background:currentColor;
-    bottom:0; 
-    left:0;
-    transition: all ease-in-out 0.3s;
-   }
-
-   .SecondaryButton:hover::before {
-    width: 100%;
-    transition: all ease-in-out 0.3s;
-   }
-
-   .SocialButtonBG {
-    background: url("/Images/socialBgImage.png") no-repeat;
-    background-size: cover;
-    background-position: 100% 50%;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    opacity: 0;
-   }
-
-   .HeroBannerButton:after{
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    bottom: 0;
-    right: 100%;
-    background: transparent;
-    border-radius: 500px;
-    box-shadow: 10px 10px 0 0 #fff;
-   }
-
-   .HeroBannerButton:before{
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    bottom: 0;
-    left: 100%;
-    background: transparent;
-    border-radius: 500px;
-    box-shadow: -10px 10px 0 0 #fff;
-   }
-
-
-   .FooterButton:after{
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    top: 0;
-    right: 100%;
-    background: transparent;
-    border-radius: 500px;
-    box-shadow: 10px -10px 0 0 #fff;
-   }
-
-   .FooterButton:before{
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    top: 0;
-    left: 100%;
-    background: transparent;
-    border-radius: 500px;
-    box-shadow: -10px -10px 0 0 #fff;
-   }
-
-
-   .embla__controls {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    justify-content: space-between;
-    gap: 1.2rem;
-    margin-top: 1.8rem;
-  }
-  .embla__buttons {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem;
-    align-items: center;
-  }
-  .embla__button {
-    -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: transparent;
-    touch-action: manipulation;
-    display: inline-flex;
-    text-decoration: none;
-    cursor: pointer;
-    border: 0;
-    padding: 0;
-    margin: 0;
-    box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
-    width: 3.6rem;
-    height: 3.6rem;
-    z-index: 1;
-    border-radius: 50%;
-    color: var(--text-body);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .embla__button:disabled {
-    color: var(--detail-high-contrast);
-  }
-  .embla__button__svg {
-    width: 35%;
-    height: 35%;
+  @media (max-width: 640px) {
+    :root {
+      --fs-h1: 2.25rem;
+      --lh-h1: 2.875rem;
+      --fs-h2: 1.5rem;
+      --lh-h2: 2rem;
+      --fs-h3: 1.5rem;
+      --lh-h3: 1.875rem;
+      --fs-h4: 1.25rem;
+      --lh-h4: 2.25rem;
+      --fs-h5: 1.25rem;
+      --lh-h5: 1.5rem;
+      --fs-h6: 1.125rem;
+      --lh-h6: 1.25rem;
+      --fs-body: 0.875rem;
+      --lh-body: 1.25rem;
+    }
   }
 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
 
-  .perspective-1000 {
-    perspective: 1000px;
-  }
-  
-  .transform-style-preserve-3d {
-    transform-style: preserve-3d;
-  }
-  
-  .backface-hidden {
-    backface-visibility: hidden;
-  }
-  
-  .rotateY-180 {
-    transform: rotateY(180deg);
-  }
-  
-  .shadow-lg {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
-  }
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
 
- 
-  .hideScroll::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
   }
-  
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.sectionContainer {
+  @apply py-8 max-w-[1300px] w-full mx-auto my-[20px];
+}
+
+.primaryButton::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: calc(100% - 10px);
+  top: -6.5%;
+  transform: translateY(-50%);
+  border-radius: 10px 10px 10px 10px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.primaryButton::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+
+  position: absolute;
+  left: calc(100% - 10px);
+  top: calc(100% + 6.5%);
+  transform: translateY(-50%);
+  border-radius: 10px 10px 10px 10px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.PrimaryButtonArrow::before {
+  content: "";
+  width: 20px;
+  height: 30px;
+  background: #373737;
+  position: absolute;
+  right: calc(100% - 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.primaryButton:hover .PrimaryButtonArrow::before {
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+.primaryButton:hover .ContactButtonBox {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.primaryButton:hover .ContactButtonBox::before {
+  opacity: 1;
+}
+
+.blackArrow .ArrowRight_svg__rightArrow {
+  stroke: #373737;
+}
+
+.SecondaryButton:before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: currentColor;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 0.3s;
+}
+
+.SecondaryButton:hover::before {
+  width: 100%;
+  transition: all ease-in-out 0.3s;
+}
+
+.SocialButtonBG {
+  background: url("/Images/socialBgImage.png") no-repeat;
+  background-size: cover;
+  background-position: 100% 50%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+}
+
+.HeroBannerButton:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 100%;
+  background: transparent;
+  border-radius: 500px;
+  box-shadow: 10px 10px 0 0 #fff;
+}
+
+.HeroBannerButton:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  left: 100%;
+  background: transparent;
+  border-radius: 500px;
+  box-shadow: -10px 10px 0 0 #fff;
+}
+
+.FooterButton:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  right: 100%;
+  background: transparent;
+  border-radius: 500px;
+  box-shadow: 10px -10px 0 0 #fff;
+}
+
+.FooterButton:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 100%;
+  background: transparent;
+  border-radius: 500px;
+  box-shadow: -10px -10px 0 0 #fff;
+}
+
+.embla__controls {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-content: space-between;
+  gap: 1.2rem;
+  margin-top: 1.8rem;
+}
+.embla__buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  align-items: center;
+}
+.embla__button {
+  -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  touch-action: manipulation;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+  width: 3.6rem;
+  height: 3.6rem;
+  z-index: 1;
+  border-radius: 50%;
+  color: var(--text-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.embla__button:disabled {
+  color: var(--detail-high-contrast);
+}
+.embla__button__svg {
+  width: 35%;
+  height: 35%;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotateY-180 {
+  transform: rotateY(180deg);
+}
+
+.shadow-lg {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hideScroll::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
 .glassmorphism {
   box-shadow: inset 0px 0px 100px rgba(231, 231, 234, 0.37);
-  backdrop-filter: blur( 14.5px );
-  -webkit-backdrop-filter: blur( 50.5px ); 
+  backdrop-filter: blur(14.5px);
+  -webkit-backdrop-filter: blur(50.5px);
 }
 
 /* .page-transition {
@@ -457,3 +439,28 @@
   /* filter : blur(12px) 
   }*/
 
+@keyframes progress-fill {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 95%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-progress-fill {
+  animation: progress-fill 2s ease-out forwards;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}

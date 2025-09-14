@@ -8,6 +8,7 @@ import CursorFollower from "@/components/Animations/customCursor";
 import SmoothScroller from "@/components/Animations/SmoothScroll";
 import "./globals.css";
 import { Suspense } from "react";
+import Upcoming from "@/components/CustomUi/Upcoming";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -44,14 +45,15 @@ export default function RootLayout({
       <body
         className={`${syne.variable} ${Satoshi.variable} bg-white mx-4 md:mx-6 md:mt-3 xl:mx-4 xl:mt-0`}
       >
-        <CursorFollower />
+        {/* <CursorFollower />
         <Suspense fallback={"loading"}>
           <SmoothScroller />
-        </Suspense>
+        </Suspense> */}
         {/* <PageTransition /> */}
-        <MainMenu />
+        {/* <MainMenu />
         {children}
-        <MainFooter />
+        <MainFooter /> */}
+        <Upcoming />
       </body>
     </html>
   );
