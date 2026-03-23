@@ -52,7 +52,7 @@ export default function RootLayout({
         <PageTransition />
         <MainMenu />
         {children}
-        <Upcoming />
+        {/* <Upcoming /> */}
         <MainFooter />
       </body>
     </html>
